@@ -31,7 +31,7 @@ st.markdown("""
     }
     
     .sub-header {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         color: #6B7280;
         text-align: center;
         margin-bottom: 3rem;
@@ -79,12 +79,12 @@ def main():
     st.sidebar.title("Process Steps")
     
     steps = [
-        "📊 Upload Client Data",
-        "🏢 Business Context", 
-        "🤖 AI Variable Selection",
-        "⚡ Data Enrichment",
-        "📈 Generate Insights",
-        "📄 Export Report"
+        "Upload Client Data",
+        "Business Context", 
+        "AI Variable Selection",
+        "Data Enrichment",
+        "Generate Insights",
+        "Export Report"
     ]
     
     # Show current step with navigation
@@ -97,7 +97,7 @@ def main():
                 st.session_state.step = i
                 st.rerun()
         else:
-            st.sidebar.markdown(f"⏳ {step_name}")
+            st.sidebar.markdown(f"> {step_name}")
     
     # Add some spacing
     st.sidebar.markdown("---")
@@ -116,7 +116,6 @@ def main():
         st.rerun()
     
     # Allow clicking on completed steps to navigate back
-    # (This is now handled in the sidebar)
 
     # Main content based on step
     if st.session_state.step == 1:
@@ -134,7 +133,7 @@ def main():
 
 def show_data_upload():
     st.markdown('<div class="step-container">', unsafe_allow_html=True)
-    st.header("📊 Step 1: Upload Client Data")
+    st.header("Step 1: Upload Client Data")
     st.markdown("Upload your client's customer data (CSV format). We'll use this as the foundation for our analysis.")
     
     uploaded_file = st.file_uploader(
@@ -241,8 +240,6 @@ def show_business_context():
                 "Understand customer demographics",
                 "Identify market positioning opportunities", 
                 "Optimize marketing messaging",
-                "Find new customer segments",
-                "Improve targeting efficiency",
                 "Competitive differentiation"
             ]
         )
@@ -419,7 +416,7 @@ def show_data_enrichment():
 
 def show_insights_generation():
     st.header("📈 Step 5: Generate Customer Intelligence")
-    st.markdown("Our AI is analyzing your enriched customer data to generate strategic insights...")
+    st.markdown("Analyzing enriched customer data to generate strategic insights...")
     
     # Show data summary
     if hasattr(st.session_state, 'enriched_data') and isinstance(st.session_state.enriched_data, pd.DataFrame):
@@ -431,8 +428,8 @@ def show_insights_generation():
         with col3:
             st.metric("Analysis Depth", "Strategic")
     
-    if st.button("🧠 Generate AI Insights", type="primary"):
-        with st.spinner("AI analyzing customer patterns and generating strategic insights..."):
+    if st.button("🧠 Generate Insights", type="primary"):
+        with st.spinner("Analyzing patterns and generating strategic insights..."):
             import time
             time.sleep(3)
             

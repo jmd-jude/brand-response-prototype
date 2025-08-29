@@ -9,16 +9,24 @@
       "priority": "High",
       "effort": "8",
       "status": "Backlog",
-      "tags": ["api", "integration", "core-feature"]
+      "tags": [
+        "api",
+        "integration",
+        "core-feature"
+      ]
     },
     {
-      "id": "BR-002", 
+      "id": "BR-002",
       "title": "Set up Supabase database for project persistence",
       "description": "Create database schema for projects, analyses, and reports. Implement CRUD operations for saving/loading client projects and analysis history.",
       "priority": "High",
       "effort": "5",
       "status": "Backlog",
-      "tags": ["database", "persistence", "supabase"]
+      "tags": [
+        "database",
+        "persistence",
+        "supabase"
+      ]
     },
     {
       "id": "BR-003",
@@ -26,8 +34,12 @@
       "description": "Modify AI prompts to return structured markdown instead of JSON. Update display logic to render markdown and prepare for PDF generation.",
       "priority": "Medium",
       "effort": "3",
-      "status": "Backlog", 
-      "tags": ["ai", "reports", "markdown"]
+      "status": "Backlog",
+      "tags": [
+        "ai",
+        "reports",
+        "markdown"
+      ]
     },
     {
       "id": "BR-004",
@@ -36,16 +48,24 @@
       "priority": "Medium",
       "effort": "5",
       "status": "Backlog",
-      "tags": ["reports", "pdf", "export"]
+      "tags": [
+        "reports",
+        "pdf",
+        "export"
+      ]
     },
     {
       "id": "BR-005",
-      "title": "Add CSV validation and error handling", 
+      "title": "Add CSV validation and error handling",
       "description": "Implement robust client data validation, required field checking, and clear error messages. Handle malformed data gracefully.",
       "priority": "Medium",
       "effort": "4",
       "status": "Backlog",
-      "tags": ["validation", "error-handling", "ux"]
+      "tags": [
+        "validation",
+        "error-handling",
+        "ux"
+      ]
     },
     {
       "id": "BR-006",
@@ -53,8 +73,12 @@
       "description": "Configure deployment pipeline, environment variables for API keys, and ensure production stability. Set up monitoring and logging.",
       "priority": "High",
       "effort": "3",
-      "status": "Backlog",
-      "tags": ["deployment", "infrastructure", "streamlit"]
+      "status": "In Progress",
+      "tags": [
+        "deployment",
+        "infrastructure",
+        "streamlit"
+      ]
     },
     {
       "id": "BR-007",
@@ -63,7 +87,11 @@
       "priority": "Medium",
       "effort": "4",
       "status": "Backlog",
-      "tags": ["marketing", "landing-page", "github-pages"]
+      "tags": [
+        "marketing",
+        "landing-page",
+        "github-pages"
+      ]
     },
     {
       "id": "BR-008",
@@ -72,7 +100,11 @@
       "priority": "Medium",
       "effort": "6",
       "status": "Backlog",
-      "tags": ["ui", "project-management", "client-workflow"]
+      "tags": [
+        "ui",
+        "project-management",
+        "client-workflow"
+      ]
     },
     {
       "id": "BR-009",
@@ -81,7 +113,11 @@
       "priority": "Low",
       "effort": "4",
       "status": "Backlog",
-      "tags": ["billing", "tracking", "metrics"]
+      "tags": [
+        "billing",
+        "tracking",
+        "metrics"
+      ]
     },
     {
       "id": "BR-010",
@@ -90,7 +126,11 @@
       "priority": "Medium",
       "effort": "5",
       "status": "Backlog",
-      "tags": ["security", "compliance", "data-protection"]
+      "tags": [
+        "security",
+        "compliance",
+        "data-protection"
+      ]
     },
     {
       "id": "BR-011",
@@ -99,7 +139,11 @@
       "priority": "Low",
       "effort": "4",
       "status": "Backlog",
-      "tags": ["ui", "client-interaction", "variable-selection"]
+      "tags": [
+        "ui",
+        "client-interaction",
+        "variable-selection"
+      ]
     },
     {
       "id": "BR-012",
@@ -108,7 +152,11 @@
       "priority": "Low",
       "effort": "2",
       "status": "Backlog",
-      "tags": ["ux", "progress-indicators", "user-feedback"]
+      "tags": [
+        "ux",
+        "progress-indicators",
+        "user-feedback"
+      ]
     },
     {
       "id": "BR-013",
@@ -117,7 +165,11 @@
       "priority": "Low",
       "effort": "3",
       "status": "Backlog",
-      "tags": ["email", "delivery", "client-communication"]
+      "tags": [
+        "email",
+        "delivery",
+        "client-communication"
+      ]
     },
     {
       "id": "BR-014",
@@ -126,7 +178,11 @@
       "priority": "Low",
       "effort": "6",
       "status": "Backlog",
-      "tags": ["visualization", "charts", "insights"]
+      "tags": [
+        "visualization",
+        "charts",
+        "insights"
+      ]
     }
   ]
 }

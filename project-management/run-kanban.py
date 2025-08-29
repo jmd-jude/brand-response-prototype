@@ -13,7 +13,7 @@ class BacklogHandler(http.server.SimpleHTTPRequestHandler):
             
             try:
                 backlog_data = json.loads(post_data.decode('utf-8'))
-                with open('backlog.json', 'w') as f:
+                with open('project-management/backlog.json', 'w') as f:
                     json.dump(backlog_data, f, indent=2)
                 
                 self.send_response(200)
@@ -39,5 +39,5 @@ class BacklogHandler(http.server.SimpleHTTPRequestHandler):
 
 PORT = 8080
 with socketserver.TCPServer(("", PORT), BacklogHandler) as httpd:
-    print(f"Server running at http://localhost:{PORT}")
+    print(f"Server running at http://localhost:{PORT}/project-management/kanban.html")
     httpd.serve_forever()
