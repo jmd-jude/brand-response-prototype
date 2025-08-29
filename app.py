@@ -206,7 +206,7 @@ def show_data_upload():
 def show_business_context():
     st.markdown('<div class="step-container">', unsafe_allow_html=True)
     st.header("🏢 Step 2: Business Context")
-    st.markdown("Tell us about the business so our AI can select the most relevant data variables for analysis.")
+    st.markdown("Tell us about the business so we can select the most relevant data variables for analysis.")
     
     with st.form("business_context_form"):
         col1, col2 = st.columns(2)
@@ -268,20 +268,20 @@ def show_business_context():
     st.markdown('</div>', unsafe_allow_html=True)
 
 def show_variable_selection():
-    st.header("🤖 Step 3: AI Variable Selection")
-    st.markdown("Our AI is analyzing your business context to select the most strategic data variables...")
+    st.header("🤖 Step 3: Data Enhancement Selection")
+    st.markdown("Analyzing your business context to select the most strategic data variables...")
     
     # Show business context summary
     if st.session_state.business_context:
-        with st.expander("📋 Business Context Summary", expanded=False):
+        with st.expander("Business Context Summary", expanded=False):
             for key, value in st.session_state.business_context.items():
                 if value and key != 'goals':
                     st.write(f"**{key.replace('_', ' ').title()}:** {value}")
                 elif key == 'goals' and value:
                     st.write(f"**Goals:** {', '.join(value)}")
     
-    if st.button("🤖 Generate AI Variable Recommendations", type="primary"):
-        with st.spinner("AI analyzing your business context..."):
+    if st.button("🤖 Generate Enhancement Recommendations", type="primary"):
+        with st.spinner("Analyzing your business context..."):
             try:
                 # Import the AI helper
                 from utils.ai_helper import select_variables_with_ai
@@ -289,7 +289,7 @@ def show_variable_selection():
                 selected_vars = select_variables_with_ai(st.session_state.business_context)
                 st.session_state.selected_variables = selected_vars
                 
-                st.success("✅ AI has selected variables optimized for your business!")
+                st.success("✅ Here are the selected variables optimized for your business!")
                 
                 # Show selected variables with AI explanations
                 show_ai_variable_explanations(selected_vars)
@@ -354,7 +354,7 @@ def show_data_enrichment():
             st.markdown(f"*... and {len(st.session_state.selected_variables) - 5} more variables*")
     
     if st.button("🚀 Start Data Enrichment", type="primary"):
-        with st.spinner("Enriching data via Audience Acuity API..."):
+        with st.spinner("Enriching data via Brand Response graph..."):
             import time
             time.sleep(2)
             
@@ -380,7 +380,7 @@ def show_data_enrichment():
                     
                     # Show sample of enriched data
                     st.subheader("📊 Enriched Data Preview")
-                    st.markdown("Your customer data has been enhanced with strategic variables from the Audience Acuity Identity Graph:")
+                    st.markdown("Your customer data has been enhanced with strategic variables from our data sources:")
                     
                     # Show relevant columns
                     display_columns = ['FIRST_NAME', 'LAST_NAME', 'AGE', 'INCOME_HH', 'EDUCATION', 'URBANICITY', 'GOURMET_AFFINITY']

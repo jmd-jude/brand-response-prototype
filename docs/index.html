@@ -394,19 +394,55 @@
         </div> -->
 
         <!-- Demo Tab -->
-        <div id="demo" class="tab-content active" style="text-align: center; padding: 4rem 0;">
-            <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: #1F2937;">
-                See Prototype
-            </h2>
-            <p style="font-size: 1.2rem; color: #6B7280; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                Open the interactive demo in a new tab, upload sample data, and see the concept in action.
-            </p>
-            <a href="https://brandresponse.streamlit.app" 
-            target="_blank" 
-            class="cta-button" 
-            style="font-size: 1.25rem; padding: 1.25rem 2.5rem;">
-                Launch Prototype
-            </a>
+        <div id="demo" class="tab-content active">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: #1F2937;">
+                    See Prototype in Action
+                </h2>
+                <p style="font-size: 1.2rem; color: #6B7280; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Browse the screenshots below, then open the live prototype to experience the full workflow.
+                </p>
+            </div>
+            
+            <!-- Screenshots Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <img src="screenshots/step1-upload.png" alt="Step 1: Data Upload" style="width: 100%; height: auto; display: block;">
+                    <div style="padding: 1rem;">
+                        <h3 style="color: #1F2937; margin-bottom: 0.5rem;">Step 1: Upload Customer Data</h3>
+                        <p style="color: #6B7280; font-size: 0.9rem;">Load sample coffee shop data or upload your own CSV file</p>
+                    </div>
+                </div>
+                
+                <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <img src="screenshots/step3-ai-variables.png" alt="Step 3: AI Variable Selection" style="width: 100%; height: auto; display: block;">
+                    <div style="padding: 1rem;">
+                        <h3 style="color: #1F2937; margin-bottom: 0.5rem;">Step 3: AI Variable Selection</h3>
+                        <p style="color: #6B7280; font-size: 0.9rem;">AI analyzes business context and selects strategic variables</p>
+                    </div>
+                </div>
+                
+                <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <img src="screenshots/step5-insights.png" alt="Step 5: Generated Insights" style="width: 100%; height: auto; display: block;">
+                    <div style="padding: 1rem;">
+                        <h3 style="color: #1F2937; margin-bottom: 0.5rem;">Step 5: Strategic Insights</h3>
+                        <p style="color: #6B7280; font-size: 0.9rem;">AI-generated analysis reveals customer reality vs assumptions</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA Button -->
+            <div style="text-align: center;">
+                <a href="https://brandresponse.streamlit.app" 
+                target="_blank" 
+                class="cta-button" 
+                style="font-size: 1.25rem; padding: 1.25rem 2.5rem;">
+                    Launch Interactive Prototype
+                </a>
+                <p style="margin-top: 1rem; color: #6B7280; font-size: 0.9rem;">
+                    Opens in new tab - try the complete workflow with sample data
+                </p>
+            </div>
         </div>
 
 
