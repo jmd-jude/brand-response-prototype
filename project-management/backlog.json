@@ -73,7 +73,7 @@
       "description": "Configure deployment pipeline, environment variables for API keys, and ensure production stability. Set up monitoring and logging.",
       "priority": "High",
       "effort": "3",
-      "status": "In Progress",
+      "status": "Done",
       "tags": [
         "deployment",
         "infrastructure",
@@ -86,7 +86,7 @@
       "description": "Build marketing landing page with app embedding, client onboarding flow, and basic Brand Response branding.",
       "priority": "Medium",
       "effort": "4",
-      "status": "Backlog",
+      "status": "Done",
       "tags": [
         "marketing",
         "landing-page",
