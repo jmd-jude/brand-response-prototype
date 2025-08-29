@@ -1,0 +1,47 @@
+graph TB
+    subgraph "Client Input"
+        A[Client CSV Upload]
+    end
+    
+    subgraph "Manual Processing"
+        B[Data Validation & Cleanup]
+        C[Manual Variable Selection]
+        D[Business Context Input]
+    end
+    
+    subgraph "Enhancement"
+        E[Audience Acuity API]
+        F[Data Enrichment]
+    end
+    
+    subgraph "Analysis"
+        G[Basic Segmentation]
+        H[Insight Generation]
+    end
+    
+    subgraph "Output"
+        I[Enhanced Dataset Export]
+        J[Template-Based Report]
+    end
+    
+    A --> B
+    B --> C
+    C --> D
+    D --> F
+    
+    F --> E
+    E --> G
+    G --> H
+    
+    H --> I
+    H --> J
+    
+    classDef input fill:#e1f5fe
+    classDef manual fill:#fff3e0
+    classDef api fill:#e8f5e8
+    classDef output fill:#fce4ec
+    
+    class A input
+    class B,C,D manual
+    class E,F,G,H api
+    class I,J output

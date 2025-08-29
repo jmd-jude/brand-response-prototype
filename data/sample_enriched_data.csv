@@ -1,0 +1,751 @@
+﻿ID,FIRST_NAME,LAST_NAME,AGE,INCOME_HH,EDUCATION,URBANICITY,MARITAL_STATUS,CHILDREN_HH,OCCUPATION_TYPE,LIFESTYLE_CLUSTER,GOURMET_AFFINITY,FITNESS_AFFINITY,HIGH_TECH_AFFINITY,READING_MAGAZINES
+3011207586,Cynthia,Kraft,58,"K. $100,000-$149,999",Completed College,4. Urban,Single,1,White Collar,,,1,1,1
+2724006989,Frank,Fowler,54,"C. $20,000-$29,999",Completed College,3. Suburban,Single,0,White Collar,,,,,0
+247995743,Rebecca,Davis,68,"M. $175,000-$199,999",Completed Graduate School,3. Suburban,Single,0,White Collar,,,,,1
+948715514,Lindsay,Lecuyer,46,"G. $60,000-$74,999",Completed College,4. Urban,Single,1,Other,,,,,1
+2071350515,Bilqis,Haqq,40,"H. $75,000-$99,999",Completed High School,4. Urban,Married,1,,,,,,1
+453401915,Davis,Tima,32,"H. $75,000-$99,999",Completed College,1. Rural,Single,1,,,,,1,1
+648370316,Meredith,Cj,48,"H. $75,000-$99,999",Completed College,3. Suburban,Married,1,White Collar,,3,3,,1
+1756870921,Roberta,Wilcox,73,"N. $200,000-$249,999",Completed High School,4. Urban,Married,0,Other,,3,3,,1
+28895481,Kari,Allen,40,"K. $100,000-$149,999",Completed College,1. Rural,Married,1,,,,2,,0
+592116216,Suzanne,Beste,47,P. $250-$299K,Completed College,3. Suburban,Single,1,White Collar,,,,,0
+278594500,Patricia,Esgro,39,"H. $75,000-$99,999",Completed High School,1. Rural,Single,1,,,,3,,0
+1211888388,Lindsay,Marshall,42,P. $250-$299K,Completed College,3. Suburban,Married,1,,,,,,0
+648468538,William,Bolinsky,44,"K. $100,000-$149,999",Some College,3. Suburban,Single,0,White Collar,,,,,0
+1090712858,Jared,Hartmann,54,"L. $150,000-$174,999",Completed High School,3. Suburban,Married,1,White Collar,,,,,1
+610864368,Jacob,Teegardin,59,Q. $300-$399K,Completed Graduate School,3. Suburban,Married,1,White Collar,,,,,0
+2985989818,Deborah,Forrest,59,"H. $75,000-$99,999",Completed College,1. Rural,Married,1,Blue Collar,,,,,1
+2504989243,Rand,Evans,67,"E. $40,000-$49,999",Some College,1. Rural,Married,0,White Collar,,,,,0
+765026205,Cathy,Sapp,99,"E. $40,000-$49,999",Some College,3. Suburban,Single,0,Other,,,,1,0
+2546345600,Todd,Boudreau,52,"K. $100,000-$149,999",Completed College,4. Urban,Single,1,White Collar,,,,,0
+2766240726,Anthony,Fannin,30,"L. $150,000-$174,999",Completed High School,3. Suburban,Single,1,White Collar,,,,,1
+2986325286,Michael,Mayorga,81,"M. $175,000-$199,999",Completed High School,3. Suburban,Single,0,,,,,,0
+1184264077,Lucas,Bickmann,27,"H. $75,000-$99,999",Completed College,1. Rural,Married,1,,,,,,1
+2530658561,Joshua,Banes,71,"L. $150,000-$174,999",Completed College,4. Urban,Married,0,,,,,,0
+2490493236,Sherman,Schufford,20,"K. $100,000-$149,999",Completed College,4. Urban,Married,1,,,2,3,,0
+3050858859,Lenna,Wolffe,69,"N. $200,000-$249,999",Completed Graduate School,4. Urban,Single,0,White Collar,,,,,1
+693238171,Dennis,Hockers,67,"H. $75,000-$99,999",Completed High School,3. Suburban,Single,0,,,,,1,0
+1902182039,Mahima,Mim,31,"H. $75,000-$99,999",Completed Graduate School,4. Urban,Single,1,,,,2,,0
+239717548,Kaitlyn,Dumaine,71,"L. $150,000-$174,999",Completed College,4. Urban,Married,0,White Collar,,1,,,1
+83556432,William,Jones,69,"K. $100,000-$149,999",Completed High School,1. Rural,Married,0,,,,,,0
+238061656,Joe,Beltran,65,"M. $175,000-$199,999",Completed College,4. Urban,Single,1,Blue Collar,,,,,1
+2435058499,Ebelia,Villalobos,29,"K. $100,000-$149,999",Completed High School,4. Urban,Single,0,,,,,,0
+195262611,Arlene,Vore,74,"H. $75,000-$99,999",Completed High School,1. Rural,Single,0,Blue Collar,,,,,1
+2563347326,Delaney,Huber,24,"K. $100,000-$149,999",Completed College,1. Rural,Single,1,Other,,,,,0
+372768971,Sharon,Burgison,41,"K. $100,000-$149,999",Completed High School,4. Urban,Single,1,,,,,,0
+2454095683,Michael,Aguirre,42,"G. $60,000-$74,999",Completed College,3. Suburban,Single,1,White Collar,,,,,1
+308700859,William,Greenlee,49,Q. $300-$399K,Completed High School,3. Suburban,Single,1,White Collar,,,,,0
+2464510444,Irene,Moore,88,"N. $200,000-$249,999",Completed High School,3. Suburban,Single,0,Other,,,,,1
+2630138353,Mario,Ascencio,85,Q. $300-$399K,Completed College,4. Urban,Single,0,White Collar,,,1,,1
+308264157,Kathleen,Fox,34,S. $500-$699K,Some College,4. Urban,Married,1,,,,,,0
+826122369,Matthew,Deceault,34,P. $250-$299K,Completed College,3. Suburban,Single,0,White Collar,,,,,0
+1293683317,Thomas,Judithc,24,S. $500-$699K,Completed Graduate School,4. Urban,Married,1,,,,,,1
+2046246282,Brandon,Elliott,44,P. $250-$299K,Completed College,3. Suburban,Married,1,White Collar,,,,,0
+539324361,Angie,DeRose,30,"D. $30,000-$39,999",Completed College,3. Suburban,Married,1,White Collar,,1,,,1
+2076312555,Pat,Mihir,43,"K. $100,000-$149,999",Some College,3. Suburban,Single,1,White Collar,,3,,,0
+1155890885,James,Stevens,66,"D. $30,000-$39,999",Completed High School,4. Urban,Single,0,,,,,,0
+2491199923,Orlando,Jones,49,"F. $50,000-$59,999",Completed High School,3. Suburban,Married,1,Other,,,,,0
+1258490887,Verna,Kline,92,"G. $60,000-$74,999",Completed College,1. Rural,Married,0,,,,,,1
+1268474383,Bernard,Sharp,87,"E. $40,000-$49,999",Completed College,3. Suburban,Single,0,Other,,,,,1
+71076084,Lenon,Bryant,68,"D. $30,000-$39,999",Completed High School,3. Suburban,Married,0,,,2,,,0
+1675664981,Patrick,Toomey,68,"H. $75,000-$99,999",Completed High School,1. Rural,Single,0,,,,1,,0
+1176747666,Tiffany,Funderburg,42,"K. $100,000-$149,999",Completed College,1. Rural,Married,1,White Collar,,2,,,0
+693105355,Charles,Martin,83,"K. $100,000-$149,999",Completed Graduate School,1. Rural,Married,0,Other,,,,,1
+97509017,Jeffrey,Eagan,53,"G. $60,000-$74,999",Completed College,1. Rural,Single,1,Blue Collar,,,,,0
+126325789,Bryan,Blasser,46,"M. $175,000-$199,999",Completed High School,3. Suburban,Single,1,White Collar,,,,,0
+897902898,John,Evans,56,"K. $100,000-$149,999",Completed High School,3. Suburban,Single,0,,,,,1,0
+84749773,Rita,Jaeger,69,"K. $100,000-$149,999",Completed College,1. Rural,Single,0,Blue Collar,,,,,1
+261103280,Richard,Poyner,69,"L. $150,000-$174,999",Completed Graduate School,3. Suburban,Married,0,White Collar,,,,1,1
+2173018917,Kurt,Madsen,53,"N. $200,000-$249,999",Completed High School,4. Urban,Single,1,,,,,,0
+3101100501,Frances,Telfer,48,"N. $200,000-$249,999",Completed High School,3. Suburban,Single,1,,,,2,,0
+2521687351,Henry,Plazola,48,R. $400-$499K,Completed College,3. Suburban,Single,1,White Collar,,,,,1
+2386399511,Phyllis,Cassell,61,"K. $100,000-$149,999",Completed College,4. Urban,Married,1,,,,,,0
+950348751,Rayne,Phoenix,46,"M. $175,000-$199,999",Some College,1. Rural,Single,1,,,,,,0
+3194844,Mark,Fontaine,59,"H. $75,000-$99,999",Completed Graduate School,4. Urban,Married,1,White Collar,,,,,1
+2164944260,Gerard,Mehrin,56,"K. $100,000-$149,999",Completed College,1. Rural,Married,1,,,,,,0
+3028353084,Brice,Schaeffer,66,"F. $50,000-$59,999",Completed High School,1. Rural,Single,0,White Collar,,,,,1
+101399056,Bus,Wartofsky,85,U. $1MM +,Completed Graduate School,4. Urban,Married,0,Other,,,,,1
+1653504763,Steve,Liekweg,69,S. $500-$699K,Completed College,4. Urban,Married,0,White Collar,,1,1,,1
+141111232,Rose,O'Connor,50,P. $250-$299K,Completed College,4. Urban,Married,1,White Collar,,,,,1
+177263071,Zachary,Kleinsorge,31,Q. $300-$399K,Completed College,3. Suburban,Single,1,,,2,,,1
+2425767100,Rose,Emery,49,"F. $50,000-$59,999",Completed College,3. Suburban,Single,1,White Collar,,,,,0
+619334325,Tishya,Bedi,62,P. $250-$299K,Completed College,4. Urban,Single,1,White Collar,,,,,0
+104638030,Felicia,Mann,53,P. $250-$299K,Completed High School,3. Suburban,Single,1,White Collar,,,,,0
+64763294,Cornelius,Degraaff,83,"K. $100,000-$149,999",Completed Graduate School,1. Rural,Single,0,White Collar,,,,,0
+616404560,Jorge,Maldonado,62,Q. $300-$399K,Completed College,4. Urban,Married,1,White Collar,,,2,,1
+2235479387,Edward,Morris,81,"K. $100,000-$149,999",Completed High School,4. Urban,Single,0,Other,,2,,1,1
+2628541523,Oscar,Ramos,89,S. $500-$699K,Completed Graduate School,3. Suburban,Married,0,Other,,,,,1
+1306216460,Nora,Davis,64,"E. $40,000-$49,999",Completed High School,1. Rural,Single,1,,,,,,0
+2432974389,Wendal,Lay,78,"K. $100,000-$149,999",Completed Graduate School,1. Rural,Married,0,Other,,,,,1
+2094290706,Kelly,Delaney,62,"N. $200,000-$249,999",Completed College,1. Rural,Single,1,Blue Collar,,,,,0
+1364335712,Leland,Snyder,58,"L. $150,000-$174,999",Completed College,3. Suburban,Single,1,White Collar,,,,,1
+29031588,Ladensack,Etal,70,"K. $100,000-$149,999",Completed College,1. Rural,Married,0,White Collar,,,,,0
+1973232091,Iris,Cepeda,70,Q. $300-$399K,Completed High School,3. Suburban,Married,0,White Collar,,,,,0
+2244696393,Thaddeus,Polakiewicz,49,"K. $100,000-$149,999",Completed High School,3. Suburban,Single,0,,,,,,0
+178418798,Julie,Colofiore,41,"K. $100,000-$149,999",Completed College,4. Urban,Single,1,Blue Collar,,3,3,,0
+234276650,Greg,Gainey,52,Q. $300-$399K,Completed College,3. Suburban,Single,0,,,,,,0
+295544085,William,Hudson,55,"H. $75,000-$99,999",Completed College,1. Rural,Married,1,,,,,,0
+81463829,Fred,Farmer,90,"K. $100,000-$149,999",Completed College,3. Suburban,Married,0,Other,,,,,1
+2612180652,Anita,Locke,44,"G. $60,000-$74,999",Completed High School,1. Rural,Married,1,White Collar,,,,1,1
+588542381,Danielle,Dunne,46,"F. $50,000-$59,999",Completed College,3. Suburban,Single,1,White Collar,,,,,0
+1804786995,Willie,Richburg,60,"L. $150,000-$174,999",Completed College,4. Urban,Married,1,White Collar,,2,2,,1
+3443704872,Ronald,Etzel,66,"N. $200,000-$249,999",Completed College,1. Rural,Married,0,White Collar,,3,2,,1
+273784084,Judy,Fernandez,52,"K. $100,000-$149,999",Completed College,4. Urban,Married,1,,,,,,0
+1140991247,Jennifer,Hines,41,"G. $60,000-$74,999",Completed High School,3. Suburban,Single,0,,,,,,0
+1152392642,Birgit,Bonanno,25,U. $1MM +,Completed College,3. Suburban,Single,1,,,2,,,0
+669631201,Margaret,Lynch,65,"D. $30,000-$39,999",Completed High School,1. Rural,Single,0,,,,,,0
+206054636,Alyssa,Edwards,58,Q. $300-$399K,Completed College,3. Suburban,Married,1,White Collar,,,,,1
+65733820,Damien,Schwoeppe,64,"K. $100,000-$149,999",Completed College,1. Rural,Married,1,,,,,,1
+941952916,Cindy,Harrison,59,"L. $150,000-$174,999",Completed College,3. Suburban,Married,1,White Collar,,,1,2,0
+86260848,Jan,Herring,87,"H. $75,000-$99,999",Completed College,1. Rural,Single,0,White Collar,,2,,,1
+2739862497,Ellee,Seymour,64,"K. $100,000-$149,999",Completed High School,3. Suburban,Married,1,White Collar,,,,,1
+927428128,Gibson,Navarre,57,P. $250-$299K,Completed College,1. Rural,Married,1,Blue Collar,,,,,1
+2399707306,Edward,Clancy,63,P. $250-$299K,Completed College,3. Suburban,Married,1,White Collar,,,,1,1
+170821464,Kevin,Hefner,63,"D. $30,000-$39,999",Completed College,4. Urban,Married,1,White Collar,,1,2,,1
+2769241054,Mary,Buckingham,43,"H. $75,000-$99,999",Completed Graduate School,4. Urban,Married,1,Other,,,,,0
+204108182,Peggy,Hawkins,82,P. $250-$299K,Completed Graduate School,3. Suburban,Married,0,White Collar,,,,,1
+3054698410,Paula,Vidad,66,"H. $75,000-$99,999",Completed College,4. Urban,Single,0,Blue Collar,,,2,,1
+13942384,Timothy,Moss,65,"K. $100,000-$149,999",Completed High School,1. Rural,Married,1,White Collar,,,,,1
+2446633316,Jessica,Rico,63,"H. $75,000-$99,999",Completed High School,4. Urban,Single,1,,,,,,0
+2657953237,Angela,Smith,52,"F. $50,000-$59,999",Completed College,3. Suburban,Married,1,,,,,1,0
+963578948,Nina,Marks,44,"F. $50,000-$59,999",Completed High School,4. Urban,Single,1,Other,,,,,1
+895988974,Bernadette,Kubiak,77,Q. $300-$399K,Completed College,1. Rural,Married,0,White Collar,,,,1,1
+415428065,Jollyben,Amin,33,"M. $175,000-$199,999",Completed College,3. Suburban,Single,1,,,1,,,0
+2416202545,Danis,Abreu,50,"M. $175,000-$199,999",Completed College,3. Suburban,Single,1,White Collar,,,,,0
+1831353448,Shirley,Escalante,66,"K. $100,000-$149,999",Completed High School,4. Urban,Single,0,,,,,,1
+1809215761,Lynn,Peeler,54,"K. $100,000-$149,999",Completed College,1. Rural,Married,1,Blue Collar,,1,2,,1
+3048631522,Lisa,Dahl,69,"H. $75,000-$99,999",Completed College,4. Urban,Married,0,White Collar,,,2,1,1
+111171365,Sergio,Hernandez,54,"M. $175,000-$199,999",Completed College,4. Urban,Married,1,Blue Collar,,,,,0
+2067353889,Marvin,Mallett,79,"H. $75,000-$99,999",Completed College,3. Suburban,Married,0,White Collar,,,,,1
+939213743,Amanda,Patton,29,"H. $75,000-$99,999",Completed High School,4. Urban,Single,1,,,,,,1
+673959995,Austin,Wright,30,"K. $100,000-$149,999",Completed College,1. Rural,Single,1,White Collar,,1,,3,1
+899681871,Lamine,Khima,57,"N. $200,000-$249,999",Completed College,1. Rural,Married,0,Blue Collar,,,,,0
+2831785620,Mi,Johnson,70,"K. $100,000-$149,999",Completed College,1. Rural,Single,0,White Collar,,,1,2,1
+358464507,Evanthia,Valis,89,"E. $40,000-$49,999",Some College,4. Urban,Single,0,White Collar,,1,,,0
+57120902,David,May,68,Q. $300-$399K,Completed College,3. Suburban,Married,0,White Collar,,1,,,1
+1297333482,Aster,Antolik,44,"N. $200,000-$249,999",Completed College,4. Urban,Married,0,,,,,,0
+2238738186,Linda,Bosteder,76,P. $250-$299K,Some College,3. Suburban,Single,0,,,,2,,0
+645848139,Daphaine,Enis,37,"K. $100,000-$149,999",Completed High School,4. Urban,Single,0,,,,,,0
+2690413137,Donald,Shirey,46,"G. $60,000-$74,999",Completed High School,3. Suburban,Married,1,,,,1,,1
+3189048423,Jon,Kontt,41,"N. $200,000-$249,999",Completed High School,4. Urban,Married,1,,,,,,1
+620186156,Blake,Crawford,80,Q. $300-$399K,Completed College,4. Urban,Married,0,White Collar,,,,,0
+141801339,Robert,Barnes,65,"E. $40,000-$49,999",Completed High School,1. Rural,Married,0,,,,,,0
+308466278,Dean,Mosher,54,"H. $75,000-$99,999",Completed High School,4. Urban,Single,1,,,,,,1
+3315766468,John,Panderson,96,T. $700-$999K,Completed College,3. Suburban,Married,0,White Collar,,,,,0
+130555331,Jerry,Lloyd,50,"K. $100,000-$149,999",Completed High School,4. Urban,Single,1,,,,,,0
+44082402,Aaron,Teafatiller,64,"N. $200,000-$249,999",Completed College,3. Suburban,Single,0,,,,,,1
+73797238,April,Jessamine,58,"C. $20,000-$29,999",Completed High School,1. Rural,Married,0,,,3,,,0
+544783333,Venedicza,Turrubiartes,27,"L. $150,000-$174,999",Some College,3. Suburban,Single,0,White Collar,,,,,0
+977789468,Patti,McCaffrey,28,R. $400-$499K,Completed College,3. Suburban,Single,1,,,,,,0
+2623955288,Marvin,Wolfe,56,"G. $60,000-$74,999",Completed High School,1. Rural,Married,1,Other,,,,1,1
+1820423264,Barbara,Baker,88,"K. $100,000-$149,999",Some College,1. Rural,Married,0,,,,,,1
+2294773473,Aswani,Kinsley,43,"C. $20,000-$29,999",Completed High School,3. Suburban,Single,1,Blue Collar,,,1,1,0
+199553752,Cindy,Schafer,34,"N. $200,000-$249,999",Completed High School,1. Rural,Single,0,,,,,,0
+2073164599,Robert,Stephenson,79,"D. $30,000-$39,999",Some College,3. Suburban,Married,0,White Collar,,3,,,0
+452278138,Danny,Pare,28,"N. $200,000-$249,999",Completed High School,4. Urban,Single,1,,,,,1,0
+2132615203,James,Kubiak,42,"F. $50,000-$59,999",Completed College,1. Rural,Married,1,,,,,,0
+2564982503,Lindsay,Jebens,91,"K. $100,000-$149,999",Attended Vocational/Technical,3. Suburban,Married,0,Other,,2,,2,0
+1832498607,Catherine,McDonald,70,Q. $300-$399K,Some College,4. Urban,Single,0,,,2,2,,0
+678181491,Jamie,Young,52,"E. $40,000-$49,999",Completed Graduate School,1. Rural,Married,0,Blue Collar,,,,,0
+147692002,Mari,Cabacungan,88,P. $250-$299K,Completed High School,3. Suburban,Married,0,,,,,,0
+1776456080,John,Epolito,44,"H. $75,000-$99,999",Completed High School,3. Suburban,Married,1,Blue Collar,,,,,0
+551894787,Sherri,Floyd,25,"H. $75,000-$99,999",Completed College,4. Urban,Single,0,,,,,,0
+3039845583,Jody,Hill,25,"K. $100,000-$149,999",Completed Graduate School,4. Urban,Married,0,,,,,,0
+1982153722,Paul,Bourassa,71,"H. $75,000-$99,999",Completed High School,4. Urban,Married,0,White Collar,,,,,1
+1798872653,Carra,Knox,33,"E. $40,000-$49,999",Completed College,3. Suburban,Single,1,White Collar,,,,,1
+2986999588,Miller,Callahan,55,"N. $200,000-$249,999",Completed College,3. Suburban,Married,1,White Collar,,,1,,0
+1005125135,Cathe,Smith,37,"D. $30,000-$39,999",Some College,1. Rural,Single,1,,,,,,0
+1218437239,Cathy,Ranieri,27,"M. $175,000-$199,999",Completed College,4. Urban,Married,1,,,,,,1
+991139815,Jess,Polcare,63,"N. $200,000-$249,999",Some College,3. Suburban,Married,1,,,,,,0
+713087227,Ritchie,Bryson,51,"L. $150,000-$174,999",Completed College,1. Rural,Married,1,White Collar,,,,,1
+1172260705,Sasha,Hornock,37,"N. $200,000-$249,999",Completed Graduate School,3. Suburban,Married,0,,,,,1,0
+20015756,Fernando,Camargo,96,"H. $75,000-$99,999",Completed High School,4. Urban,Married,0,,,,,,1
+2239460494,Doretha,Houston,62,Q. $300-$399K,Completed College,4. Urban,Married,1,,,,,,1
+1940316884,Kay,Shropshire,56,Q. $300-$399K,Completed Graduate School,3. Suburban,Married,1,White Collar,,,,,1
+1245118484,Jason,Heuerman,45,"K. $100,000-$149,999",Completed College,3. Suburban,Single,1,White Collar,,,2,,1
+1959006813,Mariah,Bixler,47,"F. $50,000-$59,999",Completed College,3. Suburban,Married,1,Other,,,1,,0
+2813141485,Michael,Buckley,30,"N. $200,000-$249,999",Completed High School,3. Suburban,Single,1,,,,,,0
+1029145646,Breanna,Wlbaum,72,"E. $40,000-$49,999",Some College,1. Rural,Single,0,,,,1,,0
+197969371,Brian,Hood,53,"K. $100,000-$149,999",Completed College,1. Rural,Single,1,White Collar,,,,,1
+788060752,Geoffre,Kase,59,"L. $150,000-$174,999",Completed College,3. Suburban,Single,0,Other,,,,,0
+105923231,Jill,Merkel,69,"G. $60,000-$74,999",Some College,1. Rural,Married,0,,,,,,1
+2797436951,Hannah,Helton,53,"N. $200,000-$249,999",Completed College,3. Suburban,Married,1,White Collar,,,,,0
+389856254,Robert,Myers,37,"L. $150,000-$174,999",Completed High School,4. Urban,Single,1,,,,,,0
+3231623236,Christia,Lonas,93,"H. $75,000-$99,999",Completed High School,1. Rural,Married,0,Blue Collar,,,,,1
+1765575808,Burnett,Dorrian,46,"F. $50,000-$59,999",Completed High School,3. Suburban,Single,1,White Collar,,,,,1
+822060259,Mosley,Deja,41,"E. $40,000-$49,999",Completed High School,3. Suburban,Single,1,,,,,,0
+128191256,Michael,Arcand,54,"H. $75,000-$99,999",Completed High School,4. Urban,Single,1,,,,,,0
+915936415,Patti,Anderson,59,"D. $30,000-$39,999",Completed College,1. Rural,Single,1,White Collar,,,,,1
+2675237590,Bobby,Maxwell,82,"N. $200,000-$249,999",Completed High School,4. Urban,Married,0,White Collar,,,,,0
+2425094714,Aschen,Brenner Brayden,84,P. $250-$299K,Completed College,1. Rural,Married,0,Blue Collar,,,,,1
+257366049,Mark,McFarland,29,"D. $30,000-$39,999",Completed High School,1. Rural,Single,1,White Collar,,,,,0
+69943283,Daniel,Bibeau,73,"M. $175,000-$199,999",Completed High School,1. Rural,Married,0,White Collar,,,,,1
+261069932,Magen,Beardsley,58,U. $1MM +,Completed College,3. Suburban,Married,1,White Collar,,,,,0
+77596813,Celeste,Madonna,66,P. $250-$299K,Completed Graduate School,3. Suburban,Married,0,Other,,,2,,1
+1212237042,Tanisha,Sutton,62,"L. $150,000-$174,999",Completed High School,4. Urban,Married,1,White Collar,,,,,1
+2217340809,John,Wallace,42,P. $250-$299K,Completed College,1. Rural,Single,1,Blue Collar,,,,,1
+2253123835,Jeff,Dabb,37,"B. $10,000-$19,999",Completed High School,4. Urban,Married,1,,,,,,0
+5401231,Deborah,Lamantia,58,Q. $300-$399K,Completed College,1. Rural,Married,1,White Collar,,,,,1
+618456053,Yochevet,Friedman,37,"H. $75,000-$99,999",Completed College,4. Urban,Married,1,,,,,,0
+2256600502,Christopher,Yeaw,63,"K. $100,000-$149,999",Completed College,3. Suburban,Married,1,,,,,1,0
+1334534177,Matt,Baker,92,"L. $150,000-$174,999",Completed Graduate School,3. Suburban,Married,0,Other,,2,2,1,1
+1747988120,Brandon,Fowler,35,S. $500-$699K,Completed College,3. Suburban,Single,1,White Collar,,1,,,0
+2487982085,Isabella,Burke,47,"H. $75,000-$99,999",Completed College,4. Urban,Married,1,White Collar,,,,,0
+1947878700,Faith,Tapia,35,"K. $100,000-$149,999",Attended Vocational/Technical,4. Urban,Married,1,Blue Collar,,,,,0
+2455874,Catherine,Sampson,67,P. $250-$299K,Completed College,3. Suburban,Single,0,White Collar,,,,,1
+56940692,Lauren,Hunt,44,"K. $100,000-$149,999",Completed College,1. Rural,Married,1,White Collar,,,,,1
+1742404827,Anastasia,Ellis,66,S. $500-$699K,Completed High School,4. Urban,Single,0,White Collar,,,,,0
+2521636427,Cordovi,Leidy,73,"E. $40,000-$49,999",Completed High School,4. Urban,Single,0,,,,,,0
+130081928,Dhamiri,Maddred,52,"B. $10,000-$19,999",Completed High School,4. Urban,Single,1,,,,,,0
+1651408344,Jamie,Taylor,75,"H. $75,000-$99,999",Completed High School,3. Suburban,Single,0,,,,,,0
+708235846,Renee,Moody,32,"N. $200,000-$249,999",Completed High School,3. Suburban,Single,1,,,,,,0
+857048055,Stephanie,Wambo,27,"K. $100,000-$149,999",Completed High School,4. Urban,Single,1,,,,,,0
+2248052696,Jose,Billarreal,81,"L. $150,000-$174,999",Completed College,3. Suburban,Married,0,White Collar,,,,,1
+618767471,Janet,Hughes,58,"N. $200,000-$249,999",Completed High School,1. Rural,Married,1,White Collar,,1,1,,1
+2299881843,Bruce,Price,65,"G. $60,000-$74,999",Completed College,3. Suburban,Married,1,Other,,,,,0
+2652233946,Samuel,Gjokaj,40,"K. $100,000-$149,999",Completed High School,4. Urban,Single,1,,,,,,0
+1157845040,Nathan,Shinell,50,"H. $75,000-$99,999",Completed High School,4. Urban,Single,0,,,,,,0
+88789035,Amada,Smith,84,"C. $20,000-$29,999",Completed High School,3. Suburban,Single,0,White Collar,,,,,1
+38506091,Mary,Yeager,38,"L. $150,000-$174,999",Completed College,3. Suburban,Married,1,,,,,,1
+2170972869,Donald,Trout,67,"H. $75,000-$99,999",Completed College,1. Rural,Single,0,White Collar,,,,,1
+77874285,Nicole,Thornton,62,"K. $100,000-$149,999",Completed High School,3. Suburban,Single,0,Blue Collar,,,1,,1
+3387823866,William,Kelly,36,Q. $300-$399K,Attended Vocational/Technical,3. Suburban,Married,0,White Collar,,,,,0
+1768926204,Barbara,Pacheco,66,"K. $100,000-$149,999",Completed High School,1. Rural,Single,0,White Collar,,,1,,0
+141402591,Timothy,Plowey,61,"D. $30,000-$39,999",Completed High School,1. Rural,Single,0,,,,,,0
+35276709,Edward,Shilka,35,"K. $100,000-$149,999",Completed College,4. Urban,Single,1,,,1,,,0
+2462349750,Khalil,Peek,91,"N. $200,000-$249,999",Completed College,4. Urban,Married,0,White Collar,,,,,1
+39894073,Gregg,Little,35,"N. $200,000-$249,999",Completed High School,3. Suburban,Married,1,,,,,1,0
+2655637687,Ashley,Marie,49,P. $250-$299K,Completed High School,4. Urban,Single,1,,,,,,1
+196811073,Dorothea,Adamski,32,T. $700-$999K,Completed College,1. Rural,Single,1,,,3,,,1
+2076834418,Stephen,Waaland,55,"G. $60,000-$74,999",Completed High School,4. Urban,Married,1,Blue Collar,,,,,1
+1070950066,Mallory,Mann,57,"K. $100,000-$149,999",Completed High School,3. Suburban,Married,1,Other,,,1,,1
+678706741,Diane,Childs,63,"G. $60,000-$74,999",Completed High School,1. Rural,Married,0,,,,,,0
+2735909744,Emilio,Mazzonna,42,Q. $300-$399K,Completed High School,1. Rural,Married,1,,,,,,0
+1165900767,Lauren,Usera,37,"M. $175,000-$199,999",Completed College,1. Rural,Single,1,,,,,,1
+2912975761,Caroline,Goldstein,35,S. $500-$699K,Completed College,4. Urban,Single,1,,,1,,2,1
+1221038144,Purushotam,Dhungana,34,"G. $60,000-$74,999",Completed High School,4. Urban,Single,1,,,,,,0
+173534019,Rachael,Dolan,32,"K. $100,000-$149,999",Some College,3. Suburban,Single,1,,,1,,,1
+2391753964,Guzman,Di,44,"D. $30,000-$39,999",Completed High School,3. Suburban,Single,0,,,,,,0
+2142711235,Julie,Roaman,76,Q. $300-$399K,Completed High School,1. Rural,Single,0,Blue Collar,,,,,0
+279169649,Robert,VanLoan,48,"M. $175,000-$199,999",Some College,1. Rural,Single,1,Blue Collar,,,,,0
+115565191,Jamie,MacKinlay,41,"H. $75,000-$99,999",Completed College,1. Rural,Single,1,,,,,,0
+2675509964,William,Leachman,66,Q. $300-$399K,Completed College,4. Urban,Married,0,White Collar,,,,,1
+138381427,Christene,Glover,75,"K. $100,000-$149,999",Completed High School,4. Urban,Married,0,Blue Collar,,,,,1
+72033902,Yury,Borovsky,67,"D. $30,000-$39,999",Completed Graduate School,4. Urban,Single,0,White Collar,,,,,0
+2753591151,Michelle,Galvan,50,"K. $100,000-$149,999",Completed High School,4. Urban,Single,1,Blue Collar,,,,,1
+1846401055,Mark,Ackerman,38,S. $500-$699K,Completed College,4. Urban,Single,0,,,2,,,0
+3271795397,Marjorie,Gore,59,"L. $150,000-$174,999",Completed College,3. Suburban,Married,0,,,,,1,0
+614176639,Mary,Graham,85,"N. $200,000-$249,999",Some College,1. Rural,Married,0,,,2,,,1
+1200711228,Zebulun,Bardwell,80,"G. $60,000-$74,999",Completed High School,3. Suburban,Single,0,White Collar,,,,,0
+911714496,David,Meador,64,"M. $175,000-$199,999",Completed High School,1. Rural,Single,0,White Collar,,,,,1
+105945185,Josh,Heibel,43,P. $250-$299K,Completed College,1. Rural,Married,1,White Collar,,,,,0
+156589382,Hutchinson,Kishon,48,"D. $30,000-$39,999",Completed High School,1. Rural,Single,1,Blue Collar,,,,,1
+1066462766,Karissa,Kampe,28,Q. $300-$399K,Completed College,1. Rural,Married,1,,,,,,1
+690662731,Carroll,Shipe,32,"H. $75,000-$99,999",Completed College,4. Urban,Single,1,,,,,,0
+610680443,Teresa,Szelczyke,65,"K. $100,000-$149,999",Attended Vocational/Technical,4. Urban,Single,1,,,,,,0
+4164825,Lori,Kornilieff,65,"G. $60,000-$74,999",Completed High School,1. Rural,Single,1,Blue Collar,,,,,1
+165475903,Mae,Winslow,82,R. $400-$499K,Some College,1. Rural,Married,0,,,,,,1
+2189562201,Kimberly,Allandale,54,"K. $100,000-$149,999",Completed College,3. Suburban,Single,1,Blue Collar,,,,,1
+1357289576,Peyton,Lingo,27,"N. $200,000-$249,999",Completed College,3. Suburban,Married,1,,,,,,1
+1831682954,Brandon,Maria,75,"K. $100,000-$149,999",Completed High School,3. Suburban,Single,0,White Collar,,,,,0
+137212419,Jeffrey,Dandois,46,"H. $75,000-$99,999",Completed College,1. Rural,Married,1,White Collar,,,,,0
+2049496094,Young,Goldy,95,"B. $10,000-$19,999",Completed High School,1. Rural,Single,0,,,,2,,1
+156231421,Bradley,Butcher,88,"K. $100,000-$149,999",Completed Graduate School,1. Rural,Single,0,Other,,3,1,,1
+2098361617,Rigoberto,Gantes,45,"H. $75,000-$99,999",Completed High School,1. Rural,Single,1,,,,3,,0
+812328780,Deyna,Rodriguez,25,"H. $75,000-$99,999",Completed College,1. Rural,Single,0,,,,,,0
+1212877311,Rosco,Shanai,30,"A. Under $10,000",Completed High School,3. Suburban,Single,1,Other,,,,,0
+2412395212,Madison,Wescott,62,T. $700-$999K,Completed Graduate School,1. Rural,Married,1,,,,,1,0
+19309567,Rosalina,Brunelle,78,"M. $175,000-$199,999",Completed College,1. Rural,Married,0,White Collar,,,,,1
+639223484,Karen,Leavitt,66,U. $1MM +,Completed Graduate School,3. Suburban,Married,0,,,,,,0
+2789779044,Erik,Pampus,65,P. $250-$299K,Completed High School,1. Rural,Married,1,Blue Collar,,,1,,1
+1922545342,Carlos,Reynaldo,32,"K. $100,000-$149,999",Completed College,4. Urban,Single,1,,,3,,,1
+1795994241,Sheena,Nguyen,66,P. $250-$299K,Completed Graduate School,3. Suburban,Single,0,White Collar,,,,,1
+981726316,Steven,Waling,76,"L. $150,000-$174,999",Completed College,1. Rural,Married,0,White Collar,,3,,,1
+3426535706,Donald,Taylor,61,"B. $10,000-$19,999",Completed Graduate School,1. Rural,Single,0,White Collar,,,,,0
+917186351,Eric,Robinson,68,"L. $150,000-$174,999",Completed College,3. Suburban,Married,0,White Collar,,,,,1
+326012766,Marilyn,Kloberdanz,71,"L. $150,000-$174,999",Completed High School,4. Urban,Married,0,White Collar,,,,3,1
+1953682393,Kenneth,Walswell,42,"K. $100,000-$149,999",Completed College,3. Suburban,Married,1,Other,,,1,1,1
+1134553405,Mohamad,Dakhil,48,"E. $40,000-$49,999",Completed College,4. Urban,Single,0,White Collar,,,,,0
+1735303121,Steve,Zwillinger,28,R. $400-$499K,Completed College,4. Urban,Single,1,,,,,,1
+191428813,Heather,Molinari,68,R. $400-$499K,Completed High School,1. Rural,Married,0,White Collar,,1,,,1
+3007280013,Kathryn,Beck,82,P. $250-$299K,Completed College,3. Suburban,Married,0,,,,,,0
+1977407970,Dorotha,Hannah,40,"N. $200,000-$249,999",Completed College,4. Urban,Single,1,White Collar,,,,,1
+2811969328,Angela,Scheer,66,P. $250-$299K,Completed College,4. Urban,Married,0,,,,,,0
+633618737,Samuel,Harris,46,"E. $40,000-$49,999",Completed College,3. Suburban,Single,1,White Collar,,,,,1
+1863951483,Hazel,Brown,54,"E. $40,000-$49,999",Completed High School,3. Suburban,Married,1,White Collar,,,,,1
+109832477,Steve,Mojica,74,"N. $200,000-$249,999",Completed High School,4. Urban,Single,0,White Collar,,3,,,1
+719130943,Andre,Berry,67,"F. $50,000-$59,999",Completed College,1. Rural,Married,0,White Collar,,2,,,1
+2300133612,Courtney,Greene,62,"G. $60,000-$74,999",Completed College,1. Rural,Married,0,White Collar,,,,,0
+2529132354,Stanley,Czworkowski,43,"M. $175,000-$199,999",Completed College,3. Suburban,Married,0,,,,,1,0
+180299748,Gabriel,Crockett,44,"H. $75,000-$99,999",Completed High School,4. Urban,Single,1,Other,,,,,1
+41520432,Jackie,Henson,80,"H. $75,000-$99,999",Completed College,4. Urban,Married,0,White Collar,,,,,1
+1976311222,Mary,Woodard,63,"K. $100,000-$149,999",Some College,1. Rural,Single,0,White Collar,,2,,,1
+3439151181,Mary,Finn,83,S. $500-$699K,Completed Graduate School,1. Rural,Married,0,White Collar,,,2,2,1
+3327683836,Bridges,Ambar,62,"H. $75,000-$99,999",Completed College,1. Rural,Married,1,White Collar,,,2,1,1
+130634803,Peter,Celli,66,"L. $150,000-$174,999",Completed College,1. Rural,Single,0,White Collar,,,,,0
+2261119663,Jenna,McCampell,49,"E. $40,000-$49,999",Completed College,3. Suburban,Single,1,,,2,,,0
+562828210,Marigold,Bays Muchmore,31,S. $500-$699K,Completed College,4. Urban,Single,1,,,,,,1
+2487207039,Natalia,Atwal,60,U. $1MM +,Completed College,3. Suburban,Married,0,White Collar,,,,,1
+1957640533,Kerstin,Andrews,88,Q. $300-$399K,Attended Vocational/Technical,3. Suburban,Married,0,Other,,,1,,1
+1820654426,Russell,Santrece,38,"E. $40,000-$49,999",Completed High School,4. Urban,Single,0,,,,,,0
+1936479759,Stanken,Tuck,28,T. $700-$999K,Completed College,4. Urban,Married,1,,,,,,0
+81394857,Nuzaira,Rahman,32,"M. $175,000-$199,999",Completed College,3. Suburban,Single,0,,,,,,0
+2287406009,Pamela,Edwards,70,"E. $40,000-$49,999",Completed High School,1. Rural,Single,0,,,,,,0
+744932186,Marlyn,Phillip,70,"H. $75,000-$99,999",Completed High School,1. Rural,Married,0,Blue Collar,,,,,0
+928224650,Jothy,Rosenberg,86,"H. $75,000-$99,999",Completed High School,3. Suburban,Married,0,Other,,,,,1
+922063394,Michelle,Harper,54,"H. $75,000-$99,999",Completed High School,1. Rural,Single,0,,,,3,,0
+46249751,Nicole,Montelbano,53,"M. $175,000-$199,999",Completed High School,3. Suburban,Single,1,Blue Collar,,1,2,,1
+778490135,Kenrin,Rowe,47,"L. $150,000-$174,999",Completed High School,4. Urban,Married,1,,,,,,0
+220901272,Jay,Petty,37,"K. $100,000-$149,999",Completed College,3. Suburban,Married,1,,,,,,0
+420623258,Pedro,Martinez,38,"H. $75,000-$99,999",Some College,1. Rural,Single,0,,,,,,0
+1139252477,Sizemore,Sanders,46,"K. $100,000-$149,999",Some College,3. Suburban,Single,1,,,,,,0
+3338576311,Elizabeth,Helms,90,"H. $75,000-$99,999",Completed High School,4. Urban,Single,0,,,,,,0
+1842844172,Melani,Anton,77,"K. $100,000-$149,999",Completed High School,4. Urban,Single,0,White Collar,,,,,1
+652646429,Roberto,Toji,55,"D. $30,000-$39,999",Completed Graduate School,1. Rural,Married,0,Other,,1,,,0
+2433898127,Carrie,Flemming,71,"D. $30,000-$39,999",Completed High School,4. Urban,Single,0,White Collar,,,,,0
+1738979385,Karon,Langer,85,"L. $150,000-$174,999",Completed College,1. Rural,Married,0,Other,,,,,1
+55059797,Robert,Gropler,23,Q. $300-$399K,Completed College,4. Urban,Married,1,,,,,,1
+777232249,Henry,Cordon,92,"K. $100,000-$149,999",Completed College,1. Rural,Married,0,,,,,,1
+3054825996,Annelouise,Hemingway,30,"M. $175,000-$199,999",Completed College,4. Urban,Single,1,,,2,,,0
+2604111833,Victoria,Thao,34,"F. $50,000-$59,999",Some College,3. Suburban,Single,1,White Collar,,,,,0
+1219641741,Wayne,Gore,38,"D. $30,000-$39,999",Completed High School,4. Urban,Single,1,,,,2,1,0
+2392369847,Jennifer,Bain,44,"H. $75,000-$99,999",Completed High School,3. Suburban,Single,0,,,,,,0
+3020311465,Martin,Kooker,35,"H. $75,000-$99,999",Completed College,1. Rural,Single,1,,,,,,1
+1912589651,Susan,Terveen,72,"K. $100,000-$149,999",Completed College,1. Rural,Married,0,Blue Collar,,,,,1
+2114857434,Ashley,Tannenbaum,85,P. $250-$299K,Completed College,1. Rural,Married,0,,,,,1,0
+71479907,Aja,McBryde,60,"G. $60,000-$74,999",Completed Graduate School,4. Urban,Married,1,White Collar,,,,,1
+219839233,Gayle,Kuboyama,60,"N. $200,000-$249,999",Completed College,1. Rural,Married,0,White Collar,,,,,0
+2695788148,Elliott,Maddy,27,"D. $30,000-$39,999",Completed College,1. Rural,Married,1,,,,,,0
+27697772,Sandra,Corsaro,82,"H. $75,000-$99,999",Completed Graduate School,3. Suburban,Married,0,White Collar,,,,,1
+2563763330,Jeremy,Castonguay,74,"N. $200,000-$249,999",Completed College,3. Suburban,Married,0,Other,,,,,1
+3022943447,Howard,Childers,71,"H. $75,000-$99,999",Completed High School,3. Suburban,Single,0,,,3,3,3,0
+2263486414,Abby,Gray,49,"D. $30,000-$39,999",Completed College,3. Suburban,Single,1,White Collar,,,,,1
+2481055817,Scott,Gregor,78,T. $700-$999K,Completed College,3. Suburban,Single,0,White Collar,,,,,1
+2272171011,Alexandra,Pierre,35,"G. $60,000-$74,999",Completed High School,3. Suburban,Single,1,White Collar,,,,,0
+1944701446,Carlos,Montanez,64,"L. $150,000-$174,999",Completed High School,4. Urban,Married,0,White Collar,,,2,,1
+3113659535,Darrell,Spurlin,74,"N. $200,000-$249,999",Completed College,4. Urban,Married,0,White Collar,,,1,1,1
+1679910676,Kumar,Ilango,46,"D. $30,000-$39,999",Completed High School,3. Suburban,Married,0,,,,,,0
+870998262,Jason,Bell,47,P. $250-$299K,Completed College,3. Suburban,Married,1,White Collar,,,2,,1
+2493351162,Ramiro,Velasquez,37,"N. $200,000-$249,999",Completed College,3. Suburban,Single,1,White Collar,,,,,0
+923204414,Tony,Holland,63,"K. $100,000-$149,999",Completed High School,1. Rural,Married,1,,,,,,0
+207095192,Megan,Bess,89,"E. $40,000-$49,999",Completed College,3. Suburban,Single,0,White Collar,,,1,,1
+2896830980,Ann,DeMarco,68,"M. $175,000-$199,999",Completed High School,3. Suburban,Married,0,Other,,,,,1
+1177201650,Luc,Ngyuen,49,"H. $75,000-$99,999",Attended Vocational/Technical,4. Urban,Married,1,Blue Collar,,,,,0
+131516813,Dustin,Brod,36,"M. $175,000-$199,999",Completed High School,3. Suburban,Single,1,White Collar,,,,,0
+77116892,Arielle,Davis,47,"K. $100,000-$149,999",Completed High School,1. Rural,Single,1,White Collar,,,,,1
+245156350,Michelle,Adams,57,"E. $40,000-$49,999",Some College,1. Rural,Single,1,,,,,,0
+25300645,David,Bartok,53,P. $250-$299K,Completed College,1. Rural,Married,1,Blue Collar,,,,,1
+32303747,Aliko,Songolo,63,P. $250-$299K,Completed Graduate School,4. Urban,Married,1,White Collar,,3,,,1
+3064246131,Perez,Llubinka Brkich,70,"K. $100,000-$149,999",Completed College,1. Rural,Single,0,White Collar,,,1,1,0
+1004509370,Lisa,Coppola,61,"K. $100,000-$149,999",Completed College,1. Rural,Married,1,White Collar,,,,,0
+2145332395,Jacob,Siboyeh,23,"N. $200,000-$249,999",Completed College,3. Suburban,Single,1,,,,,,0
+1097916191,Jerry,Brown,45,"B. $10,000-$19,999",Completed College,3. Suburban,Single,0,,,,,,0
+1090424583,Daniel,Richardson,67,"N. $200,000-$249,999",Completed High School,4. Urban,Single,0,Blue Collar,,,,,0
+933302326,Sue,Langen Brunner,65,R. $400-$499K,Completed High School,3. Suburban,Married,0,,,,1,,1
+2011992469,Josephine,Thame,64,"G. $60,000-$74,999",Completed College,3. Suburban,Single,1,,,,,,1
+618447008,Quach,Ly,40,"M. $175,000-$199,999",Completed College,4. Urban,Married,1,,,,,,0
+1642288923,Eduardo,Delpalacio,58,"K. $100,000-$149,999",Completed High School,3. Suburban,Single,0,,,,,,0
+1959487072,Tosh,Endres,42,"L. $150,000-$174,999",Completed College,4. Urban,Single,1,,,,,,0
+11222462,Barbara,Maye,43,"N. $200,000-$249,999",Completed College,4. Urban,Married,1,White Collar,,,,,1
+842758835,Richard,Sabella,57,"K. $100,000-$149,999",Completed College,1. Rural,Single,1,White Collar,,,,,1
+3139349187,Carol,Mittler,68,"K. $100,000-$149,999",Completed College,1. Rural,Single,0,White Collar,,,,,1
+3165781458,Lenore,Price,60,R. $400-$499K,Completed College,3. Suburban,Single,1,,,3,3,,0
+832020485,Joanne,Cacioppo,56,"N. $200,000-$249,999",Completed High School,1. Rural,Married,1,,,,,,1
+1301335429,William,Hanna,45,"D. $30,000-$39,999",Completed College,4. Urban,Single,0,Other,,,,1,0
+1313098941,Jeffrey,Hoffman,53,"C. $20,000-$29,999",Completed College,1. Rural,Married,1,White Collar,,,,,0
+51800260,Sheryl,Delegencia,78,P. $250-$299K,Completed College,4. Urban,Married,0,White Collar,,1,,,0
+1957126524,Antonio,Reyes,46,"H. $75,000-$99,999",Completed High School,4. Urban,Single,1,,,,,,0
+2101589451,Nyesha,Hollins,35,"L. $150,000-$174,999",Completed High School,4. Urban,Single,1,,,,,,0
+2284808536,Joseph,Viveiros,76,"L. $150,000-$174,999",Completed High School,3. Suburban,Single,0,White Collar,,3,,,0
+2531332655,Michael,Farris,49,"H. $75,000-$99,999",Completed College,4. Urban,Single,1,,,,,,0
+1006839926,Nina,Dyman,49,P. $250-$299K,Completed College,1. Rural,Single,1,,,,,,0
+818264197,Kirk,Sutphen,66,"A. Under $10,000",Completed College,4. Urban,Single,0,White Collar,,,,,0
+3009756685,Kate,Gangi,56,"K. $100,000-$149,999",Attended Vocational/Technical,4. Urban,Married,1,Blue Collar,,,,,1
+81149483,Christian,Palm,42,"G. $60,000-$74,999",Completed High School,3. Suburban,Single,1,,,,,,0
+846773280,Steven,Pundsack,40,"E. $40,000-$49,999",Some College,1. Rural,Married,1,,,3,,,0
+2512196597,Avraham,Tepper,98,Q. $300-$399K,Completed College,3. Suburban,Married,0,,,,,1,0
+262474447,Vikki,Leathers,53,"N. $200,000-$249,999",Completed College,3. Suburban,Single,1,White Collar,,,1,1,0
+1155460788,Manuel,McVallen,70,"M. $175,000-$199,999",Completed High School,4. Urban,Married,0,White Collar,,,,,0
+1835432966,Teresa,Martin,56,"K. $100,000-$149,999",Completed College,3. Suburban,Married,1,White Collar,,3,2,2,1
+40748662,Dorothy,Creech,84,"N. $200,000-$249,999",Completed High School,4. Urban,Married,0,Other,,,,,1
+899060290,Glenn,Pritchard,69,"N. $200,000-$249,999",Completed College,4. Urban,Single,0,White Collar,,1,,,1
+27945768,Katherine,Laird,33,"C. $20,000-$29,999",Completed College,1. Rural,Single,1,,,,,1,1
+28735864,Jeffrey,Kirk,63,"K. $100,000-$149,999",Completed High School,1. Rural,Married,1,White Collar,,,,,1
+904063543,Bud,Hayes,53,"K. $100,000-$149,999",Completed College,4. Urban,Married,1,,,,,,0
+2832712144,Danita,Gayden,55,"C. $20,000-$29,999",Completed High School,4. Urban,Married,0,,,,,,0
+2238305715,Rafael,Falconi,54,"L. $150,000-$174,999",Completed Graduate School,4. Urban,Single,1,,,,,,1
+2984695707,Nicole,Hussman,73,"G. $60,000-$74,999",Completed Graduate School,4. Urban,Married,0,White Collar,,,,,1
+1825439284,Dragica,Junuzovic,64,"N. $200,000-$249,999",Completed Graduate School,4. Urban,Married,1,White Collar,,1,1,,0
+927572337,Linda,Craff,73,"L. $150,000-$174,999",Completed High School,1. Rural,Married,0,Other,,1,,,1
+1137278433,Hannah,Cowan,54,R. $400-$499K,Completed College,3. Suburban,Married,1,White Collar,,,,,1
+1800394450,Holly,Governale,75,"H. $75,000-$99,999",Completed Graduate School,3. Suburban,Single,0,White Collar,,1,3,1,1
+2036456306,Keaton,Hodge,70,"K. $100,000-$149,999",Completed College,3. Suburban,Married,0,White Collar,,,,,1
+2320581108,Carolyn,Brown,81,P. $250-$299K,Completed College,3. Suburban,Single,0,White Collar,,,,,1
+2427431369,Barry,Kunkleman,54,"K. $100,000-$149,999",Completed College,4. Urban,Married,1,White Collar,,,,,0
+169370290,Xian,Hu,61,Q. $300-$399K,Completed Graduate School,3. Suburban,Married,1,White Collar,,,,,1
+1919846214,Norma,Escemilla,76,Q. $300-$399K,Completed High School,4. Urban,Married,0,White Collar,,,,,0
+2240651132,Lenore,Levy,76,"N. $200,000-$249,999",Completed College,4. Urban,Married,0,,,,,,0
+2215778895,Ferris,Wilder,74,"K. $100,000-$149,999",Completed High School,3. Suburban,Married,0,Blue Collar,,,,2,1
+2518971892,Martha,Hendrickson,63,"H. $75,000-$99,999",Completed College,3. Suburban,Married,1,,,,,,0
+146740513,Rhuel,Crisostomo,49,"H. $75,000-$99,999",Some College,4. Urban,Single,1,Other,,,,,0
+173650822,Shontiana,Butcher,74,"H. $75,000-$99,999",Completed High School,3. Suburban,Married,0,,,,,1,0
+651083280,Darius,Swan,50,"M. $175,000-$199,999",Completed High School,4. Urban,Married,1,White Collar,,2,,,0
+10705651,Rebecca,Guffey,79,"D. $30,000-$39,999",Completed High School,1. Rural,Single,0,Other,,,,,1
+1189903060,Guadalupe,Araujo,77,"E. $40,000-$49,999",Completed College,1. Rural,Single,0,White Collar,,,,,0
+1032247402,Jareica,Day,69,"B. $10,000-$19,999",Completed High School,4. Urban,Single,0,Blue Collar,,2,,2,1
+2299251699,Karen,Florin,59,"L. $150,000-$174,999",Completed College,3. Suburban,Single,1,,,1,,,0
+2190887453,Rigo,Bullock,26,"K. $100,000-$149,999",Completed College,3. Suburban,Single,1,,,,,,1
+2431834857,John,Reno,90,"H. $75,000-$99,999",Completed Graduate School,1. Rural,Married,0,Other,,,,,1
+206834661,Adrienne,Grant,32,"E. $40,000-$49,999",Completed High School,3. Suburban,Single,1,White Collar,,,2,,0
+175013459,Brett,Barnes,66,Q. $300-$399K,Completed College,1. Rural,Single,0,White Collar,,,1,,1
+49897391,Scot,Goldman,56,S. $500-$699K,Completed Graduate School,4. Urban,Married,1,White Collar,,,,,1
+2295363782,Ma,Theall,59,"B. $10,000-$19,999",Completed College,3. Suburban,Single,1,White Collar,,,,1,0
+10650310,Ann,Yankowski,73,"H. $75,000-$99,999",Completed College,1. Rural,Married,0,Other,,1,2,,1
+2264854079,Jerry,Webber,40,"C. $20,000-$29,999",Completed College,1. Rural,Single,0,,,,,,0
+89616504,Maria,Delosangeles Barrios,38,"L. $150,000-$174,999",Some College,3. Suburban,Married,1,,,1,1,,0
+2431102798,Nancy,Eichner,91,"N. $200,000-$249,999",Completed High School,3. Suburban,Married,0,Blue Collar,,3,2,,1
+426458303,Amie,Maynard,46,"G. $60,000-$74,999",Completed High School,4. Urban,Married,1,White Collar,,,,,0
+159906671,Michael,Burnitt,35,"L. $150,000-$174,999",Completed High School,1. Rural,Married,0,,,,,,0
+2524286508,Jenna,Rasmussen,68,"L. $150,000-$174,999",Completed High School,1. Rural,Single,0,Blue Collar,,,,,1
+2470538407,Brandy,Cotton,44,"M. $175,000-$199,999",Completed College,4. Urban,Single,1,White Collar,,,,,0
+448347635,Anna,Spivey,49,"E. $40,000-$49,999",Completed High School,4. Urban,Single,0,,,,,,0
+214159086,Sofia,Draper,65,S. $500-$699K,Completed College,3. Suburban,Married,1,White Collar,,1,1,2,1
+558564385,Rene,Fundora,45,"L. $150,000-$174,999",Completed High School,4. Urban,Married,0,,,1,1,,0
+2496199268,Stephanie,Young,36,Q. $300-$399K,Completed High School,3. Suburban,Single,1,,,,,1,0
+106726658,Tony,Clemons,31,"H. $75,000-$99,999",Completed College,4. Urban,Married,1,,,,,,0
+1316571577,Jordan,Goodman,53,"H. $75,000-$99,999",Some College,4. Urban,Single,0,,,,,,0
+454985373,Bruce,Deere,83,"K. $100,000-$149,999",Completed High School,1. Rural,Married,0,White Collar,,1,2,,1
+2246966640,Robert,Estes,64,"M. $175,000-$199,999",Some College,3. Suburban,Single,0,,,,,,0
+321845244,Jean,Steele,62,P. $250-$299K,Completed College,3. Suburban,Married,1,White Collar,,,,,0
+1683710191,Rod,Edwards,70,"H. $75,000-$99,999",Attended Vocational/Technical,3. Suburban,Married,0,Blue Collar,,,,,1
+2407665832,Jeffrey,Lyons,50,P. $250-$299K,Completed High School,4. Urban,Married,0,White Collar,,,,,0
+3130488640,Tracy,Leigh,69,"N. $200,000-$249,999",Completed Graduate School,1. Rural,Married,0,White Collar,,,,,1
+6335116,Lizette,Flores,27,"C. $20,000-$29,999",Completed High School,4. Urban,Single,1,,,,,,1
+888871948,Stefanie,Jones,64,"C. $20,000-$29,999",Completed High School,4. Urban,Married,0,Blue Collar,,,1,,1
+943556242,Robin,Netcott,63,"K. $100,000-$149,999",Completed High School,4. Urban,Single,1,White Collar,,,,,0
+1017971491,Patrick,Schultz,48,"N. $200,000-$249,999",Completed College,3. Suburban,Married,1,,,,,,0
+1984357315,Erik,Chon,44,"M. $175,000-$199,999",Some College,3. Suburban,Single,0,,,,,,0
+1265015304,Linda,Daddario,50,U. $1MM +,Completed College,1. Rural,Single,1,White Collar,,,,1,1
+381839076,Nicole,Herbert,57,"G. $60,000-$74,999",Completed College,4. Urban,Single,0,White Collar,,,,,0
+190919327,Shawna,Hollabaugh,50,"K. $100,000-$149,999",Completed College,1. Rural,Single,1,Blue Collar,,,1,,0
+25552223,Sonja,Demiglio,80,"H. $75,000-$99,999",Completed High School,4. Urban,Married,0,White Collar,,,,,1
+34007320,Mike,Shatto,30,"E. $40,000-$49,999",Completed College,3. Suburban,Single,1,,,,3,,1
+161113907,Jean,Wagner,36,Q. $300-$399K,Completed College,3. Suburban,Married,1,,,,,,0
+2427143092,Nicole,Burdette,39,"G. $60,000-$74,999",Some College,3. Suburban,Single,0,White Collar,,,,,0
+1784877034,Lewis,Taylor,72,S. $500-$699K,Completed College,4. Urban,Married,0,White Collar,,,,,1
+1330880284,Bob,Fred,75,"K. $100,000-$149,999",Completed College,3. Suburban,Single,0,,,,,,0
+636524038,Barbra,Allen,43,"G. $60,000-$74,999",Completed High School,1. Rural,Single,1,,,,,,0
+2636016286,Lillie,Brown,62,S. $500-$699K,Completed College,3. Suburban,Single,1,,,,,,1
+2462586710,Luz,Gamez,56,"H. $75,000-$99,999",Completed High School,1. Rural,Married,1,Blue Collar,,,,,1
+915325729,Juanita,Fajardo,82,"M. $175,000-$199,999",Completed High School,3. Suburban,Married,0,,,,,1,0
+3243044140,Emily,Crenshaw,53,"E. $40,000-$49,999",Completed Graduate School,4. Urban,Single,1,White Collar,,3,,,1
+680024924,Rebekah,White,52,"N. $200,000-$249,999",Completed College,3. Suburban,Single,1,White Collar,,,,,1
+2138967992,Melvena,Paradis,73,"N. $200,000-$249,999",Completed College,1. Rural,Married,0,White Collar,,,,,1
+85600986,Ronda,Conley,54,"L. $150,000-$174,999",Attended Vocational/Technical,4. Urban,Single,1,White Collar,,,,,0
+2696141736,Joan,Fuhrmann,47,"K. $100,000-$149,999",Completed College,3. Suburban,Married,1,White Collar,,,,,0
+990160191,Donna,Faller,49,"K. $100,000-$149,999",Some College,1. Rural,Single,1,,,,,,0
+1660956681,Toure,Coates,42,"H. $75,000-$99,999",Completed College,4. Urban,Single,0,,,,,,0
+898292496,Brenda,Allison,31,"H. $75,000-$99,999",Completed College,3. Suburban,Single,1,,,,,,1
+380897010,Kimberly,Patterson,41,"H. $75,000-$99,999",Completed High School,4. Urban,Single,1,,,,,,0
+2995961887,Alyssa,Demshick,33,"N. $200,000-$249,999",Completed College,1. Rural,Married,1,,,,,,0
+2514319634,Husam,Jarrar,97,U. $1MM +,Completed High School,3. Suburban,Single,0,Other,,,,,1
+1584205992,Janet,Campey,62,"H. $75,000-$99,999",Completed College,3. Suburban,Married,1,White Collar,,,,,1
+1655180679,Bobbi,French,59,"H. $75,000-$99,999",Completed College,1. Rural,Married,1,White Collar,,,,,1
+824648146,Robert,Hill,49,"F. $50,000-$59,999",Completed College,1. Rural,Married,0,White Collar,,,,,1
+158587663,Travis,Kirksey,33,"G. $60,000-$74,999",Some College,4. Urban,Single,1,,,,,,0
+2205133516,Lynnette,Boone,55,"F. $50,000-$59,999",Completed High School,1. Rural,Married,1,Other,,,,,1
+175060260,Cody,Shin,56,"G. $60,000-$74,999",Completed High School,1. Rural,Single,1,Blue Collar,,,,2,1
+927417126,Kristin,Bell,54,"H. $75,000-$99,999",Some College,1. Rural,Single,0,White Collar,,,,,0
+398926592,Kostoula,Papadogiannakois,28,U. $1MM +,Completed College,3. Suburban,Married,1,,,,,,0
+2416194479,Peter,Liao,27,"H. $75,000-$99,999",Completed College,1. Rural,Single,1,,,,,,0
+113397547,Peggy,Castleberry,62,"H. $75,000-$99,999",Completed College,1. Rural,Married,1,,,,,,0
+2477050324,Daria,Rosario,30,P. $250-$299K,Completed College,4. Urban,Single,1,White Collar,,,,,1
+197956465,Shirley,Fazio,57,"K. $100,000-$149,999",Completed High School,4. Urban,Married,1,Other,,,,,1
+2234332905,Vicki,Winterrowd,65,"G. $60,000-$74,999",Completed College,4. Urban,Married,1,Other,,,,,1
+2201853713,Judith,Sargent,73,"K. $100,000-$149,999",Completed College,3. Suburban,Married,0,White Collar,,,,,1
+3448118761,Landon,Hardman,78,"N. $200,000-$249,999",Completed College,1. Rural,Single,0,,,,,,0
+2713227959,Robert,Fredette,65,"K. $100,000-$149,999",Some College,3. Suburban,Married,1,Blue Collar,,,,,1
+1256615886,Brian,Petrella,58,"M. $175,000-$199,999",Some College,3. Suburban,Single,1,,,,,,0
+207177811,Nelson,Small,74,"B. $10,000-$19,999",Completed High School,1. Rural,Single,0,White Collar,,,,,0
+152166239,William,Fish,71,"L. $150,000-$174,999",Completed Graduate School,1. Rural,Married,0,Blue Collar,,,,1,1
+2476674128,Gena,Ornquist,37,"H. $75,000-$99,999",Completed High School,1. Rural,Married,1,,,,,,1
+2317844694,Keith,Jones,54,"G. $60,000-$74,999",Completed High School,3. Suburban,Single,0,,,,,,0
+849676866,Mary,Tougas,29,"N. $200,000-$249,999",Completed College,4. Urban,Single,1,White Collar,,,,,1
+45991439,Terry,Fullmer,45,"H. $75,000-$99,999",Completed High School,1. Rural,Single,1,Blue Collar,,,,,1
+2496839946,Chris,Shemmer,64,"K. $100,000-$149,999",Some College,4. Urban,Single,1,,,,,,0
+909763577,Stephanie,Mares,38,"L. $150,000-$174,999",Completed Graduate School,4. Urban,Married,1,Blue Collar,,,1,,0
+906037445,Nikisha,Harris,47,"M. $175,000-$199,999",Completed High School,3. Suburban,Single,1,,,,,,0
+728885788,Phagen,Serino,59,R. $400-$499K,Completed College,3. Suburban,Married,1,White Collar,,1,,,1
+1015632102,Aris,Leontopoulos,68,"K. $100,000-$149,999",Completed High School,1. Rural,Married,0,Blue Collar,,1,,,1
+1846749639,Aze,Hannum,63,S. $500-$699K,Completed College,4. Urban,Single,0,White Collar,,,,,0
+1030627285,Agathina,Nozy,35,"H. $75,000-$99,999",Completed High School,4. Urban,Married,1,,,,,,0
+247839835,Quitoria,Tillman,62,"D. $30,000-$39,999",Some College,3. Suburban,Single,1,,,,,,0
+510389952,Robert,Olson,67,"H. $75,000-$99,999",Completed College,1. Rural,Single,0,White Collar,,,3,3,0
+2730470655,Dennis,Hanon,76,"H. $75,000-$99,999",Completed College,1. Rural,Married,0,,,,,1,0
+1272132698,Alicia,Clairmont,55,"D. $30,000-$39,999",Completed High School,1. Rural,Married,1,,,,,,1
+222148204,Jerry,Wilson,37,P. $250-$299K,Completed College,3. Suburban,Married,1,,,,,,1
+206738580,Virginia,Adams,32,"E. $40,000-$49,999",Completed High School,3. Suburban,Single,0,,,,,,0
+2159722247,Kevin,Arcand,75,"H. $75,000-$99,999",Completed High School,3. Suburban,Married,0,Other,,,3,,1
+1872905635,Grover,Griffin,98,"E. $40,000-$49,999",Completed High School,4. Urban,Married,0,Other,,2,,2,0
+2021539197,Curtis,Markley,53,"D. $30,000-$39,999",Completed High School,3. Suburban,Single,1,Other,,,,,0
+24295055,Dorothy,Wiley,49,"G. $60,000-$74,999",Completed College,4. Urban,Single,1,White Collar,,,,3,1
+2494551656,Lucinda,Copeland,26,"M. $175,000-$199,999",Completed College,1. Rural,Single,1,,,,,,1
+1959697763,Jennifer,Gransbury,41,P. $250-$299K,Some College,3. Suburban,Married,1,,,,,3,0
+2546630931,Carolyn,Wheeler,40,"K. $100,000-$149,999",Completed College,1. Rural,Single,1,,,,,,1
+484487532,Hampton,Long,67,"E. $40,000-$49,999",Completed College,3. Suburban,Single,0,White Collar,,,,,1
+676778400,Rachel,Porter,87,"L. $150,000-$174,999",Completed High School,1. Rural,Married,0,Other,,,,,1
+2300593479,Evelyn,Hufford,57,"M. $175,000-$199,999",Completed College,4. Urban,Married,1,,,1,,,0
+192356427,Erika,Bristow,65,"H. $75,000-$99,999",Completed College,1. Rural,Married,1,White Collar,,,,,1
+2265283177,Mary,Mitchell,74,"H. $75,000-$99,999",Completed Graduate School,4. Urban,Married,0,White Collar,,3,,3,0
+107776939,Louella,DeLima,45,Q. $300-$399K,Some College,4. Urban,Single,1,,,,,,0
+360392102,Lara,Moody,51,P. $250-$299K,Completed Graduate School,1. Rural,Married,1,White Collar,,,,,0
+1929106482,James,Ginney,47,P. $250-$299K,Completed College,3. Suburban,Married,1,Other,,2,,,1
+164552115,Gerrik,Grove,76,"K. $100,000-$149,999",Completed College,4. Urban,Married,0,White Collar,,,,,0
+2817090648,Matt,Williams,43,"K. $100,000-$149,999",Completed High School,3. Suburban,Single,0,Blue Collar,,3,,,1
+43163553,Saul,Avina,34,"D. $30,000-$39,999",Completed High School,4. Urban,Single,0,White Collar,,,,,0
+1577379937,Priscilla,Sodeke,32,"N. $200,000-$249,999",Some College,4. Urban,Single,1,,,,,,1
+1139061425,Zhen,Liang,57,Q. $300-$399K,Attended Vocational/Technical,4. Urban,Single,1,Blue Collar,,,,1,1
+209154441,Ron,Harris,25,"K. $100,000-$149,999",Completed College,1. Rural,Married,1,,,,,,0
+2518088303,Marsha,Streeter,28,"M. $175,000-$199,999",Completed College,4. Urban,Single,1,,,1,,3,1
+810773785,Dav,Brown,55,P. $250-$299K,Completed College,4. Urban,Single,1,,,,1,,0
+2293330362,Jan,Kogut,47,"K. $100,000-$149,999",Completed High School,4. Urban,Married,1,White Collar,,,,,1
+847323267,Sherry,McCarthy,48,"H. $75,000-$99,999",Completed College,1. Rural,Single,1,White Collar,,,,,0
+186758938,Ron,Rogers,40,"H. $75,000-$99,999",Completed College,1. Rural,Single,1,White Collar,,,,,0
+453876117,Dante,White,53,"E. $40,000-$49,999",Completed High School,4. Urban,Single,0,,,,,,0
+1350408268,Christine,Dillon,45,P. $250-$299K,Completed High School,3. Suburban,Married,1,Blue Collar,,,,,1
+1193831269,Eileen,Davis,41,"H. $75,000-$99,999",Completed College,3. Suburban,Married,1,,,,,,0
+2604705289,Kristalyn,Davis,34,"H. $75,000-$99,999",Completed College,3. Suburban,Single,1,,,,,,0
+210257495,Paul,Martin,34,"H. $75,000-$99,999",Some College,1. Rural,Single,1,,,,,,1
+24589737,Margaret,Wettstein Bond,68,"N. $200,000-$249,999",Completed Graduate School,3. Suburban,Single,0,Blue Collar,,,,,1
+2392473972,Ruth,Trissel,43,S. $500-$699K,Completed High School,4. Urban,Married,1,,,,,,0
+3127344062,Elaine,Beasley,39,"G. $60,000-$74,999",Completed College,1. Rural,Single,1,White Collar,,,,,1
+1090501021,Josef,Kolke,63,Q. $300-$399K,Completed High School,1. Rural,Married,1,White Collar,,,3,,0
+729642240,Lillian,Teska,63,P. $250-$299K,Completed College,4. Urban,Married,1,,,,3,,1
+406016699,Deana,Benton,74,"M. $175,000-$199,999",Completed High School,4. Urban,Single,0,Blue Collar,,1,1,,1
+1919970125,Lauren,Whisenhunt,54,"N. $200,000-$249,999",Completed College,3. Suburban,Married,1,White Collar,,1,,,0
+696559096,Sarah,Cranfill,32,"N. $200,000-$249,999",Completed College,1. Rural,Single,1,,,,,1,1
+57833779,Melissa,Bradley,58,"L. $150,000-$174,999",Completed College,3. Suburban,Single,1,Other,,2,,,1
+2427313429,Eric,Gardner,79,P. $250-$299K,Completed Graduate School,3. Suburban,Single,0,White Collar,,,,,0
+721872560,Brandon,Jensen,35,"E. $40,000-$49,999",Completed High School,1. Rural,Single,1,,,,,,0
+52108469,Richard,Brunn,26,R. $400-$499K,Completed High School,3. Suburban,Married,1,Other,,,,,1
+503562854,Lynette,Erskine,49,"K. $100,000-$149,999",Completed High School,3. Suburban,Single,1,,,,,,0
+115116037,Todd,Hofschulte,78,"N. $200,000-$249,999",Completed College,4. Urban,Married,0,White Collar,,,,1,1
+2263604517,Mindy,Bailey,28,"E. $40,000-$49,999",Completed College,3. Suburban,Single,1,,,,,,0
+2438660494,Lindsey,Carusetta,42,"H. $75,000-$99,999",Completed High School,1. Rural,Married,1,Blue Collar,,,,,0
+16094921,Heather,Chambers,37,"H. $75,000-$99,999",Completed High School,1. Rural,Single,1,White Collar,,,,,0
+2478083348,Evelyn,Howard,25,R. $400-$499K,Completed College,3. Suburban,Married,1,,,,,,1
+628251051,Giuseppe,DiMarco,37,Q. $300-$399K,Some College,3. Suburban,Single,1,,,,,,0
+1351492543,John,Romey,39,"M. $175,000-$199,999",Completed College,4. Urban,Married,1,White Collar,,,,,1
+2409355601,Damien,Myles,51,"H. $75,000-$99,999",Completed High School,4. Urban,Single,0,,,,,,0
+700007427,Donald,DeVault,74,"N. $200,000-$249,999",Completed College,3. Suburban,Married,0,White Collar,,3,,,1
+905332055,Robert,Bailey,81,"K. $100,000-$149,999",Completed College,3. Suburban,Single,0,Other,,2,1,,0
+2454906275,Lorene,Sierras,79,Q. $300-$399K,Completed College,3. Suburban,Married,0,Other,,,,,1
+3134672924,Jack,Cody,50,"K. $100,000-$149,999",Completed College,1. Rural,Married,1,Other,,3,1,,1
+178614598,Micah,Webb,60,"N. $200,000-$249,999",Completed High School,1. Rural,Married,1,,,1,2,,1
+176845978,Logan,Contos,29,P. $250-$299K,Completed College,3. Suburban,Single,1,,,,,,1
+1139012111,Bonnie,Maffi,58,P. $250-$299K,Completed Graduate School,4. Urban,Married,1,White Collar,,,,,1
+1375864348,Javier,Camacho,80,"N. $200,000-$249,999",Completed College,4. Urban,Single,0,White Collar,,,,,1
+137581949,Jeffrey,Johnson,53,"D. $30,000-$39,999",Completed High School,1. Rural,Single,0,,,,,,0
+62107565,Kimberly,Hiter,33,"N. $200,000-$249,999",Some College,3. Suburban,Single,1,,,,,,1
+509218248,Meng,Xiong,61,"K. $100,000-$149,999",Some College,4. Urban,Single,1,,,,,,0
+95605867,Patrick,Friel,57,"E. $40,000-$49,999",Completed High School,1. Rural,Married,1,White Collar,,,,,0
+2609534432,Sanai,Williams,77,Q. $300-$399K,Attended Vocational/Technical,3. Suburban,Married,0,Blue Collar,,,,,1
+1268152810,Cbrock,Kirwan,72,"K. $100,000-$149,999",Completed High School,4. Urban,Married,0,,,,,,1
+2249253956,Anne,Ostergaard,59,"M. $175,000-$199,999",Completed High School,4. Urban,Single,1,,,,,,0
+175962893,Kristine,Yut,40,"H. $75,000-$99,999",Some College,4. Urban,Single,1,,,,,,0
+1354333622,Chanell,Spellman,53,"M. $175,000-$199,999",Completed High School,1. Rural,Married,1,Blue Collar,,,,,1
+174592225,Tiffany,Lord,34,"D. $30,000-$39,999",Completed College,1. Rural,Single,1,,,1,,1,1
+190610574,Steven,Swope,66,"K. $100,000-$149,999",Completed College,4. Urban,Married,0,White Collar,,,2,,0
+591807699,Mary,Hines,42,"H. $75,000-$99,999",Completed High School,3. Suburban,Married,1,,,,,,0
+2410770085,Deloris,Mouzone,31,"K. $100,000-$149,999",Completed College,3. Suburban,Single,1,White Collar,,,,,1
+107119023,Tim,Kidd,55,"M. $175,000-$199,999",Completed College,3. Suburban,Single,1,,,,3,,1
+2200017504,Edward,Rogers,93,T. $700-$999K,Some College,4. Urban,Single,0,Other,,2,2,,1
+552144202,Jose,Ortiz,34,"K. $100,000-$149,999",Completed High School,3. Suburban,Single,0,,,,,,0
+321778255,Jasmine,Bayya,60,"F. $50,000-$59,999",Completed Graduate School,4. Urban,Single,0,White Collar,,,,,0
+118016676,Sarah,Pineda Woods,38,P. $250-$299K,Completed High School,3. Suburban,Single,1,,,,,,0
+244857368,Michele,Weyburne,95,"L. $150,000-$174,999",Completed High School,3. Suburban,Single,0,Other,,2,3,,1
+939159403,Sue,Fish,91,"N. $200,000-$249,999",Completed College,3. Suburban,Married,0,Other,,2,,,1
+34151601,Raymond,Schaeffer,80,"E. $40,000-$49,999",Completed College,1. Rural,Single,0,Blue Collar,,,,,1
+2028093362,Belinda,Samariniotis,66,"L. $150,000-$174,999",Completed College,4. Urban,Married,0,White Collar,,,,,1
+2409825562,Somphou,Hernandez,68,"L. $150,000-$174,999",Completed High School,4. Urban,Married,0,White Collar,,,,,0
+1989657399,Janet,Cunningham,67,"H. $75,000-$99,999",Completed High School,1. Rural,Married,0,,,,,1,0
+2250887282,Georgia,Alevizakis,93,T. $700-$999K,Completed College,4. Urban,Married,0,,,,,,0
+33125697,Elizabeth,West,23,"N. $200,000-$249,999",Completed College,3. Suburban,Married,1,,,,,,1
+633640757,Kymber,Allen,66,"N. $200,000-$249,999",Completed College,3. Suburban,Married,0,White Collar,,,,,0
+789587868,Katlin,Taosaka,36,"F. $50,000-$59,999",Completed College,3. Suburban,Single,1,,,,,,0
+1154007054,Ray,Noble,43,R. $400-$499K,Completed High School,4. Urban,Married,0,,,,,,0
+2235812960,Steven,Williams,83,"K. $100,000-$149,999",Completed High School,3. Suburban,Married,0,Other,,,,,1
+261091526,Jaime,Vredenburg,76,P. $250-$299K,Some College,1. Rural,Single,0,,,,,,0
+139639813,Michele,Carney,35,"D. $30,000-$39,999",Completed High School,1. Rural,Single,1,,,,,,1
+14406691,John,Gregg,52,"H. $75,000-$99,999",Some College,1. Rural,Married,1,,,,,,0
+1292069973,Taivone,McIntyre,40,"L. $150,000-$174,999",Some College,4. Urban,Single,0,,,,,,0
+941001048,Jerry,Alexander,63,"H. $75,000-$99,999",Completed High School,3. Suburban,Single,1,White Collar,,,,,0
+773841608,Jacob,Saloka,56,P. $250-$299K,Completed College,3. Suburban,Married,1,Blue Collar,,,,,1
+2136503243,Gloria,Talley,29,"H. $75,000-$99,999",Completed College,1. Rural,Single,1,,,,,,1
+56703834,Michael,Riley,52,"M. $175,000-$199,999",Completed College,1. Rural,Married,1,White Collar,,,,,0
+173811180,Luis,Webb,72,P. $250-$299K,Completed Graduate School,4. Urban,Single,0,,,,,,1
+1841789818,Antonio,Nunez,57,"H. $75,000-$99,999",Completed High School,3. Suburban,Married,1,White Collar,,,,,0
+684466357,Richard,Kearns,42,"L. $150,000-$174,999",Completed High School,3. Suburban,Married,1,White Collar,,,,,0
+2483847951,Diana,Munro,86,"K. $100,000-$149,999",Some College,1. Rural,Married,0,Other,,,,,0
+2454087738,Barry,Plath,58,"H. $75,000-$99,999",Completed College,1. Rural,Married,1,White Collar,,,,,1
+145094100,William,Sony,41,"N. $200,000-$249,999",Completed High School,1. Rural,Married,1,,,,,,0
+244772222,Jakupovic,Meris,60,P. $250-$299K,Completed College,3. Suburban,Married,1,White Collar,,,,1,0
+676075708,Haley,Crain,54,"K. $100,000-$149,999",Completed College,3. Suburban,Married,1,Blue Collar,,,,,1
+1737831940,Nathaniel,Sledge,70,"C. $20,000-$29,999",Some College,3. Suburban,Single,0,,,,,,0
+7239844,Robert,Wolff,52,"L. $150,000-$174,999",Some College,4. Urban,Single,0,,,2,,,0
+2479646100,Luke,Cervelli,50,"L. $150,000-$174,999",Completed College,3. Suburban,Married,1,White Collar,,,,,1
+882588513,Stanley,Harrison,58,"B. $10,000-$19,999",Some College,1. Rural,Married,0,,,1,,,0
+75988172,Kally,Webster,43,"K. $100,000-$149,999",Completed College,3. Suburban,Married,1,,,,,,0
+3195678324,Carlos,Montoya,35,"D. $30,000-$39,999",Some College,4. Urban,Single,1,White Collar,,,,,0
+2382076989,Nataliya,McGuire,81,"L. $150,000-$174,999",Completed High School,1. Rural,Married,0,Other,,1,1,,1
+38127439,Arlen,Williams,82,"D. $30,000-$39,999",Completed High School,3. Suburban,Single,0,White Collar,,,,,1
+909434123,Ginny,Porter,75,"N. $200,000-$249,999",Completed College,4. Urban,Married,0,White Collar,,,,,1
+864181594,William,Krochmalski,70,"K. $100,000-$149,999",Completed College,4. Urban,Married,0,White Collar,,1,,,1
+2146432280,Lisbeth,Espinoza,42,"H. $75,000-$99,999",Completed High School,3. Suburban,Single,0,,,,,,0
+277154258,Michael,Uhrig,38,"N. $200,000-$249,999",Some College,3. Suburban,Single,1,,,,,,0
+668237434,Claire,Haugen,29,"C. $20,000-$29,999",Completed Graduate School,1. Rural,Single,1,,,,,1,0
+2965177138,Glen,Warren,47,R. $400-$499K,Completed College,3. Suburban,Married,0,White Collar,,1,1,,1
+1905263258,Dante,Herder,56,"K. $100,000-$149,999",Completed Graduate School,3. Suburban,Single,1,,,1,,,0
+871036653,Randall,Maynard,46,"G. $60,000-$74,999",Completed College,1. Rural,Single,1,,,,,,0
+2326397595,Dennis,Caplinger,31,"N. $200,000-$249,999",Completed High School,4. Urban,Married,0,,,,,,0
+239926857,Kendy,Nguyn,55,"L. $150,000-$174,999",Completed College,3. Suburban,Married,1,Blue Collar,,,,,1
+1820680557,Nancy,McKinnon,30,"H. $75,000-$99,999",Completed College,3. Suburban,Single,1,,,,,,1
+2473890771,Ana,Maria,81,"H. $75,000-$99,999",Completed High School,3. Suburban,Married,0,Other,,,2,,1
+229291363,Craig,Monaghan,40,"F. $50,000-$59,999",Completed College,3. Suburban,Married,1,White Collar,,,,,1
+18123972,Thomas,Hoke,47,"H. $75,000-$99,999",Completed College,3. Suburban,Married,1,White Collar,,3,1,3,1
+2066372715,Regina,Piantedosi,30,U. $1MM +,Completed College,1. Rural,Single,1,,,,,,1
+30004696,Kristine,Curley,35,"E. $40,000-$49,999",Completed High School,1. Rural,Single,0,,,,,,0
+74635293,Thomas,White,75,"K. $100,000-$149,999",Completed College,3. Suburban,Single,0,Other,,,,,1
+3392782904,Ann,Clayton,41,"E. $40,000-$49,999",Completed High School,4. Urban,Married,1,,,,,,0
+2501713840,Zachary,Simbro,59,"F. $50,000-$59,999",Completed High School,1. Rural,Single,1,,,,1,,1
+2425210961,Evan,Pittman,79,"M. $175,000-$199,999",Completed Graduate School,4. Urban,Single,0,White Collar,,,,,0
+60912558,Bruce,Spencer,66,"E. $40,000-$49,999",Completed High School,1. Rural,Single,0,,,,,,0
+2607188688,Jenna,Dreyer,54,"D. $30,000-$39,999",Completed High School,3. Suburban,Single,1,White Collar,,,,,1
+2301449812,Jenny,Howard,44,Q. $300-$399K,Completed College,3. Suburban,Single,1,,,,,,0
+920004642,Sandra,Donnelly,61,"K. $100,000-$149,999",Completed Graduate School,1. Rural,Single,0,,,,,,0
+2057073716,Brian,Dohoney,78,"M. $175,000-$199,999",Completed High School,1. Rural,Single,0,Blue Collar,,,,,1
+1343167338,Cleopatra,Gourley,51,"H. $75,000-$99,999",Completed High School,1. Rural,Single,0,,,,,,0
+2492225136,Sahaded,Raghunath,61,"L. $150,000-$174,999",Some College,3. Suburban,Single,1,,,,,,0
+2122056812,Kaila,Curry,73,"G. $60,000-$74,999",Completed High School,1. Rural,Single,0,,,,,,0
+2584661644,McDaniels,Messiah,68,"H. $75,000-$99,999",Completed College,4. Urban,Single,0,White Collar,,,,,1
+128357983,Cara,Anderson,44,"K. $100,000-$149,999",Completed College,1. Rural,Married,1,White Collar,,,,,0
+1293784513,Susana,Perez,45,"G. $60,000-$74,999",Completed High School,4. Urban,Single,0,,,,,,0
+2119021581,Matilde,Carranza,85,"G. $60,000-$74,999",Completed High School,3. Suburban,Single,0,White Collar,,,1,,1
+2063982005,Michelle,Turnbull,61,"K. $100,000-$149,999",Completed College,4. Urban,Married,1,White Collar,,2,,,0
+940313128,Ronnie,Buchanan,51,"L. $150,000-$174,999",Completed College,1. Rural,Single,1,,,,,,0
+2732829078,Hui,Chen,91,Q. $300-$399K,Completed High School,4. Urban,Married,0,Other,,,,,0
+1662613965,Heather,Shrader,66,"K. $100,000-$149,999",Completed High School,1. Rural,Married,0,White Collar,,,,,0
+303136394,Caroline,Rost,61,"N. $200,000-$249,999",Completed College,3. Suburban,Single,1,White Collar,,,,1,0
+1221884896,Tom,Green,73,"D. $30,000-$39,999",Completed College,3. Suburban,Single,0,,,,,,0
+945696394,Mayra,Zavala,62,"L. $150,000-$174,999",Some High School,3. Suburban,Married,1,,,,,1,0
+71153574,Antonio,Tibaldi,64,"L. $150,000-$174,999",Completed College,4. Urban,Single,1,White Collar,,,,,1
+1283390192,Gail,Pierce,72,"B. $10,000-$19,999",Completed College,1. Rural,Married,0,White Collar,,,,,1
+1783046625,Joan,Jolly,66,"E. $40,000-$49,999",Completed Graduate School,1. Rural,Single,0,,,,,,0
+3120813548,Barbara,Beck,70,"K. $100,000-$149,999",Completed High School,3. Suburban,Married,0,White Collar,,,,,1
+1311886078,Jose,Lorenzana,56,"D. $30,000-$39,999",Completed High School,4. Urban,Married,0,,,,,,0
+386395755,Karyn,Joseph,32,R. $400-$499K,Completed College,3. Suburban,Single,0,,,,,,0
+1168442822,Lincoln,McGrath,47,"K. $100,000-$149,999",Completed College,4. Urban,Single,0,Blue Collar,,2,,,0
+1156545609,Shane,Christopher,49,"K. $100,000-$149,999",Some College,1. Rural,Single,0,,,3,3,3,0
+2968256041,Karleen,Libby,54,"K. $100,000-$149,999",Completed College,3. Suburban,Married,1,White Collar,,,,3,1
+151513193,Steve,Appling,62,P. $250-$299K,Completed College,3. Suburban,Married,1,White Collar,,,,,1
+391343727,Margaret,Clark,64,"D. $30,000-$39,999",Completed College,3. Suburban,Married,0,Blue Collar,,2,,,0
+2995802329,Anddre,Leonhardt,58,"K. $100,000-$149,999",Completed College,4. Urban,Married,1,White Collar,,1,,,0
+69337206,Carl,Fancy,28,"N. $200,000-$249,999",Completed College,3. Suburban,Single,1,,,,,,1
+1645345509,Duren,Fair,82,"F. $50,000-$59,999",Completed College,4. Urban,Married,0,White Collar,,,1,1,0
+634355087,Sara,Kosloske,42,P. $250-$299K,Some College,4. Urban,Single,1,,,,,,0
+2390413764,Margaret,Moore,26,"F. $50,000-$59,999",Completed College,3. Suburban,Married,1,,,,,,1
+2241731721,Rosalva,Ramirez,34,"K. $100,000-$149,999",Completed College,3. Suburban,Single,1,,,,,,0
+424273943,Abdallah,Jwayyed,46,"C. $20,000-$29,999",Completed High School,3. Suburban,Single,0,,,,,,0
+2236986290,John,Hedin,30,"H. $75,000-$99,999",Completed High School,3. Suburban,Single,1,,,,,,1
+2927884874,Thomas,Martin,76,"H. $75,000-$99,999",Attended Vocational/Technical,1. Rural,Single,0,Blue Collar,,2,,,0
+873168032,Rachel,Kinsland,88,"E. $40,000-$49,999",Completed Graduate School,1. Rural,Married,0,White Collar,,,,,0
+3388866018,Manuela,Del Rosario,68,"K. $100,000-$149,999",Completed College,3. Suburban,Married,0,,,,,,0
+877341538,Maria,Diaz,33,"K. $100,000-$149,999",Completed High School,4. Urban,Married,1,,,,,,1
+1843108097,Deborah,Moye,60,"K. $100,000-$149,999",Attended Vocational/Technical,3. Suburban,Married,1,Blue Collar,,,,,0
+2157251219,Sharon,Lane,71,"N. $200,000-$249,999",Completed High School,3. Suburban,Married,0,,,,,1,0
+2247823315,Daniel,Bryant,45,Q. $300-$399K,Completed Graduate School,3. Suburban,Single,1,Blue Collar,,2,,,1
+184330210,Elisabeth,Zall,51,"L. $150,000-$174,999",Completed College,4. Urban,Single,1,,,1,,,0
+241541304,Laura,Lacy,40,"K. $100,000-$149,999",Completed College,3. Suburban,Single,1,,,,,,1
+1090609622,Alisha,Wengert,38,"F. $50,000-$59,999",Some College,3. Suburban,Single,1,,,,,,0
+97941110,Claudio,Grossling,40,U. $1MM +,Completed College,4. Urban,Single,1,,,,3,,0
+628847107,Trenton,Shaw,64,"K. $100,000-$149,999",Completed Graduate School,1. Rural,Single,1,White Collar,,,,,0
+1798408463,Sidney,Horton,44,"H. $75,000-$99,999",Completed College,1. Rural,Single,1,White Collar,,,,,0
+140696311,Antonio,Guzman,40,"F. $50,000-$59,999",Completed High School,3. Suburban,Single,1,,,,,,1
+900308833,Daniel,McKnight,69,"N. $200,000-$249,999",Completed High School,3. Suburban,Married,0,Other,,3,3,,1
+2970399948,Leanne,Young,53,"H. $75,000-$99,999",Completed High School,4. Urban,Married,1,Blue Collar,,,1,,1
+426210440,Abdul,Mazid,34,Q. $300-$399K,Some College,4. Urban,Single,0,,,,,,0
+850420430,Salvador,Zeferino,43,"N. $200,000-$249,999",Completed College,4. Urban,Single,0,,,,,,0
+7916704,Oliver,Akinrele,83,P. $250-$299K,Completed Graduate School,4. Urban,Married,0,,,,,,1
+114213209,James,Moore,68,"H. $75,000-$99,999",Completed Graduate School,3. Suburban,Married,0,,,,,1,1
+1818810219,Alyse,Orban,33,"N. $200,000-$249,999",Completed College,1. Rural,Married,1,,,,,,0
+1122775472,Angelica,Frantz,62,"K. $100,000-$149,999",Completed College,1. Rural,Married,1,White Collar,,,,,1
+2534684593,Tilitha,Williams,76,"L. $150,000-$174,999",Completed College,3. Suburban,Married,0,White Collar,,1,,2,0
+47040775,Donald,Anaya,70,"K. $100,000-$149,999",Completed College,3. Suburban,Single,0,White Collar,,,,,1
+2049452996,Melissa,Warder,25,R. $400-$499K,Completed College,1. Rural,Married,1,,,,,,0
+98977772,Cindy,Roche,60,"L. $150,000-$174,999",Completed College,1. Rural,Married,1,,,,,,0
+158453375,Kaleb,Aegerter,32,"L. $150,000-$174,999",Completed Graduate School,1. Rural,Single,1,,,,,,1
+245588250,Mike,Gannon,51,"G. $60,000-$74,999",Completed College,1. Rural,Married,1,,,,,1,0
+1266638625,Cole,Tweedie,39,"H. $75,000-$99,999",Completed High School,1. Rural,Single,1,,,,,,0
+741033512,Cyndi,Krebs,69,P. $250-$299K,Completed College,3. Suburban,Married,0,Other,,,,,1
+551925284,Ira,Chase,49,"K. $100,000-$149,999",Completed College,4. Urban,Single,1,White Collar,,,2,1,0
+1064638618,Brittany,Gates,34,"B. $10,000-$19,999",Completed High School,3. Suburban,Single,0,,,,,,0
+2660990817,Vic,Conrad,37,"H. $75,000-$99,999",Some College,3. Suburban,Married,0,White Collar,,,,,0
+705994828,David,Swanson,73,"E. $40,000-$49,999",Completed High School,4. Urban,Single,0,,,,,,0
+155346790,Jonathan,Williams,31,R. $400-$499K,Completed College,3. Suburban,Single,1,White Collar,,,,,1
+1804845599,Rakesh,Dalal,69,"G. $60,000-$74,999",Completed College,4. Urban,Single,0,,,,,,0
+35567950,Kathy,Theis,67,"L. $150,000-$174,999",Completed College,1. Rural,Married,0,White Collar,,,,,1
+6249368,Arthur,Horowitz,86,"K. $100,000-$149,999",Completed College,4. Urban,Single,0,Other,,1,,,1
+1683375474,Ni,Smith,57,"N. $200,000-$249,999",Completed High School,3. Suburban,Married,1,Other,,,,,1
+2596320796,Charles,Kimble,68,"N. $200,000-$249,999",Completed Graduate School,4. Urban,Single,0,White Collar,,,,2,0
+1085027488,Nathaniel,Oldham,47,"K. $100,000-$149,999",Some College,4. Urban,Married,1,White Collar,,,,,0
+79148247,Anthony,Schawang,54,"N. $200,000-$249,999",Completed College,4. Urban,Married,1,White Collar,,,1,,1
+29003532,Ronny,Russell,76,"M. $175,000-$199,999",Completed High School,3. Suburban,Single,0,,,,,,1
+41491701,Gerry,Thurston,42,"K. $100,000-$149,999",Completed College,4. Urban,Single,1,White Collar,,3,,,1
+6000297,Susan,Lwilliams,35,"H. $75,000-$99,999",Completed College,4. Urban,Single,1,,,,,,0
+1353824029,Sam,Gauna,42,"K. $100,000-$149,999",Completed High School,3. Suburban,Married,1,White Collar,,,,,0
+126423963,Deborah,Gary,29,"K. $100,000-$149,999",Completed High School,4. Urban,Single,0,,,,,,0
+1765968897,Holder,Breslin,48,"K. $100,000-$149,999",Completed High School,3. Suburban,Single,1,White Collar,,,,,0
+113996526,Chad,Evangelista,50,"E. $40,000-$49,999",Completed High School,1. Rural,Single,1,,,,,,0
+2581368385,Louis,Coffey,33,"K. $100,000-$149,999",Completed High School,4. Urban,Single,1,,,,,,0
+2501692385,Abigail,Curfew,70,"G. $60,000-$74,999",Completed Graduate School,1. Rural,Married,0,White Collar,,,,,0
+242799318,Lynn,Hartmann,51,P. $250-$299K,Completed College,3. Suburban,Married,1,,,,,,0
+2005646577,Amanda,Bursey,29,"K. $100,000-$149,999",Completed College,4. Urban,Single,0,,,,,,0
+2727765953,Adam,Rohde,62,"G. $60,000-$74,999",Completed High School,4. Urban,Single,1,,,,,,0
+2316129752,Reva,Gage,79,"K. $100,000-$149,999",Some College,3. Suburban,Single,0,,,,,,1
+806402453,Martin,Santiago,77,"H. $75,000-$99,999",Completed High School,1. Rural,Married,0,,,,,,0
+2633119951,Diane,Vargo,51,"H. $75,000-$99,999",Completed College,3. Suburban,Single,1,White Collar,,,,,1
+1822657552,Heather,Tousey,50,"K. $100,000-$149,999",Some College,3. Suburban,Single,1,,,,,,1
+2246815576,Allard,Crasto,58,"L. $150,000-$174,999",Completed High School,4. Urban,Married,1,Other,,,,1,1
+845797696,Malik,Lozada,31,"D. $30,000-$39,999",Completed College,4. Urban,Single,1,White Collar,,,,,1
+2173464003,Adam,DeHaven,25,"F. $50,000-$59,999",Completed College,1. Rural,Married,1,,,,,1,0
+2412530751,Courtney,Lewis,51,"M. $175,000-$199,999",Completed College,4. Urban,Single,1,White Collar,,,,,0
+2602393190,Wood,Lin,98,"K. $100,000-$149,999",Completed High School,4. Urban,Single,0,,,,,,1
+1910690326,Edgar,Ferreiro,36,"M. $175,000-$199,999",Some College,4. Urban,Single,0,,,,,,0
+18496462,Meredith,Naggar,42,Q. $300-$399K,Completed College,4. Urban,Single,1,White Collar,,,,,1
+594638038,Shriram,Venkatraman,56,"K. $100,000-$149,999",Completed Graduate School,4. Urban,Single,0,,,,,,0
+947429366,Virginia,Slores,98,"K. $100,000-$149,999",Completed College,4. Urban,Married,0,,,,,,0
+1037504227,Corneilus,Riley,75,"K. $100,000-$149,999",Completed College,3. Suburban,Single,0,Other,,2,3,1,1
+1051192390,Laura,Donkers,68,"N. $200,000-$249,999",Completed College,4. Urban,Single,0,White Collar,,,,,1
+200323623,Sunny,Beeker,89,Q. $300-$399K,Completed Graduate School,4. Urban,Single,0,,,,,,1
+626480822,David,Ally,37,"K. $100,000-$149,999",Completed High School,1. Rural,Married,1,,,,,,0
+1668363664,Ryan,Caltagirone,98,"D. $30,000-$39,999",Completed High School,1. Rural,Single,0,,,,,,0
+8715333,Michael,Hawley,70,"K. $100,000-$149,999",Completed High School,3. Suburban,Single,0,Other,,,,,1
+1822295774,Matthew,Maxie,46,"N. $200,000-$249,999",Completed High School,3. Suburban,Single,1,White Collar,,,,,0
+206466480,Tania,Perez,33,"E. $40,000-$49,999",Completed High School,4. Urban,Single,1,,,,,,0
+1582980112,Anisa,Hassan,71,"K. $100,000-$149,999",Completed College,3. Suburban,Married,0,,,,,1,0
+3069753755,Taylor,Write,38,S. $500-$699K,Completed College,3. Suburban,Single,1,White Collar,,,,,0
+1312294685,Bradford,Voegeli,41,"H. $75,000-$99,999",Completed College,4. Urban,Single,1,White Collar,,,,,0
+21634555,Helen,Zubrinsky,85,"H. $75,000-$99,999",Completed High School,3. Suburban,Single,0,Other,,,,2,1
+2381114663,Earl,Salazar,81,"M. $175,000-$199,999",Completed High School,1. Rural,Married,0,Blue Collar,,,,,1
+2024446461,Mervin,Jones,42,P. $250-$299K,Completed College,1. Rural,Single,1,,,,,,0
+1285758802,Jesse,Rodriguez,54,"K. $100,000-$149,999",Completed High School,4. Urban,Single,1,,,3,,,0
+912048074,Cory,Plank,32,"E. $40,000-$49,999",Completed High School,1. Rural,Single,0,White Collar,,,,,0
+73967545,Hartmut,Robert,70,"K. $100,000-$149,999",Completed High School,4. Urban,Married,0,Blue Collar,,,1,,1
+2259509875,Jeff,Peissig,71,"K. $100,000-$149,999",Completed High School,3. Suburban,Married,0,White Collar,,2,2,,1
+267505372,Chris,Bennett,36,"N. $200,000-$249,999",Completed High School,3. Suburban,Single,0,Blue Collar,,,,,0
+157076961,Brittany,Cross,50,"L. $150,000-$174,999",Completed College,3. Suburban,Married,1,,,,2,,0
+815614587,George,Roxanne,76,"H. $75,000-$99,999",Completed Graduate School,1. Rural,Married,0,Other,,,1,,1
+919595195,Miguel,Gutierrez,36,"G. $60,000-$74,999",Completed High School,3. Suburban,Single,0,,,,,,0
+2390963535,Brian,Davis,50,Q. $300-$399K,Completed College,3. Suburban,Single,1,White Collar,,1,,,1
+1781445329,Tonia,Payton,56,"H. $75,000-$99,999",Some College,4. Urban,Married,0,,,,,,0
+2411495454,Lynn,Reyelts,57,"L. $150,000-$174,999",Completed High School,3. Suburban,Single,0,,,,,,0

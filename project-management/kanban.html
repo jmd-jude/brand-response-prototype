@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Response - Sprint Backlog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f6fa;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .header {
+            background: white;
+            border-bottom: 1px solid #e1e5e9;
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            color: #4F46E5;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-info {
+            color: #6B7280;
+            font-size: 0.9rem;
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 0 2rem;
+        }
+
+        .file-input {
+            padding: 0.5rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            background: white;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: #4F46E5;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #3730A3;
+        }
+
+        .btn-secondary {
+            background: #6B7280;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #4B5563;
+        }
+
+        .kanban-board {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .column {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .column-header {
+            padding: 1rem;
+            font-weight: 600;
+            border-bottom: 1px solid #e1e5e9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .column-header.backlog {
+            background: #FEF3C7;
+            color: #92400E;
+        }
+
+        .column-header.in-progress {
+            background: #DBEAFE;
+            color: #1E40AF;
+        }
+
+        .column-header.review {
+            background: #F3E8FF;
+            color: #7C2D12;
+        }
+
+        .column-header.done {
+            background: #D1FAE5;
+            color: #065F46;
+        }
+
+        .issue-count {
+            background: rgba(0,0,0,0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+
+        .issues-container {
+            padding: 1rem;
+            min-height: 200px;
+        }
+
+        .issue-card {
+            background: #fafafa;
+            border: 1px solid #e1e5e9;
+            border-radius: 6px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            transition: all 0.2s;
+        }
+
+        .issue-card:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transform: translateY(-1px);
+        }
+
+        .status-dropdown {
+            padding: 0.25rem 0.5rem;
+            border: 1px solid #d1d5db;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            background: white;
+            color: #374151;
+            cursor: pointer;
+        }
+
+        .issue-header {
+            display: flex;
+            justify-content: between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .issue-id {
+            font-weight: 600;
+            color: #4F46E5;
+            font-size: 0.8rem;
+        }
+
+        .issue-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #1F2937;
+        }
+
+        .issue-description {
+            font-size: 0.85rem;
+            color: #6B7280;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .issue-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .priority {
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .priority.high {
+            background: #FEE2E2;
+            color: #DC2626;
+        }
+
+        .priority.medium {
+            background: #FEF3C7;
+            color: #D97706;
+        }
+
+        .priority.low {
+            background: #E0E7FF;
+            color: #3730A3;
+        }
+
+        .effort {
+            background: #F3F4F6;
+            color: #374151;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .tags {
+            margin-top: 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+        }
+
+        .tag {
+            background: #EFF6FF;
+            color: #1E40AF;
+            padding: 0.1rem 0.4rem;
+            border-radius: 8px;
+            font-size: 0.7rem;
+        }
+
+        .drop-zone {
+            min-height: 100px;
+            border: 2px dashed #D1D5DB;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9CA3AF;
+            transition: all 0.2s;
+        }
+
+        .drop-zone.drag-over {
+            border-color: #4F46E5;
+            background: #F0F4FF;
+            color: #4F46E5;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #6B7280;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #d1d5db;
+            border-radius: 4px;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .stats {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1rem;
+            margin: 0 2rem 2rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #4F46E5;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #6B7280;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Brand Response Sprint Backlog</h1>
+        <div class="project-info">Customer Intelligence Platform MVP</div>
+    </div>
+
+    <div class="controls">
+        <button onclick="saveBacklog()" class="btn btn-primary">Save Changes</button>
+        <button onclick="addNewIssue()" class="btn btn-secondary">Add Issue</button>
+        <span id="loadStatus" style="color: #6B7280; font-size: 0.9rem;"></span>
+    </div>
+
+    <div class="stats" id="stats"></div>
+
+    <div class="kanban-board">
+        <div class="column">
+            <div class="column-header backlog">
+                <span>Backlog</span>
+                <span class="issue-count" id="backlog-count">0</span>
+            </div>
+            <div class="issues-container" id="backlog-issues" data-status="Backlog"></div>
+        </div>
+
+        <div class="column">
+            <div class="column-header in-progress">
+                <span>In Progress</span>
+                <span class="issue-count" id="in-progress-count">0</span>
+            </div>
+            <div class="issues-container" id="in-progress-issues" data-status="In Progress"></div>
+        </div>
+
+        <div class="column">
+            <div class="column-header review">
+                <span>Review</span>
+                <span class="issue-count" id="review-count">0</span>
+            </div>
+            <div class="issues-container" id="review-issues" data-status="Review"></div>
+        </div>
+
+        <div class="column">
+            <div class="column-header done">
+                <span>Done</span>
+                <span class="issue-count" id="done-count">0</span>
+            </div>
+            <div class="issues-container" id="done-issues" data-status="Done"></div>
+        </div>
+    </div>
+
+    <!-- Modal for editing issues -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Issue</h2>
+                <button class="close" onclick="closeModal()">&times;</button>
+            </div>
+            <form id="issueForm">
+                <div class="form-group">
+                    <label for="issueId">Issue ID</label>
+                    <input type="text" id="issueId" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="issueTitle">Title</label>
+                    <input type="text" id="issueTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="issueDescription">Description</label>
+                    <textarea id="issueDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="issuePriority">Priority</label>
+                    <select id="issuePriority">
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="issueEffort">Effort</label>
+                    <input type="number" id="issueEffort" min="1" max="13">
+                </div>
+                <div class="form-group">
+                    <label for="issueTags">Tags (comma separated)</label>
+                    <input type="text" id="issueTags">
+                </div>
+                <div class="form-group">
+                    <button type="button" onclick="saveIssue()" class="btn btn-primary">Save</button>
+                    <button type="button" onclick="deleteIssue()" class="btn btn-secondary">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let backlogData = null;
+        let currentEditingIssue = null;
+
+        // Auto-load backlog.json on page load
+        async function autoLoadBacklog() {
+            try {
+                const response = await fetch('./backlog.json');
+                if (response.ok) {
+                    backlogData = await response.json();
+                    renderBoard();
+                    document.getElementById('loadStatus').textContent = '✅ Backlog loaded automatically';
+                } else {
+                    document.getElementById('loadStatus').textContent = '⚠️ backlog.json not found - add issues manually';
+                }
+            } catch (error) {
+                document.getElementById('loadStatus').textContent = '⚠️ Could not load backlog.json';
+                console.error('Auto-load error:', error);
+            }
+        }
+
+        function loadBacklog() {
+            // Keep this as fallback, but primarily use auto-load
+            autoLoadBacklog();
+        }
+
+        function renderBoard() {
+            if (!backlogData) return;
+
+            // Clear all columns
+            ['backlog', 'in-progress', 'review', 'done'].forEach(status => {
+                const container = document.getElementById(status + '-issues');
+                container.innerHTML = '';
+            });
+
+            // Render issues
+            backlogData.issues.forEach(issue => {
+                renderIssue(issue);
+            });
+
+            // Update counts and stats
+            updateCounts();
+            updateStats();
+        }
+
+        function renderIssue(issue) {
+            const statusMap = {
+                'Backlog': 'backlog',
+                'In Progress': 'in-progress',
+                'Review': 'review',
+                'Done': 'done'
+            };
+
+            const containerId = statusMap[issue.status] + '-issues';
+            const container = document.getElementById(containerId);
+
+            const issueCard = document.createElement('div');
+            issueCard.className = 'issue-card';
+            issueCard.dataset.issueId = issue.id;
+
+            issueCard.innerHTML = `
+                <div class="issue-header">
+                    <div class="issue-id">${issue.id}</div>
+                    <select class="status-dropdown" onchange="updateIssueStatus('${issue.id}', this.value)">
+                        <option value="Backlog" ${issue.status === 'Backlog' ? 'selected' : ''}>Backlog</option>
+                        <option value="In Progress" ${issue.status === 'In Progress' ? 'selected' : ''}>In Progress</option>
+                        <option value="Review" ${issue.status === 'Review' ? 'selected' : ''}>Review</option>
+                        <option value="Done" ${issue.status === 'Done' ? 'selected' : ''}>Done</option>
+                    </select>
+                </div>
+                <div class="issue-title">${issue.title}</div>
+                <div class="issue-description">${issue.description.substring(0, 120)}${issue.description.length > 120 ? '...' : ''}</div>
+                <div class="issue-meta">
+                    <span class="priority ${issue.priority.toLowerCase()}">${issue.priority}</span>
+                    <span class="effort">${issue.effort}pts</span>
+                </div>
+                <div class="tags">
+                    ${issue.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                </div>
+            `;
+
+            // Add double-click to edit
+            issueCard.addEventListener('dblclick', () => editIssue(issue.id));
+
+            container.appendChild(issueCard);
+        }
+
+        function updateIssueStatus(issueId, newStatus) {
+            const issue = backlogData.issues.find(i => i.id === issueId);
+            if (issue) {
+                issue.status = newStatus;
+                renderBoard();
+            }
+        }
+
+        function setupDropZones() {
+            document.querySelectorAll('.issues-container').forEach(container => {
+                container.addEventListener('dragover', handleDragOver);
+                container.addEventListener('drop', handleDrop);
+                container.addEventListener('dragenter', handleDragEnter);
+                container.addEventListener('dragleave', handleDragLeave);
+            });
+        }
+
+        function handleDragStart(e) {
+            e.dataTransfer.setData('text/plain', e.target.dataset.issueId);
+            e.target.classList.add('dragging');
+        }
+
+        function handleDragEnd(e) {
+            e.target.classList.remove('dragging');
+        }
+
+        function handleDragOver(e) {
+            e.preventDefault();
+        }
+
+        function handleDragEnter(e) {
+            if (e.target.classList.contains('issues-container')) {
+                e.target.classList.add('drag-over');
+            }
+        }
+
+        function handleDragLeave(e) {
+            if (e.target.classList.contains('issues-container')) {
+                e.target.classList.remove('drag-over');
+            }
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            const issueId = e.dataTransfer.getData('text/plain');
+            const newStatus = e.target.dataset.status;
+            
+            // Update issue status
+            const issue = backlogData.issues.find(i => i.id === issueId);
+            if (issue) {
+                issue.status = newStatus;
+                renderBoard();
+            }
+            
+            e.target.classList.remove('drag-over');
+        }
+
+        function updateCounts() {
+            const statusCounts = {
+                'Backlog': 0,
+                'In Progress': 0,
+                'Review': 0,
+                'Done': 0
+            };
+
+            backlogData.issues.forEach(issue => {
+                statusCounts[issue.status]++;
+            });
+
+            document.getElementById('backlog-count').textContent = statusCounts['Backlog'];
+            document.getElementById('in-progress-count').textContent = statusCounts['In Progress'];
+            document.getElementById('review-count').textContent = statusCounts['Review'];
+            document.getElementById('done-count').textContent = statusCounts['Done'];
+        }
+
+        function updateStats() {
+            const totalIssues = backlogData.issues.length;
+            const totalEffort = backlogData.issues.reduce((sum, issue) => sum + parseInt(issue.effort), 0);
+            const completedEffort = backlogData.issues
+                .filter(issue => issue.status === 'Done')
+                .reduce((sum, issue) => sum + parseInt(issue.effort), 0);
+            const highPriority = backlogData.issues.filter(issue => issue.priority === 'High').length;
+
+            document.getElementById('stats').innerHTML = `
+                <div class="stat">
+                    <div class="stat-number">${totalIssues}</div>
+                    <div class="stat-label">Total Issues</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">${totalEffort}</div>
+                    <div class="stat-label">Total Effort</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">${completedEffort}</div>
+                    <div class="stat-label">Completed Effort</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">${highPriority}</div>
+                    <div class="stat-label">High Priority</div>
+                </div>
+            `;
+        }
+
+        function editIssue(issueId) {
+            const issue = backlogData.issues.find(i => i.id === issueId);
+            if (!issue) return;
+
+            currentEditingIssue = issue;
+            
+            document.getElementById('issueId').value = issue.id;
+            document.getElementById('issueTitle').value = issue.title;
+            document.getElementById('issueDescription').value = issue.description;
+            document.getElementById('issuePriority').value = issue.priority;
+            document.getElementById('issueEffort').value = issue.effort;
+            document.getElementById('issueTags').value = issue.tags.join(', ');
+
+            document.getElementById('editModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('editModal').style.display = 'none';
+            currentEditingIssue = null;
+        }
+
+        function saveIssue() {
+            if (!currentEditingIssue) return;
+
+            currentEditingIssue.title = document.getElementById('issueTitle').value;
+            currentEditingIssue.description = document.getElementById('issueDescription').value;
+            currentEditingIssue.priority = document.getElementById('issuePriority').value;
+            currentEditingIssue.effort = document.getElementById('issueEffort').value;
+            currentEditingIssue.tags = document.getElementById('issueTags').value
+                .split(',')
+                .map(tag => tag.trim())
+                .filter(tag => tag);
+
+            renderBoard();
+            closeModal();
+        }
+
+        function deleteIssue() {
+            if (!currentEditingIssue) return;
+            
+            if (confirm('Are you sure you want to delete this issue?')) {
+                backlogData.issues = backlogData.issues.filter(i => i.id !== currentEditingIssue.id);
+                renderBoard();
+                closeModal();
+            }
+        }
+
+        function addNewIssue() {
+            if (!backlogData) {
+                backlogData = { project: "Brand Response", issues: [] };
+            }
+            
+            const existingIds = backlogData.issues.map(i => parseInt(i.id.split('-')[1]));
+            const nextId = existingIds.length > 0 ? Math.max(...existingIds) + 1 : 1;
+            const newId = 'BR-' + String(nextId).padStart(3, '0');
+            
+            const newIssue = {
+                id: newId,
+                title: 'New Issue',
+                description: 'Enter description here',
+                priority: 'Medium',
+                effort: '3',
+                status: 'Backlog',
+                tags: []
+            };
+
+            backlogData.issues.push(newIssue);
+            renderBoard();
+            editIssue(newId);
+        }
+
+        function saveBacklog() {
+            if (!backlogData) {
+                alert('No backlog data to save');
+                return;
+            }
+
+            // Try server-based save first
+            fetch('http://localhost:8080/save-backlog', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(backlogData)
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('loadStatus').textContent = '✅ Changes saved to backlog.json';
+                    setTimeout(() => {
+                        document.getElementById('loadStatus').textContent = '✅ Backlog loaded automatically';
+                    }, 2000);
+                } else {
+                    throw new Error('Server save failed');
+                }
+            })
+            .catch(error => {
+                console.log('Server save failed, falling back to download:', error);
+                // Fallback to download
+                const dataStr = JSON.stringify(backlogData, null, 2);
+                const dataBlob = new Blob([dataStr], {type: 'application/json'});
+                
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(dataBlob);
+                link.download = 'backlog.json';
+                link.click();
+                
+                document.getElementById('loadStatus').textContent = '⬇️ Downloaded - replace your backlog.json file';
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            setupDropZones();
+            autoLoadBacklog(); // Auto-load on page startup
+            
+            // Close modal when clicking outside
+            window.onclick = function(event) {
+                const modal = document.getElementById('editModal');
+                if (event.target === modal) {
+                    closeModal();
+                }
+            };
+        });
+    </script>
+</body>
+</html>

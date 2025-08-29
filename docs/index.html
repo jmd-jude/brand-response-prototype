@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Response | Customer Intelligence Platform</title>
+    <meta name="description" content="Transform your brand strategy with data-driven customer intelligence. The only SMB consultancy with integrated customer analytics.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #F8FAFF 0%, #EEF2FF 100%);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #1F2937;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            color: #6B7280;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: #4F46E5;
+            font-weight: 600;
+            margin-bottom: 3rem;
+        }
+
+        .cta-button {
+            background: #4F46E5;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #3730A3;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+        }
+
+        /* Tab Navigation */
+        .tabs {
+            background: white;
+            border-bottom: 1px solid #E5E7EB;
+            padding: 0;
+        }
+
+        .tab-nav {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tab-nav li {
+            flex: 1;
+            max-width: 200px;
+        }
+
+        .tab-nav button {
+            width: 100%;
+            padding: 1.5rem 2rem;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #6B7280;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .tab-nav button.active {
+            color: #4F46E5;
+            border-bottom-color: #4F46E5;
+            background: #F8FAFF;
+        }
+
+        .tab-nav button:hover {
+            background: #F9FAFB;
+            color: #374151;
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+            padding: 3rem 0;
+            min-height: 600px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Demo Tab */
+        .demo-frame {
+            width: 100%;
+            height: 800px;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            background: white;
+        }
+
+        /* How It Works */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #E5E7EB;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .process-step h3 {
+            color: #1F2937;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .process-step p {
+            color: #6B7280;
+        }
+
+        /* Vision Tab */
+        .vision-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .vision-text h2 {
+            font-size: 2rem;
+            color: #1F2937;
+            margin-bottom: 1.5rem;
+        }
+
+        .vision-text p {
+            color: #6B7280;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: #F8FAFF;
+            border-radius: 8px;
+            border: 1px solid #E0E7FF;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #4F46E5;
+        }
+
+        .stat-label {
+            color: #6B7280;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .value-props {
+            background: #F9FAFB;
+            padding: 3rem 0;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .value-item h3 {
+            color: #1F2937;
+            margin-bottom: 1rem;
+        }
+
+        .value-item p {
+            color: #6B7280;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #4F46E5;
+                padding: 1rem;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .tab-nav {
+                flex-direction: column;
+            }
+
+            .vision-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .demo-frame {
+                height: 600px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">Brand Response</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#demo" onclick="showTab('demo')">Demo</a></li>
+                <li><a href="#how-it-works" onclick="showTab('how-it-works')">How It Works</a></li>
+                <li><a href="#vision" onclick="showTab('vision')">Vision</a></li>
+            </ul>
+            <button class="nav-toggle" onclick="toggleNav()">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Customer Intelligence for Small Business Brands</h1>
+            <p class="subtitle">Transform assumptions into insights. Turn demographic data into strategic brand decisions. The only SMB consultancy with integrated customer analytics.</p>
+            <p class="tagline">Enterprise-level insights at small business scale</p>
+            <a href="#demo" class="cta-button" onclick="showTab('demo')">See Live Demo</a>
+        </div>
+    </section>
+
+    <!-- Tab Navigation -->
+    <div class="tabs">
+        <ul class="tab-nav">
+            <li><button onclick="showTab('demo')" class="tab-button active">Live Demo</button></li>
+            <li><button onclick="showTab('how-it-works')" class="tab-button">How It Works</button></li>
+            <li><button onclick="showTab('vision')" class="tab-button">Vision</button></li>
+        </ul>
+    </div>
+
+    <!-- Tab Content -->
+    <main class="container">
+        <!-- Demo Tab -->
+        <div id="demo" class="tab-content active">
+            <iframe 
+                src="https://brandresponse.streamlit.app" 
+                class="demo-frame"
+                title="Brand Response Customer Intelligence Platform Demo">
+            </iframe>
+            <p style="text-align: center; margin-top: 1rem; color: #6B7280;">
+                Interactive demo - Upload sample data and see AI-powered insights in action
+            </p>
+        </div>
+
+        <!-- How It Works Tab -->
+        <div id="how-it-works" class="tab-content">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2.5rem; color: #1F2937; margin-bottom: 1rem;">From Customer Data to Strategic Insights</h2>
+                <p style="font-size: 1.2rem; color: #6B7280; max-width: 600px; margin: 0 auto;">Our AI analyzes your customer data to reveal gaps between brand assumptions and reality</p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Upload Customer Data</h3>
+                    <p>Import your CRM data, email lists, or customer database. We handle names, emails, addresses, and basic demographic information.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Business Context Analysis</h3>
+                    <p>AI analyzes your brand positioning, target assumptions, and business goals to select the most strategic data variables.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Data Enrichment</h3>
+                    <p>We enhance your customer records with 200+ demographic, psychographic, and behavioral variables from our identity graph.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Strategic Insights</h3>
+                    <p>AI generates actionable recommendations comparing your assumptions to reality, identifying repositioning opportunities.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vision Tab -->
+        <div id="vision" class="tab-content">
+            <div class="vision-content">
+                <div class="vision-text">
+                    <h2>The Problem We Solve</h2>
+                    <p>Small and medium businesses make brand decisions based on assumptions, not data. They assume they know their customers but lack the tools to validate those assumptions.</p>
+                    <p>Traditional brand consultancies rely on creative intuition. Enterprise agencies have data teams but charge enterprise prices.</p>
+                    <p><strong>Brand Response bridges this gap.</strong> We deliver enterprise-level customer intelligence at SMB scale, turning brand strategy from guesswork into science.</p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat">
+                        <div class="stat-number">73%</div>
+                        <div class="stat-label">of SMBs make brand decisions without customer data</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">2x</div>
+                        <div class="stat-label">revenue growth when brand strategy aligns with customer reality</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">$25K</div>
+                        <div class="stat-label">typical enterprise consulting project cost</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">$10K</div>
+                        <div class="stat-label">our comprehensive analysis</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Value Props -->
+    <section class="value-props">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2rem; color: #1F2937; margin-bottom: 3rem;">Why Brand Response</h2>
+            <div class="value-grid">
+                <div class="value-item">
+                    <h3>Data-Driven Strategy</h3>
+                    <p>Every recommendation backed by analysis of your actual customer demographics, behaviors, and preferences.</p>
+                </div>
+                <div class="value-item">
+                    <h3>AI-Powered Insights</h3>
+                    <p>Advanced AI analyzes patterns in your customer data to identify strategic opportunities and positioning gaps.</p>
+                </div>
+                <div class="value-item">
+                    <h3>SMB Focused</h3>
+                    <p>Purpose-built for small and medium businesses. Enterprise capabilities without enterprise complexity or cost.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            
+            // Activate corresponding button
+            event.target.classList.add('active');
+            
+            // Update URL hash
+            window.location.hash = tabName;
+        }
+
+        function toggleNav() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Handle direct URL access to tabs
+        window.addEventListener('DOMContentLoaded', function() {
+            const hash = window.location.hash.substring(1);
+            if (hash && ['demo', 'how-it-works', 'vision'].includes(hash)) {
+                showTab(hash);
+            }
+        });
+
+        // Close mobile nav when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('navLinks');
+            const toggle = document.querySelector('.nav-toggle');
+            
+            if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+                nav.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

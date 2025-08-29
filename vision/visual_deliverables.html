@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Response - Customer Intelligence Reports</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .report-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+        .report-header {
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .report-header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        .report-header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+            font-size: 16px;
+        }
+        .report-content {
+            padding: 30px;
+        }
+        .section {
+            margin-bottom: 35px;
+        }
+        .section h2 {
+            color: #4F46E5;
+            border-bottom: 3px solid #E5E7EB;
+            padding-bottom: 10px;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+        .section h3 {
+            color: #374151;
+            font-size: 18px;
+            margin: 25px 0 15px 0;
+        }
+        .insight-box {
+            background: #F0F4FF;
+            border: 1px solid #C7D2FE;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #4F46E5;
+        }
+        .insight-box h4 {
+            color: #4F46E5;
+            margin: 0 0 10px 0;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .comparison-table th {
+            background: #F3F4F6;
+            color: #374151;
+            font-weight: 600;
+            padding: 15px;
+            text-align: left;
+            border-bottom: 2px solid #E5E7EB;
+        }
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #F3F4F6;
+        }
+        .comparison-table tr:hover {
+            background: #F9FAFB;
+        }
+        .metric-positive {
+            color: #059669;
+            font-weight: 600;
+        }
+        .metric-negative {
+            color: #DC2626;
+            font-weight: 600;
+        }
+        .metric-neutral {
+            color: #6B7280;
+            font-weight: 600;
+        }
+        .segment-card {
+            background: #FAFAFA;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        .segment-card h4 {
+            color: #4F46E5;
+            margin: 0 0 10px 0;
+            font-size: 18px;
+        }
+        .segment-percentage {
+            background: #4F46E5;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .action-items {
+            background: #FEF3C7;
+            border: 1px solid #F59E0B;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        .action-items h4 {
+            color: #92400E;
+            margin: 0 0 15px 0;
+            font-size: 16px;
+        }
+        .action-items ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .action-items li {
+            color: #451A03;
+            margin-bottom: 8px;
+        }
+        .chart-placeholder {
+            background: #F3F4F6;
+            border: 2px dashed #9CA3AF;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            color: #6B7280;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        .brand-logo {
+            text-align: right;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #E5E7EB;
+            color: #6B7280;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- FOUNDATION TIER SAMPLE -->
+    <div class="report-container">
+        <div class="report-header">
+            <h1>Customer Intelligence Brief</h1>
+            <p>Roasted Bean Coffee Company | Foundation Analysis</p>
+        </div>
+        <div class="report-content">
+            <div class="section">
+                <h2>Executive Summary</h2>
+                <div class="insight-box">
+                    <h4>Key Discovery</h4>
+                    <p>Your customer base is significantly older and more affluent than your current brand positioning targets, creating immediate opportunities for messaging refinement and premium positioning.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Customer Profile Analysis</h2>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Attribute</th>
+                            <th>Your Customers</th>
+                            <th>Your Assumptions</th>
+                            <th>Gap Analysis</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Primary Age Range</td>
+                            <td><span class="metric-positive">30-60 years (78%)</span></td>
+                            <td><span class="metric-negative">25-40 years</span></td>
+                            <td>Broader, more mature demographic</td>
+                        </tr>
+                        <tr>
+                            <td>Median Household Income</td>
+                            <td><span class="metric-positive">$78,000</span></td>
+                            <td><span class="metric-negative">$55,000</span></td>
+                            <td>42% higher purchasing power</td>
+                        </tr>
+                        <tr>
+                            <td>Education Level</td>
+                            <td><span class="metric-positive">43% College+</span></td>
+                            <td><span class="metric-neutral">28% assumed</span></td>
+                            <td>More sophisticated audience</td>
+                        </tr>
+                        <tr>
+                            <td>Premium Product Affinity</td>
+                            <td><span class="metric-positive">73%</span></td>
+                            <td><span class="metric-neutral">Unknown</span></td>
+                            <td>Quality over convenience preference</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>Customer Segments</h2>
+                
+                <div class="segment-card">
+                    <div class="segment-percentage">39%</div>
+                    <h4>Affluent Empty Nesters</h4>
+                    <p><strong>Profile:</strong> Age 45-60, HHI $85K+, no children at home</p>
+                    <p><strong>Behavior:</strong> High disposable income for premium products, value experience and quality over convenience</p>
+                    <p><strong>Opportunity:</strong> Premium blend subscriptions, exclusive tasting events</p>
+                </div>
+
+                <div class="segment-card">
+                    <div class="segment-percentage">32%</div>
+                    <h4>Educated Suburbanites</h4>
+                    <p><strong>Profile:</strong> Age 35-50, college educated, families</p>
+                    <p><strong>Behavior:</strong> Premium coffee as affordable luxury, seek brands reflecting sophistication</p>
+                    <p><strong>Opportunity:</strong> Family-friendly premium positioning, weekend experiences</p>
+                </div>
+
+                <div class="segment-card">
+                    <div class="segment-percentage">29%</div>
+                    <h4>Quality-First Professionals</h4>
+                    <p><strong>Profile:</strong> Age 30-45, white-collar careers</p>
+                    <p><strong>Behavior:</strong> Coffee as productivity ritual and status signal</p>
+                    <p><strong>Opportunity:</strong> Business loyalty programs, workplace catering</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Brand Positioning Recommendations</h2>
+                
+                <div class="insight-box">
+                    <h4>Strategic Shift Required</h4>
+                    <p><strong>From:</strong> "Hip coffee for young professionals"<br>
+                    <strong>To:</strong> "Sophisticated coffee for discerning adults who value quality craftsmanship"</p>
+                </div>
+
+                <h3>Logo & Visual Identity Refinements</h3>
+                <ul>
+                    <li>Shift typography from trendy to classic and sophisticated</li>
+                    <li>Adjust color palette toward warmer, more premium tones</li>
+                    <li>Emphasize craftsmanship symbols over speed/convenience icons</li>
+                </ul>
+
+                <h3>Messaging Strategy</h3>
+                <ul>
+                    <li>Lead with expertise, tradition, and quality process</li>
+                    <li>Reduce emphasis on speed and convenience</li>
+                    <li>Highlight sourcing stories and artisanal approach</li>
+                </ul>
+            </div>
+
+            <div class="action-items">
+                <h4>Immediate Action Items</h4>
+                <ol>
+                    <li>Update website copy to emphasize craftsmanship over convenience</li>
+                    <li>Adjust social media tone to be more sophisticated and educational</li>
+                    <li>Test refined logo concepts focusing on premium positioning</li>
+                    <li>Develop loyalty program targeting higher-spending customer segments</li>
+                </ol>
+            </div>
+
+            <div class="brand-logo">
+                <strong>Brand Response</strong> | Customer Intelligence Analysis<br>
+                Data based on 2,847 enhanced customer records
+            </div>
+        </div>
+    </div>
+
+    <!-- FLOORPLAN TIER SAMPLE -->
+    <div class="report-container">
+        <div class="report-header">
+            <h1>Market Positioning Analysis</h1>
+            <p>Thompson & Associates CPA | Floorplan Analysis</p>
+        </div>
+        <div class="report-content">
+            <div class="section">
+                <h2>Executive Summary</h2>
+                <div class="insight-box">
+                    <h4>Market Position Discovery</h4>
+                    <p>Your firm successfully attracts more sophisticated, growth-oriented clients than the regional average, indicating strong potential for premium positioning and advisory service expansion.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Client Profile vs. Regional Market</h2>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Business Characteristic</th>
+                            <th>Your Clients</th>
+                            <th>Regional Market</th>
+                            <th>Competitive Advantage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Average Business Age</td>
+                            <td><span class="metric-positive">8.3 years</span></td>
+                            <td><span class="metric-neutral">6.1 years</span></td>
+                            <td>+36% more established clients</td>
+                        </tr>
+                        <tr>
+                            <td>Owner Education (College+)</td>
+                            <td><span class="metric-positive">76%</span></td>
+                            <td><span class="metric-neutral">61%</span></td>
+                            <td>More sophisticated decision-makers</td>
+                        </tr>
+                        <tr>
+                            <td>Multi-Location Businesses</td>
+                            <td><span class="metric-positive">34%</span></td>
+                            <td><span class="metric-neutral">22%</span></td>
+                            <td>Higher complexity, premium pricing</td>
+                        </tr>
+                        <tr>
+                            <td>Growth Rate (>15% annually)</td>
+                            <td><span class="metric-positive">43%</span></td>
+                            <td><span class="metric-neutral">28%</span></td>
+                            <td>Growth-oriented client base</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>Industry Concentration Analysis</h2>
+                
+                <div class="chart-placeholder">
+                    [Industry Distribution Chart: Your Portfolio vs Market Share]<br>
+                    Professional Services: 32% vs 18% market | Healthcare: 18% vs 12% market
+                </div>
+
+                <div class="insight-box">
+                    <h4>Industry Positioning Strength</h4>
+                    <p>You've captured 78% more professional services clients and 50% more healthcare clients than market average, indicating natural specialization opportunities.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Competitive Positioning Strategy</h2>
+                
+                <h3>Current vs. Optimal Positioning</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Element</th>
+                            <th>Current Position</th>
+                            <th>Data-Driven Optimal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Primary Message</td>
+                            <td>"Full-service accounting for small businesses"</td>
+                            <td><span class="metric-positive">"Strategic financial partner for ambitious growing businesses"</span></td>
+                        </tr>
+                        <tr>
+                            <td>Target Client</td>
+                            <td>"Small business owners"</td>
+                            <td><span class="metric-positive">"Growth-oriented business leaders"</span></td>
+                        </tr>
+                        <tr>
+                            <td>Service Focus</td>
+                            <td>"Compliance and tax preparation"</td>
+                            <td><span class="metric-positive">"Strategic guidance + compliance"</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>Growth Opportunities</h2>
+                
+                <div class="segment-card">
+                    <h4>Underserved Market Segments</h4>
+                    <p><strong>Technology Startups:</strong> 11% current share vs 8% market average</p>
+                    <ul>
+                        <li>High growth potential with complex accounting needs</li>
+                        <li>Premium pricing acceptance for strategic guidance</li>
+                        <li>Referral network expansion opportunity</li>
+                    </ul>
+                </div>
+
+                <div class="segment-card">
+                    <h4>Geographic Expansion</h4>
+                    <p><strong>Northern Suburbs:</strong> 15% current penetration, 31% target demographic density</p>
+                    <ul>
+                        <li>Higher concentration of growth businesses</li>
+                        <li>Less competition from specialized firms</li>
+                        <li>Premium service market underserved</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Brand Strategy Implementation</h2>
+                
+                <h3>Visual Identity Direction</h3>
+                <ul>
+                    <li><strong>Color Palette:</strong> Navy/gold (trust/prosperity) replacing current green/gray</li>
+                    <li><strong>Typography:</strong> Modern professional upgrade from conservative approach</li>
+                    <li><strong>Photography:</strong> Real client collaboration vs. generic business imagery</li>
+                </ul>
+
+                <h3>Messaging Framework</h3>
+                <ul>
+                    <li><strong>Primary:</strong> "We partner with business owners who are serious about growth"</li>
+                    <li><strong>Supporting:</strong> "Strategic guidance, not just compliance"</li>
+                    <li><strong>Proof Points:</strong> Client growth stories and retention metrics</li>
+                </ul>
+            </div>
+
+            <div class="action-items">
+                <h4>Priority Implementation Steps</h4>
+                <ol>
+                    <li>Update brand book with premium positioning elements (High Impact, Medium Effort)</li>
+                    <li>Develop case studies highlighting client growth partnerships (Medium Impact, Low Effort)</li>
+                    <li>Create advisory service line for growth planning (High Impact, High Effort)</li>
+                    <li>Launch targeted marketing in northern suburbs (Medium Impact, Medium Effort)</li>
+                </ol>
+            </div>
+
+            <div class="brand-logo">
+                <strong>Brand Response</strong> | Market Intelligence Analysis<br>
+                Data based on 431 enhanced client records + regional benchmarks
+            </div>
+        </div>
+    </div>
+</body>
+</html>

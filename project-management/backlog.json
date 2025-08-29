@@ -1,0 +1,132 @@
+{
+  "project": "Brand Response Customer Intelligence Platform",
+  "sprint_version": "MVP v1.0",
+  "issues": [
+    {
+      "id": "BR-001",
+      "title": "Integrate Audience Acuity API for data enrichment",
+      "description": "Replace Step 4 simulation with real AA API calls. Implement authentication, error handling, and data transformation from client CSV to enriched records. Handle rate limiting and batch processing.",
+      "priority": "High",
+      "effort": "8",
+      "status": "Backlog",
+      "tags": ["api", "integration", "core-feature"]
+    },
+    {
+      "id": "BR-002", 
+      "title": "Set up Supabase database for project persistence",
+      "description": "Create database schema for projects, analyses, and reports. Implement CRUD operations for saving/loading client projects and analysis history.",
+      "priority": "High",
+      "effort": "5",
+      "status": "Backlog",
+      "tags": ["database", "persistence", "supabase"]
+    },
+    {
+      "id": "BR-003",
+      "title": "Convert AI insights to markdown format",
+      "description": "Modify AI prompts to return structured markdown instead of JSON. Update display logic to render markdown and prepare for PDF generation.",
+      "priority": "Medium",
+      "effort": "3",
+      "status": "Backlog", 
+      "tags": ["ai", "reports", "markdown"]
+    },
+    {
+      "id": "BR-004",
+      "title": "Implement PDF report generation",
+      "description": "Add PDF export functionality using markdown-to-PDF conversion. Include client branding placeholders and professional formatting.",
+      "priority": "Medium",
+      "effort": "5",
+      "status": "Backlog",
+      "tags": ["reports", "pdf", "export"]
+    },
+    {
+      "id": "BR-005",
+      "title": "Add CSV validation and error handling", 
+      "description": "Implement robust client data validation, required field checking, and clear error messages. Handle malformed data gracefully.",
+      "priority": "Medium",
+      "effort": "4",
+      "status": "Backlog",
+      "tags": ["validation", "error-handling", "ux"]
+    },
+    {
+      "id": "BR-006",
+      "title": "Deploy to Streamlit Cloud",
+      "description": "Configure deployment pipeline, environment variables for API keys, and ensure production stability. Set up monitoring and logging.",
+      "priority": "High",
+      "effort": "3",
+      "status": "Backlog",
+      "tags": ["deployment", "infrastructure", "streamlit"]
+    },
+    {
+      "id": "BR-007",
+      "title": "Create GitHub Pages landing site",
+      "description": "Build marketing landing page with app embedding, client onboarding flow, and basic Brand Response branding.",
+      "priority": "Medium",
+      "effort": "4",
+      "status": "Backlog",
+      "tags": ["marketing", "landing-page", "github-pages"]
+    },
+    {
+      "id": "BR-008",
+      "title": "Add project management interface",
+      "description": "Create UI for managing multiple client projects, viewing analysis history, and regenerating reports from saved data.",
+      "priority": "Medium",
+      "effort": "6",
+      "status": "Backlog",
+      "tags": ["ui", "project-management", "client-workflow"]
+    },
+    {
+      "id": "BR-009",
+      "title": "Implement usage tracking and billing prep",
+      "description": "Track API calls, processing time, and generate usage reports for client billing. Store metrics in database.",
+      "priority": "Low",
+      "effort": "4",
+      "status": "Backlog",
+      "tags": ["billing", "tracking", "metrics"]
+    },
+    {
+      "id": "BR-010",
+      "title": "Add client data security measures",
+      "description": "Implement data encryption at rest, secure file handling, and client data isolation. Add data retention policies.",
+      "priority": "Medium",
+      "effort": "5",
+      "status": "Backlog",
+      "tags": ["security", "compliance", "data-protection"]
+    },
+    {
+      "id": "BR-011",
+      "title": "Create variable selection review interface",
+      "description": "Allow clients to review and modify AI-selected variables before enrichment. Add cost estimates per variable.",
+      "priority": "Low",
+      "effort": "4",
+      "status": "Backlog",
+      "tags": ["ui", "client-interaction", "variable-selection"]
+    },
+    {
+      "id": "BR-012",
+      "title": "Add progress indicators for long operations",
+      "description": "Implement real-time progress bars for API calls, data processing, and report generation. Improve user experience during waits.",
+      "priority": "Low",
+      "effort": "2",
+      "status": "Backlog",
+      "tags": ["ux", "progress-indicators", "user-feedback"]
+    },
+    {
+      "id": "BR-013",
+      "title": "Implement report email delivery",
+      "description": "Add email functionality to send completed reports directly to clients. Include email templates and delivery confirmation.",
+      "priority": "Low",
+      "effort": "3",
+      "status": "Backlog",
+      "tags": ["email", "delivery", "client-communication"]
+    },
+    {
+      "id": "BR-014",
+      "title": "Add data visualization to insights",
+      "description": "Create charts and graphs for demographic breakdowns, segment analysis, and key metrics using Plotly or similar.",
+      "priority": "Low",
+      "effort": "6",
+      "status": "Backlog",
+      "tags": ["visualization", "charts", "insights"]
+    }
+  ]
+}

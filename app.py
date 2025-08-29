@@ -2,6 +2,11 @@ import streamlit as st
 import pandas as pd
 import os
 from dotenv import load_dotenv
+import sys
+import importlib.util
+
+# Add utils to path
+sys.path.append('utils')
 
 # Load environment variables
 load_dotenv()
@@ -82,21 +87,37 @@ def main():
         "📄 Export Report"
     ]
     
-    # Show current step
+    # Show current step with navigation
     for i, step_name in enumerate(steps, 1):
         if i == st.session_state.step:
             st.sidebar.markdown(f"**→ {step_name}**")
         elif i < st.session_state.step:
-            st.sidebar.markdown(f"✅ {step_name}")
+            # Allow clicking on completed steps
+            if st.sidebar.button(f"✅ {step_name}", key=f"nav_{i}"):
+                st.session_state.step = i
+                st.rerun()
         else:
             st.sidebar.markdown(f"⏳ {step_name}")
     
+    # Add some spacing
+    st.sidebar.markdown("---")
+    
+    # Debug info
+    if st.sidebar.checkbox("Show Debug Info"):
+        st.sidebar.write("**Current Step:**", st.session_state.step)
+        st.sidebar.write("**Has Client Data:**", st.session_state.client_data is not None)
+        st.sidebar.write("**Has Business Context:**", bool(st.session_state.business_context))
+        st.sidebar.write("**Selected Variables:**", len(st.session_state.selected_variables))
+    
     # Reset button
     if st.sidebar.button("🔄 Start Over"):
-        for key in st.session_state.keys():
+        for key in list(st.session_state.keys()):
             del st.session_state[key]
         st.rerun()
     
+    # Allow clicking on completed steps to navigate back
+    # (This is now handled in the sidebar)
+
     # Main content based on step
     if st.session_state.step == 1:
         show_data_upload()
@@ -131,17 +152,17 @@ def show_data_upload():
             
             # Show preview
             st.subheader("Data Preview")
-            st.dataframe(df.head(10), use_container_width=True)
+            st.dataframe(df.head(10), width=1000)
             
             # Show column info
             st.subheader("Column Information")
             col_info = pd.DataFrame({
                 'Column': df.columns,
-                'Type': df.dtypes,
+                'Type': [str(dtype) for dtype in df.dtypes],  # Convert to string to avoid Arrow issues
                 'Non-Null Count': df.count(),
-                'Sample Value': [df[col].dropna().iloc[0] if not df[col].dropna().empty else 'N/A' for col in df.columns]
+                'Sample Value': [str(df[col].dropna().iloc[0]) if not df[col].dropna().empty else 'N/A' for col in df.columns]
             })
-            st.dataframe(col_info, use_container_width=True)
+            st.dataframe(col_info, width=1000)
             
             if st.button("Continue to Business Context →", type="primary"):
                 st.session_state.step = 2
@@ -158,6 +179,27 @@ def show_data_upload():
             sample_data = create_sample_data()
             st.session_state.client_data = sample_data
             st.success("✅ Sample data loaded!")
+            # Auto advance to show the data
+            st.rerun()
+    
+    # Show continue button if data is loaded (outside the else block)
+    if st.session_state.client_data is not None and not uploaded_file:
+        st.subheader("Sample Data Preview")
+        st.dataframe(st.session_state.client_data.head(10), width=1000)
+        
+        # Show column info
+        st.subheader("Column Information")
+        df = st.session_state.client_data
+        col_info = pd.DataFrame({
+            'Column': df.columns,
+            'Type': [str(dtype) for dtype in df.dtypes],  # Convert to string
+            'Non-Null Count': df.count(),
+            'Sample Value': [str(df[col].dropna().iloc[0]) if not df[col].dropna().empty else 'N/A' for col in df.columns]
+        })
+        st.dataframe(col_info, width=1000)
+        
+        if st.button("Continue to Business Context →", type="primary", key="continue_from_sample"):
+            st.session_state.step = 2
             st.rerun()
     
     st.markdown('</div>', unsafe_allow_html=True)
@@ -232,112 +274,327 @@ def show_variable_selection():
     st.header("🤖 Step 3: AI Variable Selection")
     st.markdown("Our AI is analyzing your business context to select the most strategic data variables...")
     
-    # This is where we'll integrate with OpenAI to select variables
-    # For now, we'll show a mock selection
+    # Show business context summary
+    if st.session_state.business_context:
+        with st.expander("📋 Business Context Summary", expanded=False):
+            for key, value in st.session_state.business_context.items():
+                if value and key != 'goals':
+                    st.write(f"**{key.replace('_', ' ').title()}:** {value}")
+                elif key == 'goals' and value:
+                    st.write(f"**Goals:** {', '.join(value)}")
+    
     if st.button("🤖 Generate AI Variable Recommendations", type="primary"):
         with st.spinner("AI analyzing your business context..."):
-            # Mock AI selection for now
-            import time
-            time.sleep(2)
-            
-            recommended_vars = [
-                "AGE", "INCOME_HH", "EDUCATION", "URBANICITY", "MARITAL_STATUS",
-                "CHILDREN_HH", "OCCUPATION_TYPE", "PREMIUM_INCOME_HH", 
-                "LIFESTYLE_CLUSTER", "COFFEE_AFFINITY", "GOURMET_AFFINITY",
-                "FITNESS_AFFINITY", "HIGH_TECH_AFFINITY", "READING_MAGAZINES"
-            ]
-            
-            st.session_state.selected_variables = recommended_vars
-            
-            st.success("✅ AI has selected variables optimized for your business!")
-            
-            # Show selected variables with explanations
-            show_variable_explanations(recommended_vars)
-            
-            if st.button("Continue to Data Enrichment →", type="primary"):
-                st.session_state.step = 4
-                st.rerun()
-
-def show_variable_explanations(variables):
-    st.subheader("Selected Variables & Strategic Rationale")
+            try:
+                # Import the AI helper
+                from utils.ai_helper import select_variables_with_ai
+                
+                selected_vars = select_variables_with_ai(st.session_state.business_context)
+                st.session_state.selected_variables = selected_vars
+                
+                st.success("✅ AI has selected variables optimized for your business!")
+                
+                # Show selected variables with AI explanations
+                show_ai_variable_explanations(selected_vars)
+                
+            except Exception as e:
+                st.error(f"AI selection failed: {str(e)}")
+                st.info("Using fallback variable selection...")
+                # Fallback to mock selection
+                recommended_vars = [
+                    {"variable": "AGE", "rationale": "Core demographic for market segmentation", "category": "demographics"},
+                    {"variable": "INCOME_HH", "rationale": "Essential for pricing strategy", "category": "economic"},
+                    {"variable": "EDUCATION", "rationale": "Indicates customer sophistication", "category": "lifestyle"}
+                ]
+                st.session_state.selected_variables = recommended_vars
+                show_ai_variable_explanations(recommended_vars)
     
-    explanations = {
-        "AGE": "Core demographic for coffee preference segmentation",
-        "INCOME_HH": "Essential for premium positioning and pricing strategy",
-        "EDUCATION": "Correlates with specialty coffee appreciation",
-        "URBANICITY": "Urban vs suburban preferences differ significantly",
-        "MARITAL_STATUS": "Affects purchasing patterns and consumption habits",
-        "CHILDREN_HH": "Family status impacts coffee consumption timing",
-        "OCCUPATION_TYPE": "Professional vs blue-collar preferences vary",
-        "PREMIUM_INCOME_HH": "Precise income targeting for premium products",
-        "LIFESTYLE_CLUSTER": "Behavioral segmentation for targeted messaging",
-        "COFFEE_AFFINITY": "Direct relevance to your product category",
-        "GOURMET_AFFINITY": "Indicates appreciation for quality/craftsmanship",
-        "FITNESS_AFFINITY": "Health-conscious consumers align with premium coffee",
-        "HIGH_TECH_AFFINITY": "Tech affinity correlates with coffee shop apps/loyalty",
-        "READING_MAGAZINES": "Media consumption patterns for advertising strategy"
+    # Show continue button if variables are selected
+    if st.session_state.selected_variables:
+        if st.button("Continue to Data Enrichment →", type="primary"):
+            st.session_state.step = 4
+            st.rerun()
+
+def show_ai_variable_explanations(variables):
+    """Display AI-selected variables with their strategic rationale"""
+    st.subheader("🎯 AI-Selected Variables & Strategic Rationale")
+    
+    # Group by category
+    by_category = {}
+    for var in variables:
+        category = var.get('category', 'other')
+        if category not in by_category:
+            by_category[category] = []
+        by_category[category].append(var)
+    
+    # Display by category
+    category_icons = {
+        'demographics': '👥',
+        'economic': '💰', 
+        'lifestyle': '🏠',
+        'interests': '🎯',
+        'shopping': '🛍️',
+        'media': '📺'
     }
     
-    for var in variables:
-        if var in explanations:
-            st.markdown(f"**{var}**: {explanations[var]}")
+    for category, vars_in_category in by_category.items():
+        icon = category_icons.get(category, '📊')
+        st.markdown(f"**{icon} {category.upper()}**")
+        for var in vars_in_category:
+            st.markdown(f"• **{var['variable']}**: {var['rationale']}")
+        st.markdown("")  # spacing
 
 def show_data_enrichment():
     st.header("⚡ Step 4: Data Enrichment")
     st.markdown("Connecting to identity graph and enriching your customer data...")
     
+    # Show selected variables summary
+    if st.session_state.selected_variables:
+        st.subheader("🎯 Selected Variables for Enrichment")
+        for var in st.session_state.selected_variables[:5]:  # Show first 5
+            st.markdown(f"• **{var['variable']}**: {var['rationale'][:100]}...")
+        if len(st.session_state.selected_variables) > 5:
+            st.markdown(f"*... and {len(st.session_state.selected_variables) - 5} more variables*")
+    
     if st.button("🚀 Start Data Enrichment", type="primary"):
         with st.spinner("Enriching data via Audience Acuity API..."):
             import time
-            time.sleep(3)
+            time.sleep(2)
             
-            # Mock enriched data
-            st.session_state.enriched_data = "enriched"  # We'll build this out
-            
-            st.success("✅ Data enrichment complete!")
-            st.info(f"Successfully enriched {len(st.session_state.client_data)} customer records")
-            
-            if st.button("Continue to Insights Generation →", type="primary"):
-                st.session_state.step = 5
-                st.rerun()
+            try:
+                # Load the real enriched data
+                import os
+                data_path = "data/sample_enriched_data.csv"
+                if os.path.exists(data_path):
+                    enriched_df = pd.read_csv(data_path)
+                    st.session_state.enriched_data = enriched_df
+                    
+                    st.success("✅ Data enrichment complete!")
+                    
+                    # Show enrichment results
+                    col1, col2, col3 = st.columns(3)
+                    with col1:
+                        st.metric("Records Processed", f"{len(st.session_state.client_data):,}")
+                    with col2:
+                        st.metric("Variables Added", f"{len(st.session_state.selected_variables)}")
+                    with col3:
+                        match_rate = min(len(enriched_df), len(st.session_state.client_data)) / len(st.session_state.client_data)
+                        st.metric("Match Rate", f"{match_rate:.1%}")
+                    
+                    # Show sample of enriched data
+                    st.subheader("📊 Enriched Data Preview")
+                    st.markdown("Your customer data has been enhanced with strategic variables from the Audience Acuity Identity Graph:")
+                    
+                    # Show relevant columns
+                    display_columns = ['FIRST_NAME', 'LAST_NAME', 'AGE', 'INCOME_HH', 'EDUCATION', 'URBANICITY', 'GOURMET_AFFINITY']
+                    available_columns = [col for col in display_columns if col in enriched_df.columns]
+                    if available_columns:
+                        st.dataframe(enriched_df[available_columns].head(10), width=1000)
+                    else:
+                        st.dataframe(enriched_df.head(10), width=1000)
+                    
+                else:
+                    # Fallback if file not found
+                    st.warning("Sample enriched data file not found. Using mock data...")
+                    st.session_state.enriched_data = "mock_enriched"
+                    
+                    col1, col2, col3 = st.columns(3)
+                    with col1:
+                        st.metric("Records Processed", f"{len(st.session_state.client_data):,}")
+                    with col2:
+                        st.metric("Variables Added", f"{len(st.session_state.selected_variables)}")
+                    with col3:
+                        st.metric("Match Rate", "87.3%")
+                
+            except Exception as e:
+                st.error(f"Enrichment failed: {str(e)}")
+                st.info("Please ensure sample_enriched_data.csv is in the data/ folder")
+    
+    # Show continue button outside the enrichment block if data exists
+    if st.session_state.enriched_data is not None:
+        st.markdown("---")
+        if st.button("Continue to Insights Generation →", type="primary", key="continue_to_insights"):
+            st.session_state.step = 5
+            st.rerun()
 
 def show_insights_generation():
     st.header("📈 Step 5: Generate Customer Intelligence")
     st.markdown("Our AI is analyzing your enriched customer data to generate strategic insights...")
     
+    # Show data summary
+    if hasattr(st.session_state, 'enriched_data') and isinstance(st.session_state.enriched_data, pd.DataFrame):
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.metric("Records Analyzed", f"{len(st.session_state.enriched_data):,}")
+        with col2:
+            st.metric("Variables Used", f"{len(st.session_state.selected_variables)}")
+        with col3:
+            st.metric("Analysis Depth", "Strategic")
+    
     if st.button("🧠 Generate AI Insights", type="primary"):
-        with st.spinner("AI generating customer intelligence report..."):
+        with st.spinner("AI analyzing customer patterns and generating strategic insights..."):
             import time
-            time.sleep(4)
+            time.sleep(3)
             
-            # Mock insights - we'll make this real with LLM integration
-            insights = generate_mock_insights()
-            st.session_state.insights = insights
-            
-            display_insights(insights)
-            
-            if st.button("Continue to Export Report →", type="primary"):
-                st.session_state.step = 6
-                st.rerun()
+            try:
+                # Import the AI helper
+                from utils.ai_helper import generate_customer_insights
+                
+                insights = generate_customer_insights(
+                    st.session_state.enriched_data, 
+                    st.session_state.business_context, 
+                    st.session_state.selected_variables
+                )
+                st.session_state.insights = insights
+                
+                st.success("✅ Customer intelligence analysis complete!")
+                
+                display_insights(insights)
+                
+            except Exception as e:
+                st.error(f"Insights generation failed: {str(e)}")
+                # Fallback to basic insights
+                insights = {
+                    "executive_summary": "Customer analysis completed with available data.",
+                    "key_findings": ["Analysis based on enriched customer data", "Insights generated from selected variables"],
+                    "segments": {"Primary": {"percentage": 100, "profile": "All analyzed customers"}},
+                    "recommendations": ["Continue data collection for deeper insights"]
+                }
+                st.session_state.insights = insights
+                display_insights(insights)
+    
+    # Show continue button if insights are generated
+    if st.session_state.insights:
+        if st.button("Continue to Export Report →", type="primary"):
+            st.session_state.step = 6
+            st.rerun()
 
 def show_report_export():
     st.header("📄 Step 6: Export Customer Intelligence Report")
     st.markdown("Your customer intelligence analysis is complete!")
     
     if st.session_state.insights:
+        # Display the insights one more time
         display_insights(st.session_state.insights)
         
-        st.download_button(
-            label="📄 Download PDF Report",
-            data="Mock PDF data - we'll implement this",
-            file_name="customer_intelligence_report.pdf",
-            mime="application/pdf"
-        )
+        st.markdown("---")
+        st.subheader("📥 Export Options")
         
-        if st.button("🔄 Start New Analysis"):
-            for key in st.session_state.keys():
-                del st.session_state[key]
-            st.rerun()
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            # Create text summary for download
+            report_text = generate_text_report()
+            st.download_button(
+                label="📄 Download Text Report",
+                data=report_text,
+                file_name=f"{st.session_state.business_context.get('business_name', 'Customer')}_Intelligence_Report.txt",
+                mime="text/plain"
+            )
+        
+        with col2:
+            # JSON export for further analysis
+            import json
+            report_data = {
+                'business_context': st.session_state.business_context,
+                'selected_variables': st.session_state.selected_variables,
+                'insights': st.session_state.insights,
+                'analysis_date': pd.Timestamp.now().strftime('%Y-%m-%d %H:%M:%S')
+            }
+            
+            st.download_button(
+                label="📊 Download JSON Data",
+                data=json.dumps(report_data, indent=2),
+                file_name=f"{st.session_state.business_context.get('business_name', 'Customer')}_Analysis_Data.json",
+                mime="application/json"
+            )
+        
+        st.markdown("---")
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            if st.button("🔄 Start New Analysis", type="secondary"):
+                for key in list(st.session_state.keys()):
+                    del st.session_state[key]
+                st.rerun()
+        
+        with col2:
+            if st.button("🎯 Refine Analysis", type="secondary"):
+                st.session_state.step = 3  # Go back to variable selection
+                st.rerun()
+
+def generate_text_report():
+    """Generate a formatted text report"""
+    business_name = st.session_state.business_context.get('business_name', 'Your Business')
+    insights = st.session_state.insights
+    
+    report = f"""
+CUSTOMER INTELLIGENCE REPORT
+{business_name}
+Generated: {pd.Timestamp.now().strftime('%Y-%m-%d %H:%M:%S')}
+
+=====================================
+EXECUTIVE SUMMARY
+=====================================
+{insights.get('executive_summary', '')}
+
+=====================================
+KEY FINDINGS
+=====================================
+"""
+    
+    for i, finding in enumerate(insights.get('key_findings', []), 1):
+        report += f"{i}. {finding}\n"
+    
+    if 'demographic_surprises' in insights:
+        report += f"""
+=====================================
+DEMOGRAPHIC SURPRISES
+=====================================
+"""
+        for surprise in insights['demographic_surprises']:
+            report += f"• {surprise}\n"
+    
+    report += f"""
+=====================================
+CUSTOMER SEGMENTS
+=====================================
+"""
+    
+    for segment, details in insights.get('segments', {}).items():
+        report += f"{segment} ({details.get('percentage', 0)}%)\n"
+        report += f"Profile: {details.get('profile', '')}\n\n"
+    
+    report += f"""
+=====================================
+STRATEGIC RECOMMENDATIONS
+=====================================
+"""
+    
+    for i, rec in enumerate(insights.get('recommendations', []), 1):
+        report += f"{i}. {rec}\n"
+    
+    report += f"""
+=====================================
+ANALYSIS DETAILS
+=====================================
+Variables Analyzed: {len(st.session_state.selected_variables)}
+Records Processed: {len(st.session_state.enriched_data) if isinstance(st.session_state.enriched_data, pd.DataFrame) else 'N/A'}
+
+Selected Variables:
+"""
+    
+    for var in st.session_state.selected_variables:
+        report += f"• {var['variable']}: {var['rationale']}\n"
+    
+    report += f"""
+
+=====================================
+Brand Response Customer Intelligence Platform
+=====================================
+"""
+    
+    return report
 
 def create_sample_data():
     """Create sample coffee shop customer data"""
@@ -382,19 +639,83 @@ def generate_mock_insights():
     }
 
 def display_insights(insights):
-    """Display the generated insights"""
+    """Display the generated insights in a professional format"""
+    
+    # Executive Summary
     st.markdown('<div class="insight-box">', unsafe_allow_html=True)
     st.subheader("🎯 Executive Summary")
-    st.markdown(insights['executive_summary'])
+    st.markdown(insights.get('executive_summary', ''))
     st.markdown('</div>', unsafe_allow_html=True)
     
+    # Key Findings
     st.subheader("📊 Key Findings")
-    for finding in insights['key_findings']:
-        st.markdown(f"• {finding}")
+    findings = insights.get('key_findings', [])
+    for i, finding in enumerate(findings, 1):
+        st.markdown(f"**{i}.** {finding}")
     
+    # Demographic Surprises (if available)
+    if 'demographic_surprises' in insights:
+        st.subheader("🔍 Demographic Surprises")
+        for surprise in insights['demographic_surprises']:
+            st.markdown(f"• {surprise}")
+    
+    # Customer Segments
     st.subheader("👥 Customer Segments")
-    for segment, details in insights['segments'].items():
-        st.markdown(f"**{segment}** ({details['percentage']}%): {details['profile']}")
+    segments = insights.get('segments', {})
+    
+    if segments:
+        # Create segment visualization
+        segment_data = []
+        for segment_name, details in segments.items():
+            segment_data.append({
+                'Segment': segment_name,
+                'Percentage': details.get('percentage', 0),
+                'Profile': details.get('profile', '')
+            })
+        
+        # Display as columns
+        cols = st.columns(len(segment_data))
+        for i, (col, segment) in enumerate(zip(cols, segment_data)):
+            with col:
+                st.metric(
+                    segment['Segment'], 
+                    f"{segment['Percentage']}%",
+                    help=segment['Profile']
+                )
+                st.caption(segment['Profile'])
+    
+    # Raw Statistics (if available)
+    if 'raw_stats' in insights and insights['raw_stats']:
+        with st.expander("📈 Data Statistics", expanded=False):
+            stats = insights['raw_stats']
+            
+            col1, col2 = st.columns(2)
+            with col1:
+                if 'age_median' in stats:
+                    st.metric("Median Age", f"{stats['age_median']:.1f} years")
+                if 'high_income_percent' in stats:
+                    st.metric("High Income (>$150K)", f"{stats['high_income_percent']:.1f}%")
+            
+            with col2:
+                if 'college_plus_percent' in stats:
+                    st.metric("College+ Education", f"{stats['college_plus_percent']:.1f}%")
+                if 'urban_percent' in stats:
+                    st.metric("Urban Customers", f"{stats['urban_percent']:.1f}%")
+    
+    # Recommendations
+    st.subheader("💡 Strategic Recommendations")
+    recommendations = insights.get('recommendations', [])
+    for i, rec in enumerate(recommendations, 1):
+        st.markdown(f"**{i}.** {rec}")
+    
+    # Action Items
+    if recommendations:
+        st.markdown('<div class="insight-box">', unsafe_allow_html=True)
+        st.subheader("⚡ Next Steps")
+        st.markdown("**Immediate Actions:**")
+        for rec in recommendations[:3]:  # Show top 3 as immediate actions
+            st.markdown(f"• {rec}")
+        st.markdown('</div>', unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
