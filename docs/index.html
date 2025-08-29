@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brand Response | Customer Intelligence Platform</title>
-    <meta name="description" content="Transform your brand strategy with data-driven customer intelligence. The only SMB consultancy with integrated customer analytics.">
+    <meta name="description" content="Transform SMB brand strategy with data-driven customer intelligence. The only SMB consultancy with integrated customer analytics.">
     <style>
         * {
             margin: 0;
@@ -352,9 +352,9 @@
         <nav class="nav container">
             <div class="logo">Brand Response</div>
             <ul class="nav-links" id="navLinks">
+                <li><a href="#vision" onclick="showTab('vision')">Vision</a></li>
                 <li><a href="#demo" onclick="showTab('demo')">Demo</a></li>
                 <li><a href="#how-it-works" onclick="showTab('how-it-works')">How It Works</a></li>
-                <li><a href="#vision" onclick="showTab('vision')">Vision</a></li>
             </ul>
             <button class="nav-toggle" onclick="toggleNav()">☰</button>
         </nav>
@@ -366,22 +366,22 @@
             <h1>Customer Intelligence for Small Business Brands</h1>
             <p class="subtitle">Transform assumptions into insights. Turn demographic data into strategic brand decisions. The only SMB consultancy with integrated customer analytics.</p>
             <p class="tagline">Enterprise-level insights at small business scale</p>
-            <a href="#demo" class="cta-button" onclick="showTab('demo')">See Live Demo</a>
+            <a href="#demo" class="cta-button" onclick="showTab('demo')">See Prototype</a>
         </div>
     </section>
 
     <!-- Tab Navigation -->
     <div class="tabs">
         <ul class="tab-nav">
-            <li><button onclick="showTab('demo')" class="tab-button active">Live Demo</button></li>
-            <li><button onclick="showTab('how-it-works')" class="tab-button">How It Works</button></li>
             <li><button onclick="showTab('vision')" class="tab-button">Vision</button></li>
+            <li><button onclick="showTab('demo')" class="tab-button active">App Prototype</button></li>
+            <li><button onclick="showTab('how-it-works')" class="tab-button">How It Works</button></li>
         </ul>
     </div>
 
     <!-- Tab Content -->
     <main class="container">
-        <!-- Demo Tab -->
+        <!-- Demo Tab 
         <div id="demo" class="tab-content active">
             <iframe 
                 src="https://brandresponse.streamlit.app" 
@@ -389,37 +389,54 @@
                 title="Brand Response Customer Intelligence Platform Demo">
             </iframe>
             <p style="text-align: center; margin-top: 1rem; color: #6B7280;">
-                Interactive demo - Upload sample data and see AI-powered insights in action
+                Interactive prototype/demo - Upload sample data and see the concept in action
             </p>
+        </div> -->
+
+        <!-- Demo Tab -->
+        <div id="demo" class="tab-content active" style="text-align: center; padding: 4rem 0;">
+            <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: #1F2937;">
+                See Prototype
+            </h2>
+            <p style="font-size: 1.2rem; color: #6B7280; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Open the interactive demo in a new tab, upload sample data, and see the concept in action.
+            </p>
+            <a href="https://brandresponse.streamlit.app" 
+            target="_blank" 
+            class="cta-button" 
+            style="font-size: 1.25rem; padding: 1.25rem 2.5rem;">
+                Launch Prototype
+            </a>
         </div>
+
 
         <!-- How It Works Tab -->
         <div id="how-it-works" class="tab-content">
             <div style="text-align: center; margin-bottom: 3rem;">
                 <h2 style="font-size: 2.5rem; color: #1F2937; margin-bottom: 1rem;">From Customer Data to Strategic Insights</h2>
-                <p style="font-size: 1.2rem; color: #6B7280; max-width: 600px; margin: 0 auto;">Our AI analyzes your customer data to reveal gaps between brand assumptions and reality</p>
+                <p style="font-size: 1.2rem; color: #6B7280; max-width: 600px; margin: 0 auto;">We include customer data analysis to reveal gaps between brand assumptions and reality</p>
             </div>
 
             <div class="process-grid">
                 <div class="process-step">
                     <div class="step-number">1</div>
                     <h3>Upload Customer Data</h3>
-                    <p>Import your CRM data, email lists, or customer database. We handle names, emails, addresses, and basic demographic information.</p>
+                    <p>Import CRM data, email lists, or customer database. We handle names, emails, addresses, and basic demographic information.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">2</div>
                     <h3>Business Context Analysis</h3>
-                    <p>AI analyzes your brand positioning, target assumptions, and business goals to select the most strategic data variables.</p>
+                    <p>We use AI to analyze brand positioning, target assumptions, and business goals to help us select the most strategically relevant data to append.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">3</div>
                     <h3>Data Enrichment</h3>
-                    <p>We enhance your customer records with 200+ demographic, psychographic, and behavioral variables from our identity graph.</p>
+                    <p>We enhance the customer records from among 200+ demographic, psychographic, and behavioral variables available in our enterprise-grade identity graph.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">4</div>
                     <h3>Strategic Insights</h3>
-                    <p>AI generates actionable recommendations comparing your assumptions to reality, identifying repositioning opportunities.</p>
+                    <p>We generate actionable and easy to understand recommendations comparing assumptions to reality, identifying repositioning opportunities.</p>
                 </div>
             </div>
         </div>
@@ -462,11 +479,11 @@
             <div class="value-grid">
                 <div class="value-item">
                     <h3>Data-Driven Strategy</h3>
-                    <p>Every recommendation backed by analysis of your actual customer demographics, behaviors, and preferences.</p>
+                    <p>Every recommendation backed by analysis of actual customer demographics, behaviors, and preferences.</p>
                 </div>
                 <div class="value-item">
                     <h3>AI-Powered Insights</h3>
-                    <p>Advanced AI analyzes patterns in your customer data to identify strategic opportunities and positioning gaps.</p>
+                    <p>We use AI to analyze patterns in the customer data and identify strategic opportunities and positioning gaps while keeping our costs down.</p>
                 </div>
                 <div class="value-item">
                     <h3>SMB Focused</h3>
