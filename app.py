@@ -314,7 +314,7 @@ def show_variable_selection():
 
 def show_ai_variable_explanations(variables):
     """Display AI-selected variables with their strategic rationale"""
-    st.subheader("🎯 AI-Selected Variables & Strategic Rationale")
+    st.subheader("Recommended Variables & Strategic Rationale")
     
     # Group by category
     by_category = {}
