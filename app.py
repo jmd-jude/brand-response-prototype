@@ -4,6 +4,7 @@ import os
 from dotenv import load_dotenv
 import sys
 import importlib.util
+from utils.ai_helper import select_variables_with_ai, generate_customer_insights
 
 # Add utils to path
 sys.path.append('utils')
@@ -127,12 +128,11 @@ def main():
     elif st.session_state.step == 4:
         show_data_enrichment()
     elif st.session_state.step == 5:
-        show_insights_generation()
+        show_generate_insights()
     elif st.session_state.step == 6:
         show_report_export()
 
 def show_data_upload():
-    st.markdown('<div class="step-container">', unsafe_allow_html=True)
     st.header("Step 1: Upload Client Data")
     st.markdown("Upload your client's customer data (CSV format). We'll use this as the foundation for our analysis.")
     
@@ -204,9 +204,9 @@ def show_data_upload():
     st.markdown('</div>', unsafe_allow_html=True)
 
 def show_business_context():
-    st.markdown('<div class="step-container">', unsafe_allow_html=True)
     st.header("🏢 Step 2: Business Context")
     st.markdown("Tell us about the business so we can select the most relevant data variables for analysis.")
+
     
     with st.form("business_context_form"):
         col1, col2 = st.columns(2)
@@ -264,8 +264,6 @@ def show_business_context():
             }
             st.session_state.step = 3
             st.rerun()
-    
-    st.markdown('</div>', unsafe_allow_html=True)
 
 def show_variable_selection():
     st.header("🤖 Step 3: Data Enhancement Selection")
@@ -313,45 +311,85 @@ def show_variable_selection():
             st.rerun()
 
 def show_ai_variable_explanations(variables):
-    """Display AI-selected variables with their strategic rationale"""
-    st.subheader("Recommended Variables & Strategic Rationale")
+    """Display AI-selected variables with their strategic rationale in professional table format"""
+    st.subheader("Suggested Variables & Strategic Rationale")
     
-    # Group by category
-    by_category = {}
+    if not variables:
+        st.warning("No variables were selected.")
+        return
+    
+    # Create markdown table
+    table_header = "| Variable | Category | Strategic Rationale |\n|----------|----------|--------------------|\n"
+    table_rows = ""
+    
     for var in variables:
-        category = var.get('category', 'other')
-        if category not in by_category:
-            by_category[category] = []
-        by_category[category].append(var)
+        variable_name = var.get('variable', 'Unknown')
+        category = var.get('category', 'other').title()
+        rationale = var.get('rationale', 'No rationale provided')
+        
+        # Clean up rationale for table display (remove any markdown formatting that might break table)
+        rationale = rationale.replace('|', '&#124;').replace('\n', ' ')
+        
+        table_rows += f"| **{variable_name}** | {category} | {rationale} |\n"
     
-    # Display by category
-    category_icons = {
-        'demographics': '👥',
-        'economic': '💰', 
-        'lifestyle': '🏠',
-        'interests': '🎯',
-        'shopping': '🛍️',
-        'media': '📺'
-    }
+    # Display the markdown table
+    st.markdown(table_header + table_rows)
     
-    for category, vars_in_category in by_category.items():
-        icon = category_icons.get(category, '📊')
-        st.markdown(f"**{icon} {category.upper()}**")
-        for var in vars_in_category:
-            st.markdown(f"• **{var['variable']}**: {var['rationale']}")
-        st.markdown("")  # spacing
+    # Add summary stats
+    col1, col2, col3 = st.columns(3)
+    
+    # Count by category
+    category_counts = {}
+    for var in variables:
+        cat = var.get('category', 'other').title()
+        category_counts[cat] = category_counts.get(cat, 0) + 1
+    
+    with col1:
+        st.metric("Total Variables", len(variables))
+    
+    with col2:
+        if category_counts:
+            top_category = max(category_counts.items(), key=lambda x: x[1])
+            st.metric("Primary Focus", f"{top_category[0]} ({top_category[1]})")
+    
+    with col3:
+        st.metric("Categories", len(category_counts))
+    
+    # Optional: Show category breakdown in expander
+    with st.expander("📊 View Category Breakdown"):
+        for category, count in sorted(category_counts.items()):
+            st.write(f"**{category}:** {count} variable{'s' if count != 1 else ''}")
+            # Show variables in this category
+            cat_vars = [var['variable'] for var in variables if var.get('category', '').title() == category]
+            st.caption(", ".join(cat_vars))
 
 def show_data_enrichment():
     st.header("⚡ Step 4: Data Enrichment")
     st.markdown("Connecting to identity graph and enriching your customer data...")
     
-    # Show selected variables summary
+    # Show selected variables in the same nice table format as Step 3
     if st.session_state.selected_variables:
         st.subheader("🎯 Selected Variables for Enrichment")
-        for var in st.session_state.selected_variables[:5]:  # Show first 5
-            st.markdown(f"• **{var['variable']}**: {var['rationale'][:100]}...")
-        if len(st.session_state.selected_variables) > 5:
-            st.markdown(f"*... and {len(st.session_state.selected_variables) - 5} more variables*")
+        
+        # Create markdown table using the same format as Step 3
+        table_header = "| Variable | Category | Strategic Rationale |\n|----------|----------|--------------------|\n"
+        table_rows = ""
+        
+        for var in st.session_state.selected_variables:
+            variable_name = var.get('variable', 'Unknown')
+            category = var.get('category', 'other').title()
+            rationale = var.get('rationale', 'No rationale provided')
+            
+            # Clean up rationale for table display
+            rationale = rationale.replace('|', '&#124;').replace('\n', ' ')
+            
+            table_rows += f"| **{variable_name}** | {category} | {rationale} |\n"
+        
+        # Display the markdown table
+        st.markdown(table_header + table_rows)
+        
+        # Add summary metric
+        st.caption(f"Ready to enrich {len(st.session_state.client_data):,} customer records with {len(st.session_state.selected_variables)} strategic variables")
     
     if st.button("🚀 Start Data Enrichment", type="primary"):
         with st.spinner("Enriching data via Brand Response graph..."):
@@ -414,54 +452,94 @@ def show_data_enrichment():
             st.session_state.step = 5
             st.rerun()
 
-def show_insights_generation():
-    st.header("📈 Step 5: Generate Customer Intelligence")
-    st.markdown("Analyzing enriched customer data to generate strategic insights...")
+def show_generate_insights():
+    st.header("📈 Step 5: Generate Strategic Insights")
     
-    # Show data summary
-    if hasattr(st.session_state, 'enriched_data') and isinstance(st.session_state.enriched_data, pd.DataFrame):
-        col1, col2, col3 = st.columns(3)
-        with col1:
-            st.metric("Records Analyzed", f"{len(st.session_state.enriched_data):,}")
-        with col2:
-            st.metric("Variables Used", f"{len(st.session_state.selected_variables)}")
-        with col3:
-            st.metric("Analysis Depth", "Strategic")
+    # Check if we have the required data
+    if st.session_state.enriched_data is None or not st.session_state.selected_variables:
+        st.warning("Please complete previous steps first.")
+        return
     
-    if st.button("🧠 Generate Insights", type="primary"):
-        with st.spinner("Analyzing patterns and generating strategic insights..."):
-            import time
-            time.sleep(3)
-            
+    st.markdown("Analyzing your customer data to generate actionable brand strategy insights...")
+    
+    # Generate insights button
+    if st.button("Generate Customer Intelligence Report", type="primary"):
+        with st.spinner("AI is analyzing your customer data and generating strategic insights..."):
             try:
-                # Import the AI helper
+                # Import the function
                 from utils.ai_helper import generate_customer_insights
                 
                 insights = generate_customer_insights(
                     st.session_state.enriched_data, 
-                    st.session_state.business_context, 
+                    st.session_state.business_context,
                     st.session_state.selected_variables
                 )
+                
                 st.session_state.insights = insights
-                
-                st.success("✅ Customer intelligence analysis complete!")
-                
-                display_insights(insights)
                 
             except Exception as e:
-                st.error(f"Insights generation failed: {str(e)}")
-                # Fallback to basic insights
-                insights = {
-                    "executive_summary": "Customer analysis completed with available data.",
-                    "key_findings": ["Analysis based on enriched customer data", "Insights generated from selected variables"],
-                    "segments": {"Primary": {"percentage": 100, "profile": "All analyzed customers"}},
-                    "recommendations": ["Continue data collection for deeper insights"]
+                st.error(f"Error generating insights: {str(e)}")
+                # Fallback insights for demo
+                st.session_state.insights = {
+                    'insights_text': "**Demo Insights**: Your customer base shows interesting patterns that differ from typical assumptions. Consider adjusting your brand positioning based on the enriched data analysis.",
+                    'variables_analyzed': len(st.session_state.selected_variables),
+                    'records_analyzed': len(st.session_state.enriched_data)
                 }
-                st.session_state.insights = insights
-                display_insights(insights)
     
-    # Show continue button if insights are generated
-    if st.session_state.insights:
+    # Display insights if available
+    if st.session_state.insights and 'insights_text' in st.session_state.insights:
+        st.success("Strategic insights generated successfully!")
+        
+        # Show analysis summary
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.metric("Records Analyzed", st.session_state.insights.get('records_analyzed', 0))
+        with col2:
+            st.metric("Variables Analyzed", st.session_state.insights.get('variables_analyzed', 0))
+        with col3:
+            st.metric("Report Status", "Complete ✓")
+        
+        st.markdown("---")
+        
+        # Display the insights in a professional format
+        insights_container = st.container()
+        with insights_container:
+            # Add custom CSS for professional report styling
+            st.markdown("""
+            <style>
+            .insights-report {
+                background: white;
+                padding: 2rem;
+                border-radius: 8px;
+                border: 1px solid #e1e5e9;
+                margin: 1rem 0;
+            }
+            .insights-report h1 {
+                color: #1f2937;
+                border-bottom: 2px solid #4f46e5;
+                padding-bottom: 0.5rem;
+            }
+            .insights-report h2 {
+                color: #374151;
+                margin-top: 1.5rem;
+            }
+            .insights-report table {
+                margin: 1rem 0;
+            }
+            </style>
+            """, unsafe_allow_html=True)
+            
+            # Display the insights with proper markdown rendering
+            st.markdown('<div class="insights-report">', unsafe_allow_html=True)
+            st.markdown(st.session_state.insights['insights_text'])
+            st.markdown('</div>', unsafe_allow_html=True)
+            
+            # Add Brand Response branding
+            st.markdown("---")
+            st.markdown("**Brand Response** | Customer Intelligence Analysis")
+            st.caption(f"Report generated from {st.session_state.insights.get('records_analyzed', 0)} customer records using {st.session_state.insights.get('variables_analyzed', 0)} strategic variables")
+        
+        # Continue button
         if st.button("Continue to Export Report →", type="primary"):
             st.session_state.step = 6
             st.rerun()
@@ -470,10 +548,57 @@ def show_report_export():
     st.header("📄 Step 6: Export Customer Intelligence Report")
     st.markdown("Your customer intelligence analysis is complete!")
     
-    if st.session_state.insights:
-        # Display the insights one more time
-        display_insights(st.session_state.insights)
+    if st.session_state.insights and 'insights_text' in st.session_state.insights:
+        # Display the insights directly using the markdown text
+        st.markdown("---")
         
+        # Show analysis summary metrics first
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.metric("Records Analyzed", st.session_state.insights.get('records_analyzed', 0))
+        with col2:
+            st.metric("Variables Analyzed", st.session_state.insights.get('variables_analyzed', 0))
+        with col3:
+            st.metric("Report Status", "Complete ✓")
+        
+        st.markdown("---")
+        
+        # Add professional styling
+        st.markdown("""
+        <style>
+        .insights-report {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #e1e5e9;
+            margin: 1rem 0;
+        }
+        .insights-report h1 {
+            color: #1f2937;
+            border-bottom: 2px solid #4f46e5;
+            padding-bottom: 0.5rem;
+        }
+        .insights-report h2 {
+            color: #374151;
+            margin-top: 1.5rem;
+        }
+        .insights-report table {
+            margin: 1rem 0;
+        }
+        </style>
+        """, unsafe_allow_html=True)
+        
+        # Display the actual insights
+        st.markdown('<div class="insights-report">', unsafe_allow_html=True)
+        st.markdown(st.session_state.insights['insights_text'])
+        st.markdown('</div>', unsafe_allow_html=True)
+        
+        # Add Brand Response branding
+        st.markdown("---")
+        st.markdown("**Brand Response** | Customer Intelligence Analysis")
+        st.caption(f"Report generated from {st.session_state.insights.get('records_analyzed', 0)} customer records using {st.session_state.insights.get('variables_analyzed', 0)} strategic variables")
+        
+        # Export Options
         st.markdown("---")
         st.subheader("📥 Export Options")
         
@@ -506,6 +631,7 @@ def show_report_export():
                 mime="application/json"
             )
         
+        # Action buttons
         st.markdown("---")
         col1, col2 = st.columns(2)
         
@@ -519,59 +645,33 @@ def show_report_export():
             if st.button("🎯 Refine Analysis", type="secondary"):
                 st.session_state.step = 3  # Go back to variable selection
                 st.rerun()
+    
+    else:
+        st.warning("No insights available. Please complete the analysis first.")
+        if st.button("← Back to Generate Insights"):
+            st.session_state.step = 5
+            st.rerun()
 
 def generate_text_report():
-    """Generate a formatted text report"""
+    """Generate a formatted text report from actual insights data"""
     business_name = st.session_state.business_context.get('business_name', 'Your Business')
     insights = st.session_state.insights
     
-    report = f"""
-CUSTOMER INTELLIGENCE REPORT
+    # Get the actual insights text (which is already formatted)
+    insights_text = insights.get('insights_text', 'No insights available')
+    
+    # Convert markdown to plain text for the text report
+    import re
+    plain_text = re.sub(r'[#*_`]', '', insights_text)  # Remove markdown formatting
+    plain_text = re.sub(r'\|[^|]*\|', '', plain_text)  # Remove table formatting
+    plain_text = re.sub(r'\n\s*\n', '\n\n', plain_text)  # Clean up spacing
+    
+    report = f"""CUSTOMER INTELLIGENCE REPORT
 {business_name}
 Generated: {pd.Timestamp.now().strftime('%Y-%m-%d %H:%M:%S')}
 
-=====================================
-EXECUTIVE SUMMARY
-=====================================
-{insights.get('executive_summary', '')}
+{plain_text}
 
-=====================================
-KEY FINDINGS
-=====================================
-"""
-    
-    for i, finding in enumerate(insights.get('key_findings', []), 1):
-        report += f"{i}. {finding}\n"
-    
-    if 'demographic_surprises' in insights:
-        report += f"""
-=====================================
-DEMOGRAPHIC SURPRISES
-=====================================
-"""
-        for surprise in insights['demographic_surprises']:
-            report += f"• {surprise}\n"
-    
-    report += f"""
-=====================================
-CUSTOMER SEGMENTS
-=====================================
-"""
-    
-    for segment, details in insights.get('segments', {}).items():
-        report += f"{segment} ({details.get('percentage', 0)}%)\n"
-        report += f"Profile: {details.get('profile', '')}\n\n"
-    
-    report += f"""
-=====================================
-STRATEGIC RECOMMENDATIONS
-=====================================
-"""
-    
-    for i, rec in enumerate(insights.get('recommendations', []), 1):
-        report += f"{i}. {rec}\n"
-    
-    report += f"""
 =====================================
 ANALYSIS DETAILS
 =====================================

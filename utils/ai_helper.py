@@ -1,118 +1,115 @@
-import os
 import json
-from typing import List, Dict, Any
-import anthropic
+import os
+from typing import Dict, List, Any
+from anthropic import Anthropic
+print(f"API Key loaded: {os.getenv('ANTHROPIC_API_KEY')[:10] if os.getenv('ANTHROPIC_API_KEY') else 'None'}...")
 
-# Initialize Claude client
-client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+# Initialize Anthropic client
+client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
-# ID Graph Schema (key variables for brand analysis)
-ID_GRAPH_VARIABLES = {
-    "demographics": {
-        "AGE": "Age of individual",
-        "BIRTH_YEAR": "Birth year",
-        "GENDER": "Male/Female",
-        "MALE": "Binary indicator for male gender",
-        "GENERATION": "Generation cohort (Millennials, Gen X, Baby Boomers, etc.)",
-        "MARRIED": "Marital status indicator",
-        "MARITAL_STATUS": "Detailed marital status",
-        "CHILDREN_HH": "Number of children in household",
-        "NUM_ADULTS_HH": "Number of adults in household",
-        "NUM_PERSONS_HH": "Total household size"
-    },
-    "economic": {
-        "INCOME_HH": "Household income brackets",
-        "INCOME_MIDPTS_HH": "Household income midpoint estimates",
-        "PREMIUM_INCOME_HH": "High-precision income segments",
-        "NET_WORTH_HH": "Household net worth brackets",
-        "NET_WORTH_MIDPT_HH": "Net worth midpoint estimates",
-        "CREDIT_CARD": "Credit card ownership indicator",
-        "PREMIUM_CARD": "Premium credit card ownership",
-        "NEW_CREDIT_OFFERED_HH": "Recent credit offers received"
-    },
-    "lifestyle": {
-        "EDUCATION": "Educational attainment level",
-        "EDUCATION_ORDINAL": "Education level (numeric scale)",
-        "OCCUPATION_TYPE": "White collar vs blue collar",
-        "OCCUPATION_CATEGORY": "Detailed occupation categories",
-        "DWELLING_TYPE": "Single family vs multi-family housing",
-        "URBANICITY": "Rural, Suburban, or Urban classification",
-        "LIFESTYLE_CLUSTER": "Proprietary lifestyle segmentation"
-    },
-    "interests": {
-        "READING_AVID_READER": "Frequent book/magazine reader",
-        "READING_FINANCE": "Reads financial publications",
-        "READING_COOKING_CULINARY": "Cooking/culinary interest",
-        "READING_HEALTH_REMEDIES": "Health and wellness reading",
-        "FITNESS_AFFINITY": "Exercise and fitness interest",
-        "GOURMET_AFFINITY": "Fine food and dining interest",
-        "HIGH_TECH_AFFINITY": "Technology adoption propensity",
-        "TRAVEL_AFFINITY": "Travel and vacation interest",
-        "AUTO_AFFINITY": "Automotive interest",
-        "OUTDOORS_AFFINITY": "Outdoor activities interest"
-    },
-    "shopping": {
-        "BARGAIN_HUNTER_AFFINITY": "Price-conscious shopping behavior",
-        "CATALOG_AFFINITY": "Catalog shopping preference",
-        "RECENT_CATALOG_PURCHASES_TOTAL_DOLLARS": "Recent catalog spending",
-        "RECENT_APPAREL_PURCHASES_TOTAL_DOLLARS": "Recent clothing spending",
-        "PREMIUM_INCOME_MIDPT_HH": "Premium income segment midpoint",
-        "LIKELY_CHARITABLE_DONOR": "Likelihood of charitable giving"
-    },
-    "media": {
-        "READING_MAGAZINES": "Magazine readership",
-        "TV_MOVIES_AFFINITY": "Entertainment media consumption",
-        "RECENT_MAGAZINE_SUBSCRIPTIONS_NUM": "Number of magazine subscriptions"
-    }
-}
+def load_schema():
+    """Load the SIG schema from JSON file"""
+    try:
+        schema_path = os.path.join('data', 'schema.json')
+        with open(schema_path, 'r') as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"Error loading schema: {str(e)}")
+        return None
 
 def get_variable_selection_prompt(business_context: Dict[str, Any]) -> str:
-    """Generate prompt for AI variable selection"""
+    """Generate AI prompt for variable selection with real schema"""
     
-    variables_text = ""
-    for category, variables in ID_GRAPH_VARIABLES.items():
-        variables_text += f"\n**{category.upper()}:**\n"
-        for var, desc in variables.items():
-            variables_text += f"- {var}: {desc}\n"
+    # Load the actual schema
+    schema = load_schema()
     
-    prompt = f"""
-You are a customer intelligence analyst helping a branding consultancy select the most strategic data variables for client analysis.
+    # Extract available variables from DATA table (main consumer intelligence table)
+    available_variables = []
+    if schema and 'tables' in schema and 'DATA' in schema['tables']:
+        data_fields = schema['tables']['DATA']['fields']
+        for field_name, field_info in data_fields.items():
+            # Skip internal/technical fields
+            if field_name in ['ID', 'ADDRESS_ID', 'HOUSEHOLD_ID', 'SOURCENUMBER', 'NATIONALCONSUMERDATABASE']:
+                continue
+            
+            # Create variable entry with description if available
+            var_entry = {
+                'name': field_name,
+                'type': field_info.get('type', 'UNKNOWN')
+            }
+            
+            # Add description or valid values if available
+            if 'description' in field_info:
+                var_entry['description'] = field_info['description']
+            
+            available_variables.append(var_entry)
+    
+    # Build the variable list text for the prompt
+    variables_text = "AVAILABLE VARIABLES FROM IDENTITY GRAPH:\n\n"
+    
+    # Group by category for better organization
+    demographic_vars = []
+    economic_vars = []
+    lifestyle_vars = []
+    interest_vars = []
+    behavioral_vars = []
+    
+    for var in available_variables:
+        name = var['name']
+        desc = var.get('description', '')
+        
+        # Categorize variables
+        if any(term in name.lower() for term in ['age', 'gender', 'married', 'children', 'generation', 'birth']):
+            demographic_vars.append(f"- {name}: {desc}")
+        elif any(term in name.lower() for term in ['income', 'credit', 'investment', 'net_worth', 'bank']):
+            economic_vars.append(f"- {name}: {desc}")
+        elif any(term in name.lower() for term in ['education', 'occupation', 'dwelling', 'urbanicity']):
+            lifestyle_vars.append(f"- {name}: {desc}")
+        elif '_affinity' in name.lower() or any(term in name.lower() for term in ['reading_', 'music', 'sports', 'travel']):
+            interest_vars.append(f"- {name}: {desc}")
+        elif any(term in name.lower() for term in ['purchases', 'catalog', 'recent_']):
+            behavioral_vars.append(f"- {name}: {desc}")
+    
+    # Build categorized variable list
+    if demographic_vars:
+        variables_text += "DEMOGRAPHICS:\n" + "\n".join(demographic_vars[:10]) + "\n\n"
+    if economic_vars:
+        variables_text += "ECONOMIC:\n" + "\n".join(economic_vars[:8]) + "\n\n"
+    if lifestyle_vars:
+        variables_text += "LIFESTYLE:\n" + "\n".join(lifestyle_vars[:8]) + "\n\n"
+    if interest_vars:
+        variables_text += "INTERESTS & AFFINITIES:\n" + "\n".join(interest_vars[:15]) + "\n\n"
+    if behavioral_vars:
+        variables_text += "PURCHASE BEHAVIOR:\n" + "\n".join(behavioral_vars[:10]) + "\n\n"
+    
+    prompt = f"""You are a strategic data analyst helping select the most valuable customer intelligence variables for brand strategy.
 
 BUSINESS CONTEXT:
-- Business: {business_context.get('business_name', 'N/A')}
-- Industry: {business_context.get('industry', 'N/A')}
-- Business Model: {business_context.get('business_model', 'N/A')}
-- Current Target Customer Assumptions: {business_context.get('target_customer', 'N/A')}
-- Brand Positioning: {business_context.get('brand_positioning', 'N/A')}
-- Analysis Goals: {', '.join(business_context.get('goals', []))}
-- Additional Context: {business_context.get('additional_context', 'N/A')}
+- Industry: {business_context.get('industry', 'Not specified')}
+- Target Market: {business_context.get('target_market', 'Not specified')}
+- Business Model: {business_context.get('business_model', 'Not specified')}
+- Current Challenges: {business_context.get('challenges', 'Not specified')}
+- Brand Positioning: {business_context.get('positioning', 'Not specified')}
 
-AVAILABLE DATA VARIABLES:
 {variables_text}
 
-TASK: Select exactly 12-15 variables that would be most strategically valuable for:
-1. Revealing gaps between customer assumptions and reality
-2. Identifying brand positioning opportunities  
-3. Enabling targeted messaging and marketing
-4. Providing actionable business insights
+YOUR TASK: Select 8-12 variables that will provide the most strategic value for this specific business context.
 
-REQUIREMENTS:
-- Choose variables that directly relate to this specific business context
-- Prioritize variables that can challenge current assumptions
-- Include a mix of demographics, economics, lifestyle, and interests
-- Focus on variables that inform brand strategy decisions
+SELECTION CRITERIA:
+1. Choose variables that directly relate to this business context
+2. Prioritize variables that can challenge current assumptions about customers
+3. Include a strategic mix across different categories
+4. Focus on variables that inform brand strategy and positioning decisions
+5. Consider variables that reveal unexpected customer segments
 
-Respond with ONLY a JSON object in this exact format:
-{{
-    "selected_variables": [
-        {{
-            "variable": "VARIABLE_NAME",
-            "rationale": "Strategic explanation for why this variable is critical for this specific business",
-            "category": "demographics|economic|lifestyle|interests|shopping|media"
-        }}
-    ]
-}}
-"""
+RESPOND IN MARKDOWN TABLE FORMAT:
+
+| Variable | Category | Strategic Rationale |
+|----------|----------|-------------------|
+| VARIABLE_NAME | demographics/economic/lifestyle/interests/behavioral | Specific explanation of why this variable is critical for this business |
+
+Select variables that will reveal the most surprising and actionable insights about who this business's customers really are."""
+
     return prompt
 
 def select_variables_with_ai(business_context: Dict[str, Any]) -> List[Dict[str, str]]:
@@ -130,21 +127,33 @@ def select_variables_with_ai(business_context: Dict[str, Any]) -> List[Dict[str,
             ]
         )
         
-        # Parse the JSON response
+        # Parse the markdown table response
         response_text = response.content[0].text.strip()
         
-        # Clean up the response in case there's extra text
-        if "```json" in response_text:
-            response_text = response_text.split("```json")[1].split("```")[0].strip()
-        elif "```" in response_text:
-            response_text = response_text.split("```")[1].strip()
-            
-        result = json.loads(response_text)
-        return result.get("selected_variables", [])
+        # Extract table from markdown
+        variables = []
+        lines = response_text.split('\n')
+        in_table = False
+        
+        for line in lines:
+            line = line.strip()
+            if '|' in line and not line.startswith('|---'):
+                if 'Variable' in line and 'Category' in line and 'Strategic Rationale' in line:
+                    in_table = True
+                    continue
+                elif in_table and line.count('|') >= 3:
+                    parts = [part.strip() for part in line.split('|')]
+                    if len(parts) >= 4 and parts[1] and parts[2] and parts[3]:
+                        variables.append({
+                            'variable': parts[1],
+                            'category': parts[2],
+                            'rationale': parts[3]
+                        })
+        
+        return variables if variables else get_fallback_variables()
         
     except Exception as e:
         print(f"Error in AI variable selection: {str(e)}")
-        # Fallback to default variables
         return get_fallback_variables()
 
 def get_fallback_variables() -> List[Dict[str, str]]:
@@ -161,160 +170,68 @@ def get_fallback_variables() -> List[Dict[str, str]]:
         {"variable": "HIGH_TECH_AFFINITY", "rationale": "Technology adoption affects marketing channels", "category": "interests"},
         {"variable": "GOURMET_AFFINITY", "rationale": "Quality appreciation aligns with premium positioning", "category": "interests"},
         {"variable": "FITNESS_AFFINITY", "rationale": "Health consciousness affects product preferences", "category": "interests"},
-        {"variable": "READING_MAGAZINES", "rationale": "Media consumption patterns for advertising", "category": "media"}
+        {"variable": "READING_MAGAZINES", "rationale": "Media consumption patterns for advertising", "category": "behavioral"}
     ]
 
 def generate_customer_insights(enriched_data, business_context: Dict[str, Any], selected_variables: List[Dict[str, str]]) -> Dict[str, Any]:
     """Generate AI-powered customer insights from enriched data"""
     
-    if isinstance(enriched_data, str):
-        # Fallback for mock data
-        return get_mock_insights()
-    
+    # Analyze the enriched data
     try:
-        # Analyze the actual data
-        insights = analyze_enriched_data(enriched_data, business_context, selected_variables)
-        return insights
+        # Create summary statistics for each selected variable
+        variable_summaries = []
+        for var_info in selected_variables:
+            var_name = var_info['variable']
+            if var_name in enriched_data.columns:
+                summary = f"{var_name}: {enriched_data[var_name].value_counts().head().to_dict()}"
+                variable_summaries.append(summary)
         
-    except Exception as e:
-        print(f"Error generating insights: {str(e)}")
-        return get_mock_insights()
+        insights_prompt = f"""Analyze this customer data and generate strategic brand insights.
 
-def analyze_enriched_data(df, business_context: Dict[str, Any], selected_variables: List[Dict[str, str]]) -> Dict[str, Any]:
-    """Analyze the enriched dataframe and generate insights"""
-    
-    # Extract key statistics
-    stats = {}
-    
-    # Age analysis
-    if 'AGE' in df.columns:
-        stats['age_median'] = df['AGE'].median()
-        stats['age_ranges'] = {
-            'under_30': (df['AGE'] < 30).sum() / len(df) * 100,
-            'age_30_50': ((df['AGE'] >= 30) & (df['AGE'] < 50)).sum() / len(df) * 100,
-            'over_50': (df['AGE'] >= 50).sum() / len(df) * 100
-        }
-    
-    # Income analysis
-    if 'PREMIUM_INCOME_HH' in df.columns:
-        high_income = df['PREMIUM_INCOME_HH'].str.contains('150K|200K|250K', na=False).sum() / len(df) * 100
-        stats['high_income_percent'] = high_income
-    
-    # Education analysis
-    if 'EDUCATION' in df.columns:
-        college_plus = df['EDUCATION'].str.contains('College|Graduate', na=False).sum() / len(df) * 100
-        stats['college_plus_percent'] = college_plus
-    
-    # Lifestyle analysis
-    if 'URBANICITY' in df.columns:
-        urban_percent = df['URBANICITY'].str.contains('Urban', na=False).sum() / len(df) * 100
-        stats['urban_percent'] = urban_percent
-    
-    # Generate AI insights based on these stats
-    insights_prompt = f"""
-    Analyze this customer data for {business_context.get('business_name', 'the business')} and provide strategic insights.
+BUSINESS CONTEXT:
+- Industry: {business_context.get('industry', 'Not specified')}
+- Target Market: {business_context.get('target_market', 'Not specified')}
+- Current Brand Assumptions: {business_context.get('positioning', 'Not specified')}
 
-    BUSINESS CONTEXT:
-    - Industry: {business_context.get('industry')}
-    - Target Assumptions: {business_context.get('target_customer')}
-    - Brand Positioning: {business_context.get('brand_positioning')}
+CUSTOMER DATA ANALYSIS:
+{chr(10).join(variable_summaries)}
 
-    DATA INSIGHTS:
-    - Median Age: {stats.get('age_median', 'N/A')}
-    - Age Distribution: Under 30: {stats.get('age_ranges', {}).get('under_30', 0):.1f}%, 30-50: {stats.get('age_ranges', {}).get('age_30_50', 0):.1f}%, Over 50: {stats.get('age_ranges', {}).get('over_50', 0):.1f}%
-    - High Income (>$150K): {stats.get('high_income_percent', 0):.1f}%
-    - College+ Education: {stats.get('college_plus_percent', 0):.1f}%
-    - Urban Customers: {stats.get('urban_percent', 0):.1f}%
-    
-    Total Records Analyzed: {len(df)}
+Generate professional consulting-style insights in this format:
 
-    Provide insights in JSON format:
-    {{
-        "executive_summary": "Key finding about customer reality vs assumptions",
-        "key_findings": ["finding 1", "finding 2", "finding 3"],
-        "demographic_surprises": ["surprise 1", "surprise 2"],
-        "segments": {{
-            "Primary Segment": {{"percentage": X, "profile": "description"}},
-            "Secondary Segment": {{"percentage": Y, "profile": "description"}},
-            "Opportunity Segment": {{"percentage": Z, "profile": "description"}}
-        }},
-        "recommendations": ["recommendation 1", "recommendation 2", "recommendation 3"]
-    }}
-    """
-    
-    try:
+# Executive Summary
+[2-3 sentences summarizing the most important findings]
+
+## Key Customer Reality vs. Assumptions
+[Table comparing what the business assumed vs what data reveals]
+
+## Strategic Recommendations
+1. **Brand Positioning Adjustment**: [Specific recommendation]
+2. **Target Audience Refinement**: [Specific recommendation] 
+3. **Messaging Strategy**: [Specific recommendation]
+
+## Most Surprising Discovery
+[Highlight the most unexpected finding that challenges assumptions]
+
+Write in professional business language suitable for client presentation."""
+
         response = client.messages.create(
             model=os.getenv("LLM_MODEL", "claude-3-sonnet-20240229"),
-            max_tokens=int(os.getenv("LLM_MAX_TOKENS", "2500")),
-            temperature=float(os.getenv("LLM_TEMPERATURE", "0.3")),
+            max_tokens=int(os.getenv("LLM_MAX_TOKENS", "3000")),
+            temperature=float(os.getenv("LLM_TEMPERATURE", "0.7")),
             messages=[
                 {"role": "user", "content": insights_prompt}
             ]
         )
         
-        response_text = response.content[0].text.strip()
-        
-        # Clean up JSON response
-        if "```json" in response_text:
-            response_text = response_text.split("```json")[1].split("```")[0].strip()
-        elif "```" in response_text:
-            response_text = response_text.split("```")[1].strip()
-            
-        import json
-        insights = json.loads(response_text)
-        
-        # Add raw stats for display
-        insights['raw_stats'] = stats
-        
-        return insights
+        return {
+            'insights_text': response.content[0].text.strip(),
+            'variables_analyzed': len(selected_variables),
+            'records_analyzed': len(enriched_data)
+        }
         
     except Exception as e:
-        print(f"Error in AI insights generation: {str(e)}")
-        return get_mock_insights_with_stats(stats)
-
-def get_mock_insights():
-    """Fallback mock insights"""
-    return {
-        "executive_summary": "Your customer data analysis reveals significant opportunities for brand repositioning and targeted marketing strategies.",
-        "key_findings": [
-            "Customer demographics differ from current brand assumptions",
-            "Income levels suggest premium positioning opportunities", 
-            "Geographic distribution indicates untapped markets"
-        ],
-        "segments": {
-            "Primary Segment": {"percentage": 45, "profile": "Core customer group with highest value potential"},
-            "Growth Segment": {"percentage": 32, "profile": "Emerging segment with expansion opportunities"},
-            "Niche Segment": {"percentage": 23, "profile": "Specialized group requiring targeted approach"}
-        },
-        "recommendations": [
-            "Adjust brand messaging to reflect actual customer sophistication",
-            "Develop premium service offerings for high-income segments",
-            "Optimize marketing channels based on demographic insights"
-        ]
-    }
-
-def get_mock_insights_with_stats(stats):
-    """Mock insights incorporating real stats"""
-    age_insight = f"Median customer age is {stats.get('age_median', 45)} years"
-    if stats.get('age_ranges', {}).get('over_50', 0) > 40:
-        age_insight += ", indicating a more mature customer base than typically assumed"
-    
-    return {
-        "executive_summary": f"Analysis of your customer data reveals key insights. {age_insight}.",
-        "key_findings": [
-            f"High-income customers represent {stats.get('high_income_percent', 25):.1f}% of your base",
-            f"College-educated customers comprise {stats.get('college_plus_percent', 60):.1f}% of your audience",
-            f"Urban customers make up {stats.get('urban_percent', 70):.1f}% of your market"
-        ],
-        "segments": {
-            "Affluent Professionals": {"percentage": 45, "profile": "High-income, educated urban customers"},
-            "Emerging Adults": {"percentage": 30, "profile": "Younger demographic with growth potential"}, 
-            "Mature Market": {"percentage": 25, "profile": "Established customers with premium preferences"}
-        },
-        "recommendations": [
-            "Leverage high education levels in sophisticated messaging",
-            "Develop urban-focused marketing campaigns",
-            "Create premium offerings for affluent segments"
-        ],
-        "raw_stats": stats
-    }
+        return {
+            'insights_text': f"Error generating insights: {str(e)}",
+            'variables_analyzed': 0,
+            'records_analyzed': 0
+        }
