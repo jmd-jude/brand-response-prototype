@@ -1,0 +1,8 @@
+{"timestamp": "2025-08-30T17:44:45.494872", "event": "session_start", "details": {"session_id": "20250830_174445", "timestamp": "2025-08-30T17:44:45.494867"}}
+{"timestamp": "2025-08-30T17:44:47.355176", "event": "data_upload", "details": {"records": 500, "columns": 8, "filename": "sample_coffee_shop_data", "data_source": "sample_generated"}}
+{"timestamp": "2025-08-30T17:45:39.522154", "event": "business_context_captured", "details": {"business_name": "Beanery Town", "industry": "Food & Beverage", "business_model": "B2C Retail", "goals_count": 2, "has_target_description": true, "has_positioning": true}}
+{"timestamp": "2025-08-30T17:46:00.664833", "event": "ai_variable_selection", "details": {"variables_selected": 10, "categories": ["Demographics", "Economic", "Lifestyle", "Behavioral", "Interests"], "business_industry": "Food & Beverage", "ai_success": true, "schema_integrated": true}}
+{"timestamp": "2025-08-30T17:46:25.926179", "event": "data_enrichment_complete", "details": {"records_processed": 500, "variables_added": 10, "match_rate_percent": "100.0%", "enrichment_source": "identity_graph_simulation"}}
+{"timestamp": "2025-08-30T17:46:41.802537", "event": "insights_generated", "details": {"records_analyzed": 750, "variables_analyzed": 10, "ai_analysis_success": true, "business_industry": "Food & Beverage"}}
+{"timestamp": "2025-08-30T17:48:28.912308", "event": "report_exported", "details": {"format": "text", "business_name": "Beanery Town"}}
+{"timestamp": "2025-08-30T17:49:05.195955", "event": "workflow_summary_generated", "details": {"audience": "internal", "summary_length": 2015}}
