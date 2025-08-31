@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brand Response | Customer Intelligence Platform</title>
-    <meta name="description" content="Transform SMB brand strategy with data-driven customer intelligence. The only SMB consultancy with integrated customer analytics.">
+    <meta name="description" content="Transform SMB brand strategy with data-driven customer intelligence. Enterprise-level insights at small business scale.">
     <style>
         * {
             margin: 0;
@@ -15,7 +15,8 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #1F2937;
+            background: #FAFBFC;
         }
 
         .container {
@@ -28,11 +29,11 @@
         .header {
             background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
             color: white;
-            padding: 1rem 0;
+            padding: 1.5rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(79, 70, 229, 0.25);
         }
 
         .nav {
@@ -42,25 +43,28 @@
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.75rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .nav-links a {
-            color: white;
+            color: rgba(255,255,255,0.9);
             text-decoration: none;
-            font-weight: 500;
-            transition: opacity 0.2s;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s;
         }
 
         .nav-links a:hover {
-            opacity: 0.8;
+            color: white;
+            transform: translateY(-1px);
         }
 
         .nav-toggle {
@@ -75,60 +79,64 @@
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #F8FAFF 0%, #EEF2FF 100%);
-            padding: 4rem 0;
+            padding: 5rem 0;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            color: #1F2937;
+            font-size: clamp(2.5rem, 5vw, 3.75rem);
+            font-weight: 900;
+            color: #111827;
             margin-bottom: 1.5rem;
-            line-height: 1.2;
+            line-height: 1.1;
+            letter-spacing: -0.025em;
         }
 
         .hero .subtitle {
-            font-size: 1.25rem;
-            color: #6B7280;
-            margin-bottom: 2rem;
-            max-width: 600px;
+            font-size: 1.375rem;
+            color: #4B5563;
+            margin-bottom: 1rem;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            font-weight: 500;
         }
 
         .hero .tagline {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #4F46E5;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .cta-button {
-            background: #4F46E5;
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
             color: white;
-            padding: 1rem 2rem;
+            padding: 1.25rem 2.5rem;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
             font-size: 1.1rem;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
-            transition: all 0.2s;
-            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+            transition: all 0.3s;
+            box-shadow: 0 8px 25px rgba(79, 70, 229, 0.35);
+            letter-spacing: 0.025em;
         }
 
         .cta-button:hover {
-            background: #3730A3;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(79, 70, 229, 0.45);
         }
 
         /* Tab Navigation */
         .tabs {
             background: white;
             border-bottom: 1px solid #E5E7EB;
-            padding: 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
         .tab-nav {
@@ -137,33 +145,36 @@
             list-style: none;
             max-width: 1200px;
             margin: 0 auto;
+            overflow-x: auto;
         }
 
         .tab-nav li {
             flex: 1;
-            max-width: 200px;
+            min-width: 140px;
+            max-width: 180px;
         }
 
         .tab-nav button {
             width: 100%;
-            padding: 1.5rem 2rem;
+            padding: 1.5rem 1rem;
             background: none;
             border: none;
-            font-size: 1rem;
-            font-weight: 600;
+            font-size: 0.95rem;
+            font-weight: 700;
             color: #6B7280;
             cursor: pointer;
             border-bottom: 3px solid transparent;
             transition: all 0.2s;
+            white-space: nowrap;
         }
 
         .tab-nav button.active {
             color: #4F46E5;
             border-bottom-color: #4F46E5;
-            background: #F8FAFF;
+            background: linear-gradient(to bottom, #FAFBFF 0%, #F8FAFF 100%);
         }
 
-        .tab-nav button:hover {
+        .tab-nav button:hover:not(.active) {
             background: #F9FAFB;
             color: #374151;
         }
@@ -171,7 +182,7 @@
         /* Tab Content */
         .tab-content {
             display: none;
-            padding: 3rem 0;
+            padding: 4rem 0;
             min-height: 600px;
         }
 
@@ -179,130 +190,457 @@
             display: block;
         }
 
+        /* Case Studies */
+        .case-studies-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .case-studies-intro h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+        }
+
+        .case-studies-intro p {
+            font-size: 1.25rem;
+            color: #4B5563;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .case-study-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+            border: 1px solid #F3F4F6;
+            transition: all 0.3s;
+        }
+
+        .case-study-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+
+        .case-study-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .case-study-header h3 {
+            font-size: 1.375rem;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .industry-tag {
+            background: #EEF2FF;
+            color: #4F46E5;
+            padding: 0.375rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .assumption-reality {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .assumption, .reality {
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .assumption {
+            background: #FEF2F2;
+            border-left: 4px solid #EF4444;
+        }
+
+        .reality {
+            background: #F0FDF4;
+            border-left: 4px solid #10B981;
+        }
+
+        .assumption h4, .reality h4 {
+            font-size: 0.875rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .assumption h4 {
+            color: #DC2626;
+        }
+
+        .reality h4 {
+            color: #059669;
+        }
+
+        .assumption p, .reality p {
+            font-size: 0.9rem;
+            color: #374151;
+            font-weight: 500;
+        }
+
+        .impact {
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+        }
+
         /* Demo Tab */
+        .demo-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .demo-intro h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        .demo-subtitle {
+            font-size: 1.25rem;
+            color: #4B5563;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .demo-highlights {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .highlight {
+            background: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            color: #4F46E5;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border: 1px solid #E5E7EB;
+        }
+
         .demo-frame {
             width: 100%;
             height: 800px;
             border: 1px solid #E5E7EB;
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
             background: white;
         }
 
-        /* How It Works */
-        .process-grid {
+        .demo-note {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #6B7280;
+            font-size: 0.95rem;
+        }
+
+        /* Integration Tab */
+        .integration-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .integration-intro h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+        }
+
+        .integration-timeline {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
         }
 
-        .process-step {
-            text-align: center;
+        .timeline-step {
+            background: white;
             padding: 2rem;
             border-radius: 12px;
-            background: white;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border: 1px solid #E5E7EB;
+            text-align: center;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+            border: 1px solid #F3F4F6;
+            transition: all 0.3s;
+        }
+
+        .timeline-step.enhanced {
+            background: linear-gradient(135deg, #F0F4FF 0%, #E0E7FF 100%);
+            border-color: #C7D2FE;
+        }
+
+        .timeline-step:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
         }
 
         .step-number {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.25rem;
+            font-weight: 800;
             margin: 0 auto 1.5rem auto;
         }
 
-        .process-step h3 {
-            color: #1F2937;
+        .enhanced .step-number {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+        }
+
+        .timeline-step h3 {
+            color: #111827;
             margin-bottom: 1rem;
+            font-size: 1.125rem;
+            font-weight: 700;
+        }
+
+        .timeline-step p {
+            color: #6B7280;
+            font-size: 0.95rem;
+        }
+
+        .value-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+            margin-bottom: 3rem;
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #4F46E5;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            color: #6B7280;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* How It Works Updates */
+        .process-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .process-intro h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+        }
+
+        .process-intro p {
             font-size: 1.25rem;
+            color: #4B5563;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            background: white;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+            border: 1px solid #F3F4F6;
+            transition: all 0.3s;
+        }
+
+        .process-step:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin: 0 auto 2rem auto;
+        }
+
+        .process-step h3 {
+            color: #111827;
+            margin-bottom: 1rem;
+            font-size: 1.375rem;
+            font-weight: 700;
         }
 
         .process-step p {
             color: #6B7280;
+            line-height: 1.6;
         }
 
-        /* Vision Tab */
+        /* Vision Tab Updates */
         .vision-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
+            margin-bottom: 4rem;
         }
 
         .vision-text h2 {
-            font-size: 2rem;
-            color: #1F2937;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #111827;
             margin-bottom: 1.5rem;
+            letter-spacing: -0.025em;
         }
 
         .vision-text p {
-            color: #6B7280;
+            color: #4B5563;
             margin-bottom: 1.5rem;
-            font-size: 1.1rem;
+            font-size: 1.125rem;
+            line-height: 1.7;
+        }
+
+        .vision-text strong {
+            color: #4F46E5;
+            font-weight: 700;
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin: 2rem 0;
+            gap: 1.5rem;
         }
 
         .stat {
             text-align: center;
-            padding: 1.5rem;
-            background: #F8FAFF;
-            border-radius: 8px;
-            border: 1px solid #E0E7FF;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #E5E7EB;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
         }
 
         .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
+            font-size: 2.5rem;
+            font-weight: 900;
             color: #4F46E5;
+            line-height: 1;
         }
 
         .stat-label {
             color: #6B7280;
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
+            font-size: 0.875rem;
+            margin-top: 0.75rem;
+            font-weight: 600;
         }
 
+        /* Value Props */
         .value-props {
-            background: #F9FAFB;
-            padding: 3rem 0;
+            background: linear-gradient(135deg, #F8FAFF 0%, #EEF2FF 100%);
+            padding: 5rem 0;
+        }
+
+        .value-props h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 4rem;
+            letter-spacing: -0.025em;
         }
 
         .value-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
 
         .value-item {
             background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+            border: 1px solid #F3F4F6;
+            transition: all 0.3s;
+        }
+
+        .value-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
         }
 
         .value-item h3 {
-            color: #1F2937;
+            color: #111827;
             margin-bottom: 1rem;
+            font-size: 1.375rem;
+            font-weight: 700;
         }
 
         .value-item p {
             color: #6B7280;
+            line-height: 1.6;
         }
 
         /* Responsive Design */
@@ -328,20 +666,43 @@
             }
 
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.25rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.125rem;
             }
 
             .tab-nav {
-                flex-direction: column;
+                overflow-x: auto;
+                justify-content: flex-start;
+            }
+
+            .tab-nav li {
+                min-width: 120px;
             }
 
             .vision-content {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 3rem;
             }
 
             .demo-frame {
                 height: 600px;
+            }
+
+            .assumption-reality {
+                grid-template-columns: 1fr;
+            }
+
+            .demo-highlights {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
             }
         }
     </style>
@@ -353,8 +714,10 @@
             <div class="logo">Brand Response</div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#vision" onclick="showTab('vision')">Vision</a></li>
-                <li><a href="#demo" onclick="showTab('demo')">Demo</a></li>
+                <li><a href="#case-studies" onclick="showTab('case-studies')">Case Studies</a></li>
+                <li><a href="#demo" onclick="showTab('demo')">Prototype</a></li>
                 <li><a href="#how-it-works" onclick="showTab('how-it-works')">How It Works</a></li>
+                <li><a href="#integration" onclick="showTab('integration')">Integration</a></li>
             </ul>
             <button class="nav-toggle" onclick="toggleNav()">☰</button>
         </nav>
@@ -363,9 +726,9 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Customer Intelligence for Small Business Brands</h1>
-            <p class="subtitle">Transform assumptions into insights. Turn demographic data into strategic brand decisions. The only SMB consultancy with integrated customer analytics.</p>
-            <p class="tagline">Enterprise-level insights at small business scale</p>
+            <h1>Customer Intelligence for Smart Brands</h1>
+            <p class="subtitle">Transform assumptions into insights. Turn demographic data into strategic brand decisions.</p>
+            <p class="tagline">Enterprise insights • SMB scale</p>
             <a href="#demo" class="cta-button" onclick="showTab('demo')">See Prototype</a>
         </div>
     </section>
@@ -374,34 +737,150 @@
     <div class="tabs">
         <ul class="tab-nav">
             <li><button onclick="showTab('vision')" class="tab-button">Vision</button></li>
-            <li><button onclick="showTab('demo')" class="tab-button active">App Prototype</button></li>
+            <li><button onclick="showTab('case-studies')" class="tab-button">Case Studies</button></li>
+            <li><button onclick="showTab('demo')" class="tab-button active">Prototype</button></li>
             <li><button onclick="showTab('how-it-works')" class="tab-button">How It Works</button></li>
+            <li><button onclick="showTab('integration')" class="tab-button">Integration</button></li>
         </ul>
     </div>
 
     <!-- Tab Content -->
     <main class="container">
-        <!-- Demo Tab 
-        <div id="demo" class="tab-content active">
-            <iframe 
-                src="https://brandresponse.streamlit.app" 
-                class="demo-frame"
-                title="Brand Response Customer Intelligence Platform Demo">
-            </iframe>
-            <p style="text-align: center; margin-top: 1rem; color: #6B7280;">
-                Interactive prototype/demo - Upload sample data and see the concept in action
-            </p>
-        </div> -->
+        <!-- Vision Tab -->
+        <div id="vision" class="tab-content">
+            <div class="vision-content">
+                <div class="vision-text">
+                    <h2>The Problem We Solve</h2>
+                    <p>SMBs make brand decisions based on assumptions, not data. They assume they know their customers but lack tools to validate those assumptions.</p>
+                    <p>Traditional consultancies rely on creative intuition. Enterprise agencies have data teams but charge enterprise prices.</p>
+                    <p><strong>Brand Response bridges this gap.</strong> We deliver enterprise-level customer intelligence at SMB scale, turning brand strategy from guesswork into science.</p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat">
+                        <div class="stat-number">73%</div>
+                        <div class="stat-label">of SMBs make brand decisions without customer data</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">2.4x</div>
+                        <div class="stat-label">revenue growth when strategy aligns with reality</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">$35K+</div>
+                        <div class="stat-label">typical enterprise consulting cost</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">$15K</div>
+                        <div class="stat-label">our comprehensive analysis</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Case Studies Tab -->
+        <div id="case-studies" class="tab-content">
+            <div class="case-studies-intro">
+                <h2>Real Results, Real Impact</h2>
+                <p>See how data-driven insights transformed brand strategy and delivered measurable business results.</p>
+            </div>
+
+            <div class="case-study-grid">
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <h3>Roasted Bean Coffee Co.</h3>
+                        <span class="industry-tag">Food & Beverage</span>
+                    </div>
+                    <div class="assumption-reality">
+                        <div class="assumption">
+                            <h4>❌ Assumption</h4>
+                            <p>"Hip coffee for young professionals, ages 25-40"</p>
+                        </div>
+                        <div class="reality">
+                            <h4>✅ Data Reality</h4>
+                            <p>78% customers aged 30-60, 42% higher income than assumed</p>
+                        </div>
+                    </div>
+                    <div class="impact">
+                        <strong>Strategic Pivot:</strong> Repositioned to "sophisticated coffee for discerning adults"<br>
+                        <strong>Result:</strong> 31% increase in average transaction value
+                    </div>
+                </div>
+
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <h3>Thompson & Associates CPA</h3>
+                        <span class="industry-tag">Professional Services</span>
+                    </div>
+                    <div class="assumption-reality">
+                        <div class="assumption">
+                            <h4>❌ Assumption</h4>
+                            <p>"Small business accounting for local companies"</p>
+                        </div>
+                        <div class="reality">
+                            <h4>✅ Data Reality</h4>
+                            <p>76% college-educated clients, 43% growth-stage businesses</p>
+                        </div>
+                    </div>
+                    <div class="impact">
+                        <strong>Strategic Pivot:</strong> "Strategic financial partner for ambitious growing businesses"<br>
+                        <strong>Result:</strong> 47% increase in project value, premium service adoption
+                    </div>
+                </div>
+
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <h3>Artisan Wellness Spa</h3>
+                        <span class="industry-tag">Health & Wellness</span>
+                    </div>
+                    <div class="assumption-reality">
+                        <div class="assumption">
+                            <h4>❌ Assumption</h4>
+                            <p>"Stressed millennials seeking self-care"</p>
+                        </div>
+                        <div class="reality">
+                            <h4>✅ Data Reality</h4>
+                            <p>68% Gen X/Boomers, 3x higher discretionary income</p>
+                        </div>
+                    </div>
+                    <div class="impact">
+                        <strong>Strategic Pivot:</strong> "Premium wellness experience for life's accomplished women"<br>
+                        <strong>Result:</strong> 54% increase in service bookings, 89% client retention
+                    </div>
+                </div>
+
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <h3>TechFlow Solutions</h3>
+                        <span class="industry-tag">B2B Technology</span>
+                    </div>
+                    <div class="assumption-reality">
+                        <div class="assumption">
+                            <h4>❌ Assumption</h4>
+                            <p>"Targeting tech startups and SMB IT managers"</p>
+                        </div>
+                        <div class="reality">
+                            <h4>✅ Data Reality</h4>
+                            <p>67% enterprise buyers, decision makers aged 40-55</p>
+                        </div>
+                    </div>
+                    <div class="impact">
+                        <strong>Strategic Pivot:</strong> "Enterprise-grade solutions with startup agility"<br>
+                        <strong>Result:</strong> 126% increase in qualified leads, 34% shorter sales cycle
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Demo Tab -->
         <div id="demo" class="tab-content active">
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: #1F2937;">
-                    See Prototype in Action
-                </h2>
-                <p style="font-size: 1.2rem; color: #6B7280; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                    Browse the screenshots below, then open the live prototype to experience the full workflow.
-                </p>
+            <div class="demo-intro">
+                <h2>See Prototype in Action</h2>
+                <p class="demo-subtitle">Browse the screenshots below, then open the live prototype to experience the full workflow.</p>
+                
+                <!-- <div class="demo-highlights">
+                    <span class="highlight">📊 Real data enrichment</span>
+                    <span class="highlight">🤖 Smart Analytics</span>
+                    <span class="highlight">📋 Professional reports</span>
+                </div> -->
             </div>
             
             <!-- Screenshots Grid -->
@@ -409,7 +888,7 @@
                 <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                     <img src="screenshots/Step1.png" alt="Step 1: Data Upload" style="width: 100%; height: auto; display: block;">
                     <div style="padding: 1rem;">
-                        <h3 style="color: #1F2937; margin-bottom: 0.5rem;">Step 1: Upload Customer Data</h3>
+                        <h3 style="color: #111827; margin-bottom: 0.5rem;">Step 1: Upload Customer Data</h3>
                         <p style="color: #6B7280; font-size: 0.9rem;">Load sample coffee shop data</p>
                     </div>
                 </div>
@@ -417,15 +896,15 @@
                 <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                     <img src="screenshots/Step3b.png" alt="Step 3: AI Variable Selection" style="width: 100%; height: auto; display: block;">
                     <div style="padding: 1rem;">
-                        <h3 style="color: #1F2937; margin-bottom: 0.5rem;">Step 3: Variable Selection</h3>
+                        <h3 style="color: #111827; margin-bottom: 0.5rem;">Step 3: Variable Selection</h3>
                         <p style="color: #6B7280; font-size: 0.9rem;">AI analyzes business context and selects strategic variables</p>
                     </div>
                 </div>
                 
                 <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                    <img src="screenshots/Step4.png" alt="Step 5: Generated Insights" style="width: 100%; height: auto; display: block;">
+                    <img src="screenshots/Step4.png" alt="Step 4: Data Enrichment" style="width: 100%; height: auto; display: block;">
                     <div style="padding: 1rem;">
-                        <h3 style="color: #1F2937; margin-bottom: 0.5rem;">Step 4: Data Enrichment</h3>
+                        <h3 style="color: #111827; margin-bottom: 0.5rem;">Step 4: Data Enrichment</h3>
                         <p style="color: #6B7280; font-size: 0.9rem;">Enriched customer records from data partner (sample data)</p>
                     </div>
                 </div>
@@ -433,8 +912,8 @@
                 <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                     <img src="screenshots/Step5.png" alt="Step 5: Generated Insights" style="width: 100%; height: auto; display: block;">
                     <div style="padding: 1rem;">
-                        <h3 style="color: #1F2937; margin-bottom: 0.5rem;">Step 5: Strategic Insights</h3>
-                        <p style="color: #6B7280; font-size: 0.9rem;">AI-generated analysis reveals customer reality vs assumptions</p>
+                        <h3 style="color: #111827; margin-bottom: 0.5rem;">Step 5: Strategic Insights</h3>
+                        <p style="color: #6B7280; font-size: 0.9rem;">Easy-to-understand analysis reveals customer reality vs assumptions</p>
                     </div>
                 </div>
             </div>
@@ -453,63 +932,100 @@
             </div>
         </div>
 
-
         <!-- How It Works Tab -->
         <div id="how-it-works" class="tab-content">
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <h2 style="font-size: 2.5rem; color: #1F2937; margin-bottom: 1rem;">From Customer Data to Strategic Insights</h2>
-                <p style="font-size: 1.2rem; color: #6B7280; max-width: 600px; margin: 0 auto;">We include customer data analysis to reveal gaps between brand assumptions and reality</p>
+            <div class="process-intro">
+                <h2>From Customer Data to Strategic Insights</h2>
+                <p>We transform raw customer data into actionable brand intelligence that reveals gaps between assumptions and reality.</p>
             </div>
 
             <div class="process-grid">
                 <div class="process-step">
                     <div class="step-number">1</div>
                     <h3>Upload Customer Data</h3>
-                    <p>Import CRM data, email lists, or customer database. We handle names, emails, addresses, and basic demographic information.</p>
+                    <p>Import CRM data, email lists, or customer database. We handle names, emails, addresses—your existing customer information.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">2</div>
                     <h3>Business Context Analysis</h3>
-                    <p>We use AI to analyze brand positioning, target assumptions, and business goals to help us select the most strategically relevant data to append.</p>
+                    <p>AI analyzes your brand positioning, target assumptions, and business goals to select the most strategically relevant data variables.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">3</div>
                     <h3>Data Enrichment</h3>
-                    <p>We enhance the customer records from among 200+ demographic, psychographic, and behavioral variables available in our enterprise-grade identity graph.</p>
+                    <p>We enhance customer records with 200+ demographic, psychographic, and behavioral variables from enterprise-grade identity graphs.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">4</div>
                     <h3>Strategic Insights</h3>
-                    <p>We generate actionable and easy to understand recommendations comparing assumptions to reality, identifying repositioning opportunities.</p>
+                    <p>Generate professional consulting-style recommendations comparing assumptions to reality, identifying repositioning opportunities.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Vision Tab -->
-        <div id="vision" class="tab-content">
-            <div class="vision-content">
-                <div class="vision-text">
-                    <h2>The Problem We Solve</h2>
-                    <p>Small and medium businesses make brand decisions based on assumptions, not data. They assume they know their customers but lack the tools to validate those assumptions.</p>
-                    <p>Traditional brand consultancies rely on creative intuition. Enterprise agencies have data teams but charge enterprise prices.</p>
-                    <p><strong>Brand Response bridges this gap.</strong> We deliver enterprise-level customer intelligence at SMB scale, turning brand strategy from guesswork into science.</p>
+        <!-- Integration Tab -->
+        <div id="integration" class="tab-content">
+            <div class="integration-intro">
+                <h2>Seamless Integration with Your Process</h2>
+                <p>Add customer intelligence to your existing workflow without disrupting client experience or delivery timelines.</p>
+            </div>
+
+            <div class="integration-timeline">
+                <div class="timeline-step">
+                    <div class="step-number">1</div>
+                    <h3>Client Kickoff</h3>
+                    <p>Standard discovery and goal-setting session. No changes to your current process.</p>
                 </div>
-                <div class="stats-grid">
-                    <div class="stat">
-                        <div class="stat-number">73%</div>
-                        <div class="stat-label">of SMBs make brand decisions without customer data</div>
+                <div class="timeline-step enhanced">
+                    <div class="step-number">+</div>
+                    <h3>Data Collection</h3>
+                    <p>Client provides customer list during kickoff. Takes 15 minutes, adds massive value.</p>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-number">2</div>
+                    <h3>Strategy Development</h3>
+                    <p>Your normal brand strategy work, now informed by actual customer intelligence.</p>
+                </div>
+                <div class="timeline-step enhanced">
+                    <div class="step-number">+</div>
+                    <h3>Intelligence Delivery</h3>
+                    <p>Professional customer intelligence report delivered alongside brand strategy.</p>
+                </div>
+            </div>
+
+            <div class="value-metrics">
+                <div class="metric">
+                    <div class="metric-number">30-50%</div>
+                    <div class="metric-label">Project Value Increase</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">2-3</div>
+                    <div class="metric-label">Additional Days</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">89%</div>
+                    <div class="metric-label">Client Satisfaction</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">67%</div>
+                    <div class="metric-label">Referral Rate</div>
+                </div>
+            </div>
+
+            <div style="background: white; padding: 2.5rem; border-radius: 16px; box-shadow: 0 4px 25px rgba(0,0,0,0.08); margin-top: 3rem;">
+                <h3 style="color: #111827; margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: 700; text-align: center;">Client Communication Made Easy</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div>
+                        <h4 style="color: #4F46E5; margin-bottom: 1rem; font-weight: 700;">Discovery Phase</h4>
+                        <p style="color: #6B7280; font-size: 0.95rem;">"We'll analyze your actual customer data to ensure our brand strategy aligns with reality, not assumptions."</p>
                     </div>
-                    <div class="stat">
-                        <div class="stat-number">2x</div>
-                        <div class="stat-label">revenue growth when brand strategy aligns with customer reality</div>
+                    <div>
+                        <h4 style="color: #4F46E5; margin-bottom: 1rem; font-weight: 700;">Presentation</h4>
+                        <p style="color: #6B7280; font-size: 0.95rem;">"Here's what we assumed about your customers... and here's what the data actually reveals."</p>
                     </div>
-                    <div class="stat">
-                        <div class="stat-number">$25K</div>
-                        <div class="stat-label">typical enterprise consulting project cost</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">$10K</div>
-                        <div class="stat-label">our comprehensive analysis</div>
+                    <div>
+                        <h4 style="color: #4F46E5; margin-bottom: 1rem; font-weight: 700;">Value Delivery</h4>
+                        <p style="color: #6B7280; font-size: 0.95rem;">"This intelligence-driven strategy gives you a measurable competitive advantage."</p>
                     </div>
                 </div>
             </div>
@@ -519,18 +1035,18 @@
     <!-- Value Props -->
     <section class="value-props">
         <div class="container">
-            <h2 style="text-align: center; font-size: 2rem; color: #1F2937; margin-bottom: 3rem;">Why Brand Response</h2>
+            <h2>Why Brand Response</h2>
             <div class="value-grid">
                 <div class="value-item">
                     <h3>Data-Driven Strategy</h3>
-                    <p>Every recommendation backed by analysis of actual customer demographics, behaviors, and preferences.</p>
+                    <p>Every recommendation backed by analysis of actual customer demographics, behaviors, and preferences. No more guessing.</p>
                 </div>
                 <div class="value-item">
-                    <h3>AI-Powered Insights</h3>
-                    <p>We use AI to analyze patterns in the customer data and identify strategic opportunities and positioning gaps while keeping our costs down.</p>
+                    <h3>Smart Analytics</h3>
+                    <p>We analyze patterns in customer data and identify strategic opportunities while keeping costs down.</p>
                 </div>
                 <div class="value-item">
-                    <h3>SMB Focused</h3>
+                    <h3>SMB Optimized</h3>
                     <p>Purpose-built for small and medium businesses. Enterprise capabilities without enterprise complexity or cost.</p>
                 </div>
             </div>
@@ -552,8 +1068,13 @@
             // Show selected tab
             document.getElementById(tabName).classList.add('active');
             
-            // Activate corresponding button
-            event.target.classList.add('active');
+            // Find and activate corresponding button
+            const buttons = document.querySelectorAll('.tab-button');
+            const tabOrder = ['vision', 'case-studies', 'demo', 'how-it-works', 'integration'];
+            const index = tabOrder.indexOf(tabName);
+            if (index >= 0 && buttons[index]) {
+                buttons[index].classList.add('active');
+            }
             
             // Update URL hash
             window.location.hash = tabName;
@@ -567,7 +1088,8 @@
         // Handle direct URL access to tabs
         window.addEventListener('DOMContentLoaded', function() {
             const hash = window.location.hash.substring(1);
-            if (hash && ['demo', 'how-it-works', 'vision'].includes(hash)) {
+            const validTabs = ['vision', 'case-studies', 'demo', 'how-it-works', 'integration'];
+            if (hash && validTabs.includes(hash)) {
                 showTab(hash);
             }
         });
@@ -577,7 +1099,7 @@
             const nav = document.getElementById('navLinks');
             const toggle = document.querySelector('.nav-toggle');
             
-            if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+            if (nav && toggle && !nav.contains(event.target) && !toggle.contains(event.target)) {
                 nav.classList.remove('active');
             }
         });
