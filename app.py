@@ -99,13 +99,6 @@ def main():
     # Add some spacing
     st.sidebar.markdown("---")
     
-    # Debug info
-    if st.sidebar.checkbox("Show Debug Info"):
-        st.sidebar.write("**Current Step:**", st.session_state.step)
-        st.sidebar.write("**Has Client Data:**", st.session_state.client_data is not None)
-        st.sidebar.write("**Has Business Context:**", bool(st.session_state.business_context))
-        st.sidebar.write("**Selected Variables:**", len(st.session_state.selected_variables))
-    
     # Reset button
     if st.sidebar.button("🔄 Start Over"):
         for key in list(st.session_state.keys()):
