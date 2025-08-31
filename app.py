@@ -288,7 +288,7 @@ def show_business_context():
             st.rerun()
 
 def show_variable_selection():
-    st.header("🤖 Step 3: Data Enhancement Selection")
+    st.header("🤖 Step 3: Data Enrichment Selection")
     st.markdown("Analyzing your business context to select the most strategic data variables...")
     
     # Show business context summary
@@ -300,9 +300,9 @@ def show_variable_selection():
                 elif key == 'goals' and value:
                     st.write(f"**Goals:** {', '.join(value)}")
 
-    st.info("💡 **Why not standard packages?** Every business is different. Rather than generic data packages, we use AI to select variables strategically optimized for your specific industry, business model, and brand objectives.")
+    st.info("Every business is unique. Rather than generic data packages, we intelligently choose data variables strategically optimized for your specific business and brand objectives.")
     
-    if st.button("🤖 Generate Enhancement Recommendations", type="primary"):
+    if st.button("Generate Enrichment Recommendations", type="primary"):
         with st.spinner("Analyzing your business context..."):
             try:                
                 selected_vars = select_variables_with_ai(st.session_state.business_context)
@@ -348,7 +348,7 @@ def show_variable_selection():
 
 def show_ai_variable_explanations(variables):
     """Display AI-selected variables with their strategic rationale in professional table format"""
-    st.subheader("🎯 AI-Selected Variables & Strategic Rationale")
+    st.subheader("Recommended Variables & Strategic Rationale")
     
     if not variables:
         st.warning("No variables were selected.")
@@ -698,8 +698,8 @@ def show_report_export():
         # Workflow Summary Section
         if st.session_state.get('logger'):
             st.markdown("---")
-            st.subheader("📋 Workflow Analysis")
-            st.markdown("Generate AI summaries of this analysis session for different audiences:")
+            st.subheader("Platform Workflow Analysis")
+            st.markdown("Generate summary of this session:")
             
             col1, col2 = st.columns(2)
             

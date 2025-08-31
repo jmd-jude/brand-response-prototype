@@ -70,12 +70,12 @@ class SessionLogger:
         WORKFLOW DATA:
         {workflow_narrative}
 
-        Focus your summary on these key innovations:
-        1. **Contextually Optimized Data Enhancement** - How the platform moved beyond standard data packages to select variables strategically for this specific business context
+        Focus your summary on these key innovations. :
+        1. **Contextually Optimized Data Enhancement** - How the platform moves beyond standardized data packages to select variables strategically for this specific business context
         2. **Enterprise-Grade Data at SMB Economics** - Access to sophisticated identity graph data at a fraction of enterprise consulting costs
         3. **Rapid Strategic Transformation** - Converting raw customer data into actionable brand insights in minutes
 
-        Write in factual, journalistic tone emphasizing demonstrated capabilities and competitive advantages."""
+        Write in factual, journalistic tone emphasizing demonstrated capabilities and competitive advantages. Speak in present tense, not past."""
         
         else:  # customer audience
             prompt = f"""You are summarizing a Brand Response Customer Intelligence analysis for a client who wants to understand what was done and what value they received.

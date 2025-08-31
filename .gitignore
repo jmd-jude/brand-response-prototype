@@ -35,6 +35,7 @@ ENV/
 # Data files (for now, we'll add sample data later)
 /data/*.csv
 !/data/sample_*.csv
+/logs/
 
 # IDE
 .vscode/
